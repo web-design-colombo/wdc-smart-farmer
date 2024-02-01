@@ -52,7 +52,7 @@
                                         @if ($user->role)
                                             {{ ucwords(str_replace('_', ' ', Str::snake($user->usertype->value))) }}
                                         @else
-                                            No Role Assigned
+                                            No Role Assigned xxx
                                         @endif
                                     </td>
                                     <td class="py-4 pl-4 pr-3 text-sm font-medium">
