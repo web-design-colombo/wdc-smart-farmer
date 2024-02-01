@@ -1,0 +1,45 @@
+ul#Contenttab1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul#Contenttab1 li {
+    display: none;
+}
+ul#Contenttab1 li.selected {
+    display: block;
+}
+
+#sidebar-wrapper .sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 225px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar-wrapper .sidebar-nav li {
+    text-indent: 0;
+    line-height: 45px;
+}
+
+#sidebar-wrapper .sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+	outline:0;
+	color:#fff;
+}
+
+
+#sidebar-wrapper .sidebar-nav li a.active{
+background-color:#85ce36;
+color:#fff;
+}
+
+#sidebar-wrapper .sidebar-nav li a:focus,
+#sidebar-wrapper .sidebar-nav li a:hover{
+background-color:#2d363f;
+}

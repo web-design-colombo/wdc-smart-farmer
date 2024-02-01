@@ -1,0 +1,30 @@
+  <section class="pricing-table sections">
+        <div class="containers">
+            <div class="rows">
+                <div class="cols-lg-12"  style="margin-top: 60px;">
+                    <h2 id="aa"  >Why Users Choose Us</h2>
+                    <div class="section-title" style="display:flex;   ">
+
+
+                        <p id="ss">" Choose us for unparalleled access to expert guidance at every stage of your farming
+                            journey. From seed selection to cultivation practices and harvesting techniques, our
+                            platform offers curated insights and real-time support, ensuring you make informed decisions
+                            for a more prosperous harvest. "
+
+  </p>
+                            <video width="50%" height="360" controls id="vv">
+                                <source src="img/d.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                    </div>
+                    <
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <!--/ End Pricing Table -->
