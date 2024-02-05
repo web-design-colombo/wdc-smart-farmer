@@ -14,7 +14,7 @@
 
 
                         <ul class="bread-list">
-                            <li> <a href="{{ url('welcome') }}">Home</a></li>
+                            <li> <a href="{{ url('/') }}">Home</a></li>
 
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">My DashBoard</li>

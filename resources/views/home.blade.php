@@ -675,4 +675,4 @@
     <!-- /End Newsletter Area -->
 
 
-</x-app-layout>
+</x-site-layout>

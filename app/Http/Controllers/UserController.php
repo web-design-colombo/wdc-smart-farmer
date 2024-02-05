@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Enums\Role;
-use Illuminate\Support\Facades\Auth;
-use App\Models\ProductCategory;
 
 class UserController extends Controller
 {
@@ -46,7 +44,7 @@ class UserController extends Controller
 
         User::create($validated);
 
-        return redirect()->route('admin.user.index')->with('success', 'User successfully created!');
+        return redirect()->route('user.index')->with('success', 'User successfully created!');
     }
 
     /**
@@ -81,7 +79,7 @@ class UserController extends Controller
 
         $user->update($validated);
 
-        return redirect()->route('admin.user.index')->with('success', 'User successfully updated!');
+        return redirect()->route('user.index')->with('success', 'User successfully updated!');
     }
 
     /**
@@ -91,6 +89,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('admin.user.index')->with('success', 'User successfully deleted!');
+        return redirect()->route('user.index')->with('success', 'User successfully deleted!');
     }
 }

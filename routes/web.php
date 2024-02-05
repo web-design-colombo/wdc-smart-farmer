@@ -6,6 +6,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ use App\Http\Controllers\ProductCategoryController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('redirects',[HomeController::class,'index']);;
 
 Route::middleware([
     'auth:sanctum',
@@ -46,8 +49,8 @@ Route::middleware([
 ->name('admin.')
 ->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
+    Route::get('dashboard', function () {
+        return view('admin.user.index');
     })->name('dashboard');
 
 
@@ -61,14 +64,9 @@ Route::middleware([
 
 
 
-    route::get('/admin',[AdminController::class,'index']);
 
-    route::get('/home',[UserController::class,'index']);
 
 });
-
-
-Route::get('/p', [ProductCategoryController::class, 'index']);
 
 
 route::get('auth/facebook',[FacebookController::class,'facebookpage']);
