@@ -1,26 +1,6 @@
 <x-app-layout>
 
-    <form action="{{  route('admin.product-category.store') }}" method="post">
-        @csrf
-
-        <div>
-            <label for="name" value="{{ __('Name') }}" />
-            <input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
-                autofocus autocomplete="name" />
-        </div>
-
-        <div>
-            <label for="slug" value="{{ __('Slug') }}" />
-            <input id="slug" class="block mt-1 w-full"
-            type="text" name="slug" :value="old('slug')" required
-                autofocus autocomplete="slug" />
-        </div>
-
-
-        <button type="submit">
-            Save
-        </button>
-    </form>
+    
 
     <div class="container mx-auto mt-1">
         <div class="space-y-10 divide-y divide-gray-900/10">
@@ -99,7 +79,7 @@
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->value }}"
-                                                {{ ($user && old('role', $user?->role?->value) == $role->value ? 'selected' : '') }}>
+                                                {{ ($user && optional($user->role)->value == $role->value ? 'selected' : '') }}>
                                                 {{ ucwords(str_replace('_', ' ', Str::snake($role->name))) }}
                                             </option>
                                         @endforeach

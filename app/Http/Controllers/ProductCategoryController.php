@@ -15,7 +15,7 @@ class ProductCategoryController extends Controller
     {
         return view('admin.product_category.index', [
             'product_categories' => ProductCategory::orderBy('id', 'DESC')->paginate(10)
-            
+
         ]);
 
 
@@ -54,7 +54,10 @@ class ProductCategoryController extends Controller
      */
     public function edit(ProductCategory $productCategory)
     {
-        //
+        return view('admin.user.form', [
+            'user' => $productCategory,
+
+        ]);
     }
 
     /**
@@ -72,7 +75,8 @@ class ProductCategoryController extends Controller
     {
         $productCategory->delete();
 
-        return redirect()->route('product-category.index');
+        return redirect()->route('user.index')->with('success', 'Product successfully deleted!');
+
 
     }
 }

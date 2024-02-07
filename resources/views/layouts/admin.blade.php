@@ -8,8 +8,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-     <!-- Scripts -->
-     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Styles -->
     <style>
@@ -124,43 +124,70 @@
 </head>
 
 <body>
-   <!-- Header Inner -->
-   <div class="header-inner">
-    <div class="container">
-        <div class="inner">
-            <div class="flex  items-center py-0">
-                <!-- Logo -->
-                <div class="logo" style="margin-right: 65%; margin-left: 5%;">
-                    <a href="{{ route('admin.dashboard') }}">
-                        <img src="/img/logo.png" alt="#" class="max-w-40" />
-                    </a>
-                </div>
-
-
-
-                <div class="pt-4 pb-1 border-t border-gray-200">
-                    <div class="flex items-center px-4">
-                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <div class="shrink-0 me-3">
-                                <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                            </div>
-                        @endif
-
-                        <div>
-                            <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                            <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                        </div>
+    <!-- Header Inner -->
+    <div class="header-inner" style="background-color: #aeeebd">
+        <div class="container">
+            <div class="inner">
+                <div class="flex  items-center py-0">
+                    <!-- Logo -->
+                    <div class="logo" style="margin-right: 65%; margin-left: 5%;">
+                        <a href="{{ route('admin.dashboard') }}">
+                            <img src="/img/logo.png" alt="#" class="max-w-40" />
+                        </a>
                     </div>
 
+
+                    <!-- Trigger Button -->
+                    <button onclick="toggleDropdown()"
+                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                        <span class="mr-2">{{ Auth::user()->name }}</span>
+                        <svg class="-me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Content -->
+                    <div id="dropdownContent" class="dropdown-content" style="display: none;">
+                        <!-- Account Management -->
+                        <div onclick="manageAccount()" class="block px-4 py-2 text-xs text-gray-400 cursor-pointer">
+                            {{ __('Manage Account') }}
+                        </div>
+
+                        <a href="{{ route('profile.show') }}">{{ __('Profile') }}</a>
+
+                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            <a href="{{ route('api-tokens.index') }}">{{ __('API Tokens') }}</a>
+                        @endif
+
+                        <div class="border-t border-gray-200"></div>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">{{ __('Log Out') }}</button>
+                        </form>
+                    </div>
+
+                    <script>
+                        function toggleDropdown() {
+                            var dropdownContent = document.getElementById("dropdownContent");
+                            dropdownContent.style.display = (dropdownContent.style.display === "none") ? "block" : "none";
+                        }
+
+                        function manageAccount() {
+                            // Add your logic for handling the 'Manage Account' click
+                            alert("Manage Account Clicked!");
+                        }
+                    </script>
+
+
+
                 </div>
-
-
-
             </div>
         </div>
     </div>
-</div>
-<!--/ End Header Inner -->
+    <!--/ End Header Inner -->
 
     <div class="containerr">
         <div class="sidenav">

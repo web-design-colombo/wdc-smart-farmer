@@ -72,4 +72,4 @@ Route::middleware([
 route::get('auth/facebook',[FacebookController::class,'facebookpage']);
 
 route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);
-
+Route::get('/users', [UserController::class, 'index'])->name('user.index');
