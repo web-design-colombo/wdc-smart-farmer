@@ -12,9 +12,8 @@
                         <div class="logo">
                             <a href="/"><img src="/img/logo.png" alt="#" style="max-width: 60%;"></a>
                         </div>
-                        <!-- End Logo -->
-                        <!-- Mobile Nav -->
-                        <!-- End Mobile Nav -->
+
+
                     </div>
                     <div class="flex lg:flex-row md:flex-row flex-col items-center " style="margin-left: 8%">
                         <!-- Main Menu -->

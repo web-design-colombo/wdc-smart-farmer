@@ -1,6 +1,6 @@
-<x-app-layout>
+<x-admin-layout>
 
-    
+
 
     <div class="container mx-auto mt-1">
         <div class="space-y-10 divide-y divide-gray-900/10">
@@ -107,4 +107,4 @@
 
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

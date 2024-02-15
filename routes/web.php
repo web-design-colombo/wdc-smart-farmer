@@ -62,14 +62,21 @@ Route::middleware([
         'user',\App\Http\Controllers\UserController::class
     );
 
-
-
-
-
 });
+
+ Route::resource(
+        'product-category',\App\Http\Controllers\ProductCategoryController::class
+    );
+
 
 
 route::get('auth/facebook',[FacebookController::class,'facebookpage']);
 
 route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
+
+
+Route::get('about', function () {
+    return view('admin.product_category.index');
+})->name('about');
+

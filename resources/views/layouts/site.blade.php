@@ -396,7 +396,7 @@
                                             <ul class="dropdown">
                                                 <li><a href="index.html">Take action</a></li>
                                                 <li><a href="index.html">Communities</a></li>
-                                                <li><a href="index.html">Join the RHS</a></li>
+                                                <li><a href="index.html">Join the SmartFarmer</a></li>
                                                 <li><a href="index.html">Support us</a></li>
 
                                             </ul>

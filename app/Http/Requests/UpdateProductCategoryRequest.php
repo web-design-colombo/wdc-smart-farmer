@@ -11,7 +11,7 @@ class UpdateProductCategoryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true; // Allow all users for simplicity, you may adjust this based on your needs
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateProductCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'slug' => 'required|string|max:255',
+            // Add other validation rules as needed
         ];
     }
 }
