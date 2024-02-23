@@ -1,0 +1,878 @@
+.plant-attributes__panel {
+    font-size: 1.0135135135rem;
+    line-height: 1.11;
+    padding: 1.618rem 0;
+    border-top: 1px solid #2f9c2f
+}
+
+@media screen and (min-width:46.25em) {
+    .plant-attributes__panel {
+        font-size: 1.0416666667rem;
+        line-height: 1.44
+    }
+}
+
+@media screen and (min-width:61.25em) {
+    .plant-attributes__panel {
+        font-size: 1.1458333333rem;
+        line-height: 1.3090909091
+    }
+}
+
+.plant-attributes__panel:last-child {
+    border-bottom: 1px solid #2f9c2f
+}
+
+@media (min-width:46.25em) {
+    .plant-attributes__panel {
+        position: relative;
+        float: left;
+        min-height: 1px;
+        width: 50%;
+        margin-left: -.5px;
+        margin-right: -.5px
+    }
+    .plant-attributes__panel:last-child {
+        border-bottom: 0
+    }
+    .plant-attributes__panel:nth-child(odd) {
+        padding-right: 1.618rem;
+        border-right: 1px solid #2f9c2f;
+        clear: left
+    }
+    .plant-attributes__panel:nth-child(even) {
+        padding-left: 1.618rem;
+        border-left: 1px solid #2f9c2f
+    }
+    .plant-attributes__panel:nth-last-of-type(-n+2) {
+        padding-bottom: 0
+    }
+}
+
+.plant-attributes__content {
+    display: none;
+    margin-top: 1.125rem
+}
+
+@media (min-width:46.25em) {
+    .plant-attributes__content {
+        display: block
+    }
+}
+
+@media print {
+    .plant-attributes__content {
+        display: block
+    }
+}
+
+.is-active .plant-attributes__content {
+    display: block
+}
+
+.plant-attributes__header {
+    position: relative;
+    padding-right: 2.5rem;
+    cursor: pointer
+}
+
+@media (min-width:46.25em) {
+    .plant-attributes__header {
+        padding-right: 0;
+        cursor: auto
+    }
+}
+
+.plant-attributes__heading {
+    margin-bottom: 0
+}
+
+.plant-attributes__header-indicator {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #2f9c2f;
+    text-align: center;
+    -webkit-transition: -webkit-transform .125s ease-in-out;
+    transition: transform .125s ease-in-out;
+    transition: transform .125s ease-in-out, -webkit-transform .125s ease-in-out;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+@media (min-width:46.25em) {
+    .plant-attributes__header-indicator {
+        display: none
+    }
+}
+
+.plant-attributes__header-indicator:before {
+    content: "\f078";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400
+}
+
+.plant-attributes__header-indicator:hover {
+    color: #2f9c2f
+}
+
+.is-active .plant-attributes__header-indicator {
+    -webkit-transform: rotate(180deg) translateY(50%);
+    transform: rotate(180deg) translateY(50%)
+}
+
+.plants-button-list {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.plants-button-list>li {
+    margin-left: 0
+}
+
+.plants-button-list__item {
+    display: inline-block;
+    padding-right: .809rem;
+    margin-right: .809rem;
+    border-right: 1px solid #2f9c2f;
+    vertical-align: top
+}
+
+.plants-button-list__item:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0
+}
+
+.plant-icon {
+    display: inline-block;
+    margin-right: .125rem
+}
+
+@media (min-width:61.25em) {
+    .plant-icon {
+        margin-right: .25rem
+    }
+}
+
+.plant-icon:last-child {
+    margin-right: 0
+}
+
+.plant-icon--autumn,
+.plant-icon--autumn-large,
+.plant-icon--chalk-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -271px 0;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--autumn,
+.plant-icon--chalk-large {
+    background-position: -367px -288px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--chalk-large {
+    background-position: -271px -96px;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--chalk,
+.plant-icon--clay,
+.plant-icon--clay-large,
+.plant-icon--flower-black {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -399px -288px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--clay,
+.plant-icon--clay-large,
+.plant-icon--flower-black {
+    background-position: 0 -251px;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--clay,
+.plant-icon--flower-black {
+    background-position: -431px -288px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--flower-black {
+    background-position: -387px -367px;
+    width: 18px;
+    height: 20px
+}
+
+.plant-icon--flower-blue,
+.plant-icon--flower-bronze,
+.plant-icon--flower-brown,
+.plant-icon--flower-cream {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -405px -367px;
+    width: 18px;
+    height: 20px
+}
+
+.plant-icon--flower-bronze,
+.plant-icon--flower-brown,
+.plant-icon--flower-cream {
+    background-position: -423px -367px
+}
+
+.plant-icon--flower-brown,
+.plant-icon--flower-cream {
+    background-position: -441px -367px
+}
+
+.plant-icon--flower-cream {
+    background-position: 0 -387px
+}
+
+.plant-icon--flower-gold,
+.plant-icon--flower-green,
+.plant-icon--flower-grey,
+.plant-icon--flower-orange {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -18px -387px;
+    width: 18px;
+    height: 20px
+}
+
+.plant-icon--flower-green,
+.plant-icon--flower-grey,
+.plant-icon--flower-orange {
+    background-position: -36px -387px
+}
+
+.plant-icon--flower-grey,
+.plant-icon--flower-orange {
+    background-position: -54px -387px
+}
+
+.plant-icon--flower-orange {
+    background-position: -72px -387px
+}
+
+.plant-icon--flower-pink,
+.plant-icon--flower-purple,
+.plant-icon--flower-red,
+.plant-icon--flower-silver {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -90px -387px;
+    width: 18px;
+    height: 20px
+}
+
+.plant-icon--flower-purple,
+.plant-icon--flower-red,
+.plant-icon--flower-silver {
+    background-position: -108px -387px
+}
+
+.plant-icon--flower-red,
+.plant-icon--flower-silver {
+    background-position: -126px -387px
+}
+
+.plant-icon--flower-silver {
+    background-position: -144px -387px
+}
+
+.plant-icon--flower,
+.plant-icon--flower-variegated,
+.plant-icon--flower-white,
+.plant-icon--flower-yellow {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -162px -387px;
+    width: 18px;
+    height: 20px
+}
+
+.plant-icon--flower,
+.plant-icon--flower-white,
+.plant-icon--flower-yellow {
+    background-position: -180px -387px
+}
+
+.plant-icon--flower,
+.plant-icon--flower-yellow {
+    background-position: -198px -387px
+}
+
+.plant-icon--flower {
+    background-position: -426px -320px;
+    width: 20px
+}
+
+.plant-icon--foliage-black,
+.plant-icon--foliage-blue,
+.plant-icon--foliage-bronze,
+.plant-icon--foliage-brown {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -293px -224px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--foliage-blue,
+.plant-icon--foliage-bronze,
+.plant-icon--foliage-brown {
+    background-position: -313px -224px
+}
+
+.plant-icon--foliage-bronze,
+.plant-icon--foliage-brown {
+    background-position: -333px -224px
+}
+
+.plant-icon--foliage-brown {
+    background-position: -239px -103px
+}
+
+.plant-icon--foliage-cream,
+.plant-icon--foliage-gold,
+.plant-icon--foliage-green,
+.plant-icon--foliage-grey {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -236px -143px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--foliage-gold,
+.plant-icon--foliage-green,
+.plant-icon--foliage-grey {
+    background-position: -236px -163px
+}
+
+.plant-icon--foliage-green,
+.plant-icon--foliage-grey {
+    background-position: -236px -183px
+}
+
+.plant-icon--foliage-grey {
+    background-position: -236px -203px
+}
+
+.plant-icon--foliage-orange,
+.plant-icon--foliage-pink,
+.plant-icon--foliage-purple,
+.plant-icon--foliage-red {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -288px -251px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--foliage-pink,
+.plant-icon--foliage-purple,
+.plant-icon--foliage-red {
+    background-position: -308px -251px
+}
+
+.plant-icon--foliage-purple,
+.plant-icon--foliage-red {
+    background-position: -328px -251px
+}
+
+.plant-icon--foliage-red {
+    background-position: -288px -271px
+}
+
+.plant-icon--foliage-silver,
+.plant-icon--foliage-variegated,
+.plant-icon--foliage-white,
+.plant-icon--foliage-yellow {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -308px -271px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--foliage-variegated,
+.plant-icon--foliage-white,
+.plant-icon--foliage-yellow {
+    background-position: -328px -271px
+}
+
+.plant-icon--foliage-white,
+.plant-icon--foliage-yellow {
+    background-position: -288px -291px
+}
+
+.plant-icon--foliage-yellow {
+    background-position: -308px -291px
+}
+
+.plant-icon--foliage,
+.plant-icon--fruit-black,
+.plant-icon--fruit-blue,
+.plant-icon--fruit-bronze {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -328px -291px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--fruit-black,
+.plant-icon--fruit-blue,
+.plant-icon--fruit-bronze {
+    background-position: -348px -251px;
+    width: 19px
+}
+
+.plant-icon--fruit-blue,
+.plant-icon--fruit-bronze {
+    background-position: -348px -271px
+}
+
+.plant-icon--fruit-bronze {
+    background-position: -348px -291px
+}
+
+.plant-icon--fruit-brown,
+.plant-icon--fruit-cream,
+.plant-icon--fruit-gold,
+.plant-icon--fruit-green {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -348px -311px;
+    width: 19px;
+    height: 20px
+}
+
+.plant-icon--fruit-cream,
+.plant-icon--fruit-gold,
+.plant-icon--fruit-green {
+    background-position: -140px -367px
+}
+
+.plant-icon--fruit-gold,
+.plant-icon--fruit-green {
+    background-position: -159px -367px
+}
+
+.plant-icon--fruit-green {
+    background-position: -178px -367px
+}
+
+.plant-icon--fruit-grey,
+.plant-icon--fruit-orange,
+.plant-icon--fruit-pink,
+.plant-icon--fruit-purple {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -197px -367px;
+    width: 19px;
+    height: 20px
+}
+
+.plant-icon--fruit-orange,
+.plant-icon--fruit-pink,
+.plant-icon--fruit-purple {
+    background-position: -216px -367px
+}
+
+.plant-icon--fruit-pink,
+.plant-icon--fruit-purple {
+    background-position: -235px -367px
+}
+
+.plant-icon--fruit-purple {
+    background-position: -254px -367px
+}
+
+.plant-icon--fruit-red,
+.plant-icon--fruit-silver,
+.plant-icon--fruit-variegated,
+.plant-icon--fruit-white {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -273px -367px;
+    width: 19px;
+    height: 20px
+}
+
+.plant-icon--fruit-silver,
+.plant-icon--fruit-variegated,
+.plant-icon--fruit-white {
+    background-position: -292px -367px
+}
+
+.plant-icon--fruit-variegated,
+.plant-icon--fruit-white {
+    background-position: -311px -367px
+}
+
+.plant-icon--fruit-white {
+    background-position: -330px -367px
+}
+
+.plant-icon--fruit,
+.plant-icon--fruit-yellow,
+.plant-icon--full-shade,
+.plant-icon--full-shade-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -349px -367px;
+    width: 19px;
+    height: 20px
+}
+
+.plant-icon--fruit,
+.plant-icon--full-shade,
+.plant-icon--full-shade-large {
+    background-position: -368px -367px
+}
+
+.plant-icon--full-shade,
+.plant-icon--full-shade-large {
+    background-position: -108px -143px;
+    width: 128px;
+    height: 90px
+}
+
+.plant-icon--full-shade {
+    background-position: -398px -320px;
+    width: 28px;
+    height: 20px
+}
+
+.plant-icon--full-sun,
+.plant-icon--full-sun-large,
+.plant-icon--loam-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: 0 -143px;
+    width: 108px;
+    height: 108px
+}
+
+.plant-icon--full-sun,
+.plant-icon--loam-large {
+    background-position: -271px -224px;
+    width: 22px;
+    height: 23px
+}
+
+.plant-icon--loam-large {
+    background-position: -96px -251px;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--loam,
+.plant-icon--partial-shade,
+.plant-icon--partial-shade-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -271px -192px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--partial-shade,
+.plant-icon--partial-shade-large {
+    background-position: -143px 0;
+    width: 128px;
+    height: 103px
+}
+
+.plant-icon--partial-shade {
+    background-position: -367px -320px;
+    width: 31px;
+    height: 23px
+}
+
+.plant-icon--radio,
+.plant-icon--radio-large,
+.plant-icon--sand,
+.plant-icon--sand-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: 0 0;
+    width: 143px;
+    height: 143px
+}
+
+.plant-icon--radio,
+.plant-icon--sand,
+.plant-icon--sand-large {
+    background-position: -303px -192px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--sand,
+.plant-icon--sand-large {
+    background-position: -192px -251px;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--sand {
+    background-position: -335px -192px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--spring,
+.plant-icon--spring-large,
+.plant-icon--stem-black,
+.plant-icon--stem-blue {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -367px 0;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--spring,
+.plant-icon--stem-black,
+.plant-icon--stem-blue {
+    background-position: -143px -103px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--stem-black,
+.plant-icon--stem-blue {
+    background-position: -288px -311px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--stem-blue {
+    background-position: -308px -311px
+}
+
+.plant-icon--stem-bronze,
+.plant-icon--stem-brown,
+.plant-icon--stem-cream,
+.plant-icon--stem-gold {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -328px -311px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--stem-brown,
+.plant-icon--stem-cream,
+.plant-icon--stem-gold {
+    background-position: 0 -347px
+}
+
+.plant-icon--stem-cream,
+.plant-icon--stem-gold {
+    background-position: -20px -347px
+}
+
+.plant-icon--stem-gold {
+    background-position: -40px -347px
+}
+
+.plant-icon--stem-green,
+.plant-icon--stem-grey,
+.plant-icon--stem-orange,
+.plant-icon--stem-pink {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -60px -347px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--stem-grey,
+.plant-icon--stem-orange,
+.plant-icon--stem-pink {
+    background-position: -80px -347px
+}
+
+.plant-icon--stem-orange,
+.plant-icon--stem-pink {
+    background-position: -100px -347px
+}
+
+.plant-icon--stem-pink {
+    background-position: -120px -347px
+}
+
+.plant-icon--stem-purple,
+.plant-icon--stem-red,
+.plant-icon--stem-silver,
+.plant-icon--stem-variegated {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -140px -347px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--stem-red,
+.plant-icon--stem-silver,
+.plant-icon--stem-variegated {
+    background-position: -160px -347px
+}
+
+.plant-icon--stem-silver,
+.plant-icon--stem-variegated {
+    background-position: -180px -347px
+}
+
+.plant-icon--stem-variegated {
+    background-position: -200px -347px
+}
+
+.plant-icon--stem,
+.plant-icon--stem-white,
+.plant-icon--stem-yellow,
+.plant-icon--summer-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -220px -347px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--stem,
+.plant-icon--stem-yellow,
+.plant-icon--summer-large {
+    background-position: -240px -347px
+}
+
+.plant-icon--stem,
+.plant-icon--summer-large {
+    background-position: -260px -347px
+}
+
+.plant-icon--summer-large {
+    background-position: -367px -96px;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--summer,
+.plant-icon--swatch-black,
+.plant-icon--swatch-blue {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -175px -103px;
+    width: 32px;
+    height: 32px
+}
+
+.plant-icon--swatch-black,
+.plant-icon--swatch-blue {
+    background-position: -280px -347px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--swatch-blue {
+    background-position: -300px -347px
+}
+
+.plant-icon--swatch-bronze,
+.plant-icon--swatch-brown,
+.plant-icon--swatch-cream,
+.plant-icon--swatch-gold {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -320px -347px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--swatch-brown,
+.plant-icon--swatch-cream,
+.plant-icon--swatch-gold {
+    background-position: -340px -347px
+}
+
+.plant-icon--swatch-cream,
+.plant-icon--swatch-gold {
+    background-position: -360px -347px
+}
+
+.plant-icon--swatch-gold {
+    background-position: -380px -347px
+}
+
+.plant-icon--swatch-green,
+.plant-icon--swatch-grey,
+.plant-icon--swatch-orange,
+.plant-icon--swatch-pink {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -400px -347px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--swatch-grey,
+.plant-icon--swatch-orange,
+.plant-icon--swatch-pink {
+    background-position: -420px -347px
+}
+
+.plant-icon--swatch-orange,
+.plant-icon--swatch-pink {
+    background-position: -440px -347px
+}
+
+.plant-icon--swatch-pink {
+    background-position: 0 -367px
+}
+
+.plant-icon--swatch-purple,
+.plant-icon--swatch-red,
+.plant-icon--swatch-silver,
+.plant-icon--swatch-variegated {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -20px -367px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--swatch-red,
+.plant-icon--swatch-silver,
+.plant-icon--swatch-variegated {
+    background-position: -40px -367px
+}
+
+.plant-icon--swatch-silver,
+.plant-icon--swatch-variegated {
+    background-position: -60px -367px
+}
+
+.plant-icon--swatch-variegated {
+    background-position: -80px -367px
+}
+
+.plant-icon--swatch-white,
+.plant-icon--swatch-yellow,
+.plant-icon--winter,
+.plant-icon--winter-large {
+    background-image: url(/assets/styles/f2/web/assets/sprites/plants.png);
+    background-position: -100px -367px;
+    width: 20px;
+    height: 20px
+}
+
+.plant-icon--swatch-yellow,
+.plant-icon--winter,
+.plant-icon--winter-large {
+    background-position: -120px -367px
+}
+
+.plant-icon--winter,
+.plant-icon--winter-large {
+    background-position: -367px -192px;
+    width: 96px;
+    height: 96px
+}
+
+.plant-icon--winter {
+    background-position: -207px -103px;
+    width: 32px;
+    height: 32px
+}

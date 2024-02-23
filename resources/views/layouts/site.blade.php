@@ -395,15 +395,16 @@
                                                     class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 <li><a href="index.html">Take action</a></li>
-                                                <li><a href="index.html">Communities</a></li>
-                                                <li><a href="index.html">Join the SmartFarmer</a></li>
+                                                <li>
+                                                    <a href="{{ url('/chatify') }}">Chat</a>
+                                                </li>                                                <li><a href="index.html">Join the SmartFarmer</a></li>
                                                 <li><a href="index.html">Support us</a></li>
 
                                             </ul>
                                         </li>
                                         <li><a href="#">Farming<i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="index.html">Plants</a></li>
+                                                <li><a href="{{ url('/fi') }}">Vegetable</a></li>
                                                 <li><a href="index.html">Advice</a></li>
 
 
@@ -415,8 +416,12 @@
 
                                         <li><a href="contact.html">Shop</a></li>
                                         </li>
-                                        <li><a href="contact.html">Community</a></li>
+                                        <li>
+                                            <a href="{{ url('/chatify') }}">Chat</a>
                                         </li>
+
+                                        </li>
+
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -428,23 +433,23 @@
                                 @if (Route::has('login'))
                                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                                         @auth
-                                        <a href="{{ url('/redirects') }}"
-                                            class="font-semibold text-gray-600 hover:text-gray-900 focus:outline
+                                            <a href="{{ url('/redirects') }}"
+                                                class="font-semibold text-gray-600 hover:text-gray-900 focus:outline
                                             focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                            <p id="dd">Hi, {{ Auth::user()->name }}</p>
-                                        </a>
-                                    @else
-                                        <a class="btn" href="{{ route('login') }}"
-                                            class="font-semibold text-gray-600 hover:text-gray-900 focus:outline
+                                                <p id="dd">Hi, {{ Auth::user()->name }}</p>
+                                            </a>
+                                        @else
+                                            <a class="btn" href="{{ route('login') }}"
+                                                class="font-semibold text-gray-600 hover:text-gray-900 focus:outline
                                             focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                                            in</a>
+                                                in</a>
 
-                                        @if (Route::has('register'))
-                                            <a class="btn" href="{{ route('register') }}"
-                                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline
+                                            @if (Route::has('register'))
+                                                <a class="btn" href="{{ route('register') }}"
+                                                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline
                                                  focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                                        @endif
-                                    @endauth
+                                            @endif
+                                        @endauth
                                     </div>
                                 @endif
                                 {{-- <a href="appointment.html" class="btn">Login</a> --}}

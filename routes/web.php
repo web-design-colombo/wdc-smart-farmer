@@ -80,3 +80,15 @@ Route::get('about', function () {
     return view('admin.product_category.index');
 })->name('about');
 
+Route::get('/community', function () {
+    return view('community');
+});
+
+Route::get('/fi', function () {
+    return view('find');
+});
+
+use App\Http\Controllers\VegetableController;
+
+Route::get('/vegetable-calculator', [VegetableController::class, 'index']);
+Route::post('/vegetable-calculator/calculate', [VegetableController::class, 'calculate']);

@@ -2,28 +2,21 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
+class VegetableSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $vegetables = [
+            ['name' => 'Tomato', 'spacing' => 30, 'depth' => 10, 'cost_per_plant' => 2.5, 'fertilizer_cost' => 10],
+            ['name' => 'Onion', 'spacing' => 10, 'depth' => 5, 'cost_per_plant' => 1.5, 'fertilizer_cost' => 8],
+            ['name' => 'Carrot', 'spacing' => 15, 'depth' => 8, 'cost_per_plant' => 1, 'fertilizer_cost' => 5],
+            ['name' => 'Cabbage', 'spacing' => 40, 'depth' => 15, 'cost_per_plant' => 3, 'fertilizer_cost' => 12],
+            ['name' => 'Bell Pepper', 'spacing' => 25, 'depth' => 12, 'cost_per_plant' => 2, 'fertilizer_cost' => 9],
+        ];
 
-        \App\Models\User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('admin12345'),
-            'role' => 'admin',
-        ]);
-
-        $this->call([
-            ProductCategorySeeder::class,
-            // ProductSeeder::class,
-        ]);
+        DB::table('vegetables')->insert($vegetables);
     }
 }
