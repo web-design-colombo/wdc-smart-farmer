@@ -14,16 +14,19 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            //user = 0 , admin = 2  editor = 1
+            $table->tinyInteger('role')->default(0);
+            $table->string('last_name')->default('');
+            $table->string('country')->default('');
             $table->string('address')->default('');
+            $table->string('city')->default('');
+            $table->string('province')->default('');
+            $table->string('phone')->default('');
             $table->string('email')->unique();
-            $table->string('facebook_id')->nullable();
-
-            $table->string('role')->default(0);
-
-            $table->string('phone')->nullable();
+            $table->string('order_notes')->default('');
+            $table->string('zip_code')->default('');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

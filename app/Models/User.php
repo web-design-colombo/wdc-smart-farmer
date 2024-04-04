@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use App\Enums\Role;
+use illuminate\Database\Eloquent\Casts\Attribute;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
@@ -28,8 +29,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'facebook_id',
-        'usertype',
+        'last_name',
+        'country',
+        'address',
+        'city',
+        'province',
+        'phone',
+        'order_notes',
+        'zip_code',
+'role',
     ];
 
     /**
@@ -51,7 +59,8 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'usertype' => Role::class
+        'role' => Role::class,
+
     ];
 
     /**
@@ -59,9 +68,15 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
-
-     protected $table = 'users';
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //role
+    protected function role(): Attribute
+    {
+        return  new Attribute(
+            get: fn($value)=>["user", "editor", "admin"][$value]
+        );
+    }
 }

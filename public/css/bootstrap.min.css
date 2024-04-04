@@ -1346,7 +1346,7 @@ pre code {
         flex: 0 0 8.333333%;
         max-width: 8.333333%
     }
-    .col-lg-2 {    padding-top: 26px;
+    .col-lg-2 {    padding-top: 16px;
 
         -ms-flex: 0 0 16.666667%;
         flex: 0 0 16.666667%;
@@ -3699,7 +3699,8 @@ tbody.collapse.show {
     flex-wrap: wrap;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none;    padding-top: 26px;
+    list-style: none;    padding-top: 16px;
+    margin-left: 50px;
 
 }
 
