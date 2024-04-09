@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/redirects',[HomeController::class,'index']);;
 
 
@@ -30,6 +31,7 @@ Route::middleware([
         return redirect('/redirects');
     })->name('dashboard');
 });
+
 
 
 //admin route
@@ -66,19 +68,29 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], func
     Route::get('/admin/category/edit', 'App\Http\Controllers\ProductController@edit');
     Route::get('/admin/category/update', 'App\Http\Controllers\ProductController@update');
 
-//add to cart
-    Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->name('addToCart');
-    Route::get('cart', 'App\Http\Controllers\CartController@show');
-    Route::put('cartupdate/{id}', 'App\Http\Controllers\CartController@updateQuantity');
-    Route::get('cartdelete/{id}', 'App\Http\Controllers\CartController@delete')->name('cart.delete');
-
-//checkout controller
-    Route::get('checkout', 'App\Http\Controllers\CheckoutController@index');
-    Route::post('/place-oder', 'App\Http\Controllers\CheckoutController@placeOrder');
-
 });
+
 
 //front end ui (shop)
 Route::get('/shop', 'App\Http\Controllers\ShopController@index');
 Route::get('view-category/{id}', 'App\Http\Controllers\ShopController@viewCategoryById');
 Route::get('more/{slug}', 'App\Http\Controllers\ShopController@more');
+Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->name('addToCart');
+
+//front end card
+Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->name('addToCart');
+Route::get('cart', 'App\Http\Controllers\CartController@show');
+Route::put('cartupdate/{id}', 'App\Http\Controllers\CartController@updateQuantity');
+Route::get('cartdelete/{id}', 'App\Http\Controllers\CartController@delete')->name('cart.delete');
+
+
+//checkout controller
+    Route::get('checkout', 'App\Http\Controllers\CheckoutController@index');
+    Route::post('/place-oder', 'App\Http\Controllers\CheckoutController@placeOrder');
+
+//order confirmation
+Route::get('/confirmation', 'App\Http\Controllers\Confirmation@index');
+
+//order history
+Route::get('my-orders', 'App\Http\Controllers\UserController@index');
+Route::get('view-order/{id}', 'App\Http\Controllers\UserController@viewOrder');

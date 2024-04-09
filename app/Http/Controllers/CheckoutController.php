@@ -50,10 +50,11 @@ class CheckoutController extends Controller
         $order->zip_code = $request->zip_code;
         $order->order_notes = $request->order_notes;
         $order->status = 0;
+
         $total = 0;
         $cartItems = Cart::where('user_id', Auth::id())->get();
         foreach ($cartItems as $item) {
-            $total += optional($item->product)->selling_price * $item->prod_qty;
+            $total += $item->products->selling_price ?? 0;
         }
         $order->tot = $total;
 

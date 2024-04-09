@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Order_Items;
+
 
 class Order extends Model
 {
@@ -26,4 +28,10 @@ class Order extends Model
         'tracking_no',
         'tot',
     ];
+
+    public function items()
+    {
+        return $this->hasMany(Order_Items::class);
+    }
+
 }

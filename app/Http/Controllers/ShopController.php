@@ -15,6 +15,7 @@ class ShopController extends Controller
         return view('shop.shophome', compact('product', 'category'));
     }
 
+
     public function more($productSlug)
     {
         $product = Product::where('slug', $productSlug)->first();

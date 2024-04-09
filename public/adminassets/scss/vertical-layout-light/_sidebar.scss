@@ -116,7 +116,7 @@
             i,
             .menu-title,
             .menu-arrow {
-              color: $sidebar-light-menu-active-color;
+              color:#288E28;
             }
             .menu-title {
              font-size: 13px;
@@ -125,7 +125,7 @@
               &.menu-arrow {
                 &::before {
                   content: "\e64b";
-                } 
+                }
               }
             }
         }
@@ -135,7 +135,7 @@
           i,
           .menu-title,
           .menu-arrow {
-            color: $sidebar-light-menu-active-color;
+            color: #288E28;
           }
         }
 
@@ -164,7 +164,7 @@
         &:hover {
           > .nav-link, &[aria-expanded="true"] {
             background: $sidebar-light-menu-hover-bg;
-            color: $sidebar-light-menu-hover-color;                    
+            color: $sidebar-light-menu-hover-color;
           }
         }
         > .nav-link {
@@ -172,7 +172,7 @@
           &[aria-expanded="true"] {
             border-radius: 8px 8px 0 0;
             background: $sidebar-light-menu-hover-bg;
-            color: $sidebar-light-menu-active-color;
+            color: #288E28;
           }
         }
         &.active {
@@ -211,7 +211,7 @@
             color: $sidebar-light-submenu-hover-color;
           }
           &.active {
-            color: $sidebar-light-submenu-active-color;
+            color: #288E28;
             background: transparent;
           }
         }
@@ -263,7 +263,7 @@
             }
             .menu-title,
             i {
-              color: $sidebar-dark-menu-active-color; 
+              color: $sidebar-dark-menu-active-color;
             }
           }
         }
@@ -273,7 +273,7 @@
           &:hover {
             > .nav-link {
               background: $sidebar-dark-menu-hover-bg;
-              color: $sidebar-dark-menu-hover-color;  
+              color: $sidebar-dark-menu-hover-color;
               &:before {
                 content: '';
                 width: 2px;
@@ -282,10 +282,10 @@
                 left: 0;
                 top:0;
                 position: absolute;
-              }  
+              }
               .menu-arrow {
                 color: $sidebar-dark-menu-hover-color;
-              }                                
+              }
             }
           }
           .nav-link {
