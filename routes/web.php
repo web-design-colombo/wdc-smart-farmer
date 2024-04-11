@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\models\user;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,12 +69,25 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], func
     Route::get('/admin/category/edit', 'App\Http\Controllers\ProductController@edit');
     Route::get('/admin/category/update', 'App\Http\Controllers\ProductController@update');
 
+//admin vegetable
+    Route::get('adminvegetable', 'App\Http\Controllers\VegetableController@index');
+    Route::get('showvegetable', 'App\Http\Controllers\VegetableController@show');
+    Route::POST('/vegetable-add', 'App\Http\Controllers\VegetableController@add');
+    Route::GET('/vegetable-add', 'App\Http\Controllers\VegetableController@add');
+    Route::get('/admin/vegetable/delete', 'App\Http\Controllers\VegetableController@delete');
+    Route::get('/admin/vegetable/edit', 'App\Http\Controllers\VegetableController@edit');
+    Route::get('/admin/vegetable/update', 'App\Http\Controllers\VegetableController@update');
+
 });
 
 
 //front end ui (shop)
 Route::get('/shop', 'App\Http\Controllers\ShopController@index');
-Route::get('view-category/{id}', 'App\Http\Controllers\ShopController@viewCategoryById');
+Route::get('/view-category/{slug}', 'App\Http\Controllers\ShopController@viewCategory');
+Route::get('product-list', 'App\Http\Controllers\ShopController@productAjax');
+
+Route::get('searchproduct', 'App\Http\Controllers\ShopController@searchproduct');
+
 Route::get('more/{slug}', 'App\Http\Controllers\ShopController@more');
 Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->name('addToCart');
 
@@ -89,8 +103,16 @@ Route::get('cartdelete/{id}', 'App\Http\Controllers\CartController@delete')->nam
     Route::post('/place-oder', 'App\Http\Controllers\CheckoutController@placeOrder');
 
 //order confirmation
-Route::get('/confirmation', 'App\Http\Controllers\Confirmation@index');
+Route::post('confirmation', 'App\Http\Controllers\Confirmation@index')->name('confirmation');
 
 //order history
 Route::get('my-orders', 'App\Http\Controllers\UserController@index');
 Route::get('view-order/{id}', 'App\Http\Controllers\UserController@viewOrder');
+
+
+
+//vegetable
+Route::get('vegetables', 'App\Http\Controllers\VegetableController@indexfront');
+Route::get('/more', function () {
+    return view('vegetables.viewdetails');
+});

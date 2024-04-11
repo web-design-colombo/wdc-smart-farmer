@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 class ShopController extends Controller
 {
     //index method
-    public function index(){
-        $category = Category::all();
-        $product = Product::all();
-        return view('shop.shophome', compact('product', 'category'));
-    }
-
+    public function index()
+{
+    $category = Category::all();
+    $product = Product::all();
+    return view('shop.shophome',  compact('product', 'category'));
+}
 
     public function more($productSlug)
     {
@@ -29,23 +29,43 @@ class ShopController extends Controller
 
 
 //    viewcategory
-    public function viewCategoryById($id)
-    {
-        $category = Category::all();
-        $product = Product::all();
-        $category = Category::find($id);
+public function viewCategory($slug)
+{
+    $category = Category::where('slug', $slug)->first();
 
-        if ($category) {
-            $products = Product::where('cate_id', $id)->where('status', '0')->get();
-            return view('shop.shophome', compact('category', 'products'));
-        } else {
-            return redirect()->route('shop.shophome')->with('error', 'Category not found');
-        }
+    if ($category) {
+        $product = Product::where('cate_id', $category->id)->where('status', '0')->get();
+        return view('shop.shophome', compact('category', 'product'));
+    } else {
+        return redirect()->back();
     }
+}
 
     public function viewAllProducts()
     {
         $products = Product::where('status', '0')->get();
         return view('shop.all-products', compact('products'));
     }
+
+
+    //create productAjax
+   // ShopController.php
+public function productAjax(Request $request)
+{
+$res = Product::select("name")
+->where("name","LIKE","%{$request->term}%")
+->get();
+return response()->json($res);
+
+
+}
+
+//searchproduct
+public function searchproduct(Request $request)
+{
+    $search = $request->search;
+    $product = Product::where('name', 'like', '%' . $search . '%')->get();
+    return view('shop.shophome', compact('product'));
+}
+
 }

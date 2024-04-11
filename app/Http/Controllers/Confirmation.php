@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Confirmation extends Controller
 {
-    public function index()
+    public function hfghjg()
     {
         //cart data
         $cartItem = Cart::where('user_id', Auth::id())->get();
-        return view('shop.confirmation', compact('cartItem'));
+        $orders = Cart::where('user_id', Auth::id())->get();
+        return view('shop.confirmation', compact('cartItem', 'orders'));
     }
 }

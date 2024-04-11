@@ -12,6 +12,8 @@
     <!-- Title -->
     <title>Smart Farmer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="{{ asset('shopassets/css/style.css') }}" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" href="img/logo-color.png">
@@ -119,6 +121,9 @@
                                     </li>
 
                                     <li><a href="contact.html">Contact</a></li>
+
+
+
                                 </ul>
                             </nav>
                         </div>
@@ -146,11 +151,69 @@
                                                  focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
                                         @endif
                                     @endauth
+
+
+
+
+                                    <div class="relative">
+                                        @if(Auth::check())
+                                            <button onclick="toggleDropdown()" class="inline-flex items-center text-sm leading-4 font-medium rounded-md text-gray-500 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150" style="margin-left: 10px; margin-top:4px;">
+                                                <img src="{{ Auth::user()->profile_photo_url }}" alt="User Profile" class="h-8 w-8 rounded-full object-cover mr-2" />
+                                                <svg class="-me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                                </svg>
+                                            </button>
+                                        @endif
+
+
+                                        <!-- Dropdown Content -->
+                                        <div id="dropdownContent" class="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                                             style="display: none;">
+                                            <!-- Account Management -->
+                                            <div onclick="manageAccount()"
+                                                 class="block px-4 py-2 text-xs text-gray-400 cursor-pointer hover:bg-gray-100">
+                                                {{ __('Manage Account') }}
+                                            </div>
+
+                                            <a href="{{ route('profile.show') }}"
+                                               class="block px-4 py-2 text-xs text-gray-900 hover:bg-gray-100">{{ __('Profile') }}</a>
+
+                                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                                <a href="{{ route('api-tokens.index') }}"
+                                                   class="block px-4 py-2 text-xs text-gray-900 hover:bg-gray-100">{{ __('API Tokens') }}</a>
+                                            @endif
+
+                                            <div class="border-t border-gray-200"></div>
+
+                                            <!-- Authentication -->
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                                                <button type="submit"
+                                                        class="block w-full px-4 py-2 text-left text-xs text-gray-900 hover:bg-gray-100">{{ __('Log Out') }}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        function toggleDropdown() {
+                                            var dropdownContent = document.getElementById("dropdownContent");
+                                            dropdownContent.style.display = (dropdownContent.style.display === "none") ? "block" : "none";
+                                        }
+
+                                        function manageAccount() {
+                                            // Add your logic for handling the 'Manage Account' click
+                                            alert("Manage Account Clicked!");
+                                        }
+                                    </script>
                                 </div>
+
+
                             @endif
                             {{-- <a href="appointment.html" class="btn">Login</a> --}}
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>

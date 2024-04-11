@@ -535,6 +535,26 @@
                     </div>
                 </li>
 
+
+                <li class="nav-item {{Request::is('#form-Vegetables') ? 'active':''}}">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#form-Vegetables" aria-expanded="false"
+                       aria-controls="form-elements">
+                        <i class="menu-icon mdi mdi-card-text-outline"></i>
+                        <span class="menu-title">Vegetables</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="form-Vegetables">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"><a class="nav-link" href="{{url('adminvegetable')}}">Add Vegetables</a>
+                            </li>
+                        </ul>
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"><a class="nav-link" href="{{url('showproduct')}}">Show All Vegetables</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 {{--                <li class="nav-item">--}}
 {{--                    <a class="nav-link" href="#form-elements" aria-expanded="false" aria-controls="form-elements">--}}
 {{--                        <i class="menu-icon mdi mdi-card-text-outline"></i>--}}
