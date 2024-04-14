@@ -196,6 +196,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        \Chatify\ChatifyServiceProvider::class,
+
 
     ],
 
@@ -213,5 +215,6 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
+    'Chatify' => Chatify\Facades\ChatifyMessenger::class,
 
 ];

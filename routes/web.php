@@ -116,3 +116,5 @@ Route::get('vegetables', 'App\Http\Controllers\VegetableController@indexfront');
 Route::get('/more', function () {
     return view('vegetables.viewdetails');
 });
+
+
