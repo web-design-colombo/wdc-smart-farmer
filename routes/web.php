@@ -55,10 +55,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], func
     Route::get('/admin/category', 'App\Http\Controllers\CategoriController@index');
     Route::POST('/category-add', 'App\Http\Controllers\CategoriController@add');
     Route::GET('/category-add', 'App\Http\Controllers\CategoriController@add');
-    Route::get('/admin/category/delete', 'App\Http\Controllers\CategoriController@delete');
-    Route::get('/admin/category/edit', 'App\Http\Controllers\CategoriController@edit');
-    Route::get('/admin/category/update', 'App\Http\Controllers\CategoriController@update');
-
+    Route::delete('deleteproductcate/{id}', 'App\Http\Controllers\CategoriController@delete');
+    Route::get('edit/{id}', 'App\Http\Controllers\CategoriController@edit');
+    Route::get('showcategory', 'App\Http\Controllers\CategoriController@show');
+    Route::put('update-category/{id}', 'App\Http\Controllers\CategoriController@update');
 
 //product route
     Route::get('product', 'App\Http\Controllers\ProductController@index');
@@ -68,6 +68,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], func
     Route::get('/admin/category/delete', 'App\Http\Controllers\ProductController@delete');
     Route::get('/admin/category/edit', 'App\Http\Controllers\ProductController@edit');
     Route::get('/admin/category/update', 'App\Http\Controllers\ProductController@update');
+    Route::get('editproduct/{id}', 'App\Http\Controllers\ProductController@edit');
+    Route::delete('deleteproduct/{id}', 'App\Http\Controllers\ProductController@delete');
+    Route::put('productshgop-add/{id}', 'App\Http\Controllers\ProductController@update');
+
 
 //admin vegetable
     Route::get('adminvegetable', 'App\Http\Controllers\VegetableController@index');
@@ -77,6 +81,16 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], func
     Route::get('/admin/vegetable/delete', 'App\Http\Controllers\VegetableController@delete');
     Route::get('/admin/vegetable/edit', 'App\Http\Controllers\VegetableController@edit');
     Route::get('/admin/vegetable/update', 'App\Http\Controllers\VegetableController@update');
+
+
+//orders
+    Route::get('orders', 'App\Http\Controllers\OrderController@index');
+    Route::get('view-orderadmion/{id}', 'App\Http\Controllers\OrderController@viewOrder');
+    Route::get('orderadmion/{id}', 'App\Http\Controllers\OrderController@viewOrder');
+    Route::put('order-update/{id}', 'App\Http\Controllers\OrderController@update');
+    Route::get('orderhistory', 'App\Http\Controllers\OrderController@orderhistory');
+
+
 
 });
 
@@ -96,11 +110,16 @@ Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->
 Route::get('cart', 'App\Http\Controllers\CartController@show');
 Route::put('cartupdate/{id}', 'App\Http\Controllers\CartController@updateQuantity');
 Route::get('cartdelete/{id}', 'App\Http\Controllers\CartController@delete')->name('cart.delete');
+Route::get('cart-count', 'App\Http\Controllers\CartController@cartcount');
 
 
 //checkout controller
     Route::get('checkout', 'App\Http\Controllers\CheckoutController@index');
     Route::post('/place-oder', 'App\Http\Controllers\CheckoutController@placeOrder');
+
+    // Route::post('/session', 'PaymentController@session')->name('session');
+    Route::get('session', 'App\Http\Controllers\CheckoutController@session');
+
 
 //order confirmation
 Route::post('confirmation', 'App\Http\Controllers\Confirmation@index')->name('confirmation');

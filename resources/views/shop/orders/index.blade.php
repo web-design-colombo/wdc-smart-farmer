@@ -26,7 +26,7 @@
                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->created_at }}</td>
 
                     <td class="px-6 py-4 whitespace-nowrap">{{ $order->tot }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $order->status }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{ $order->status == '0' ?'pending' : 'completed' }}</td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
                         <a href="{{ url('view-order/'.$order->id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>

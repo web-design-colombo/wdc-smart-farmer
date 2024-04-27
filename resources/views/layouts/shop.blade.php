@@ -737,6 +737,8 @@
                                         <use href="#icon_search" />
                                     </svg>
                                 </button>
+
+
                             </div>
                         </form>
                     </div>
@@ -751,7 +753,7 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_cart" />
                     </svg>
-                    <span class="cart-amount d-block position-absolute js-cart-items-count">3</span>
+                    <span class="cart-amount d-block position-absolute cart-count" style="background-color: green; color: white;"></span>
                 </a>
 
                 <a class="header-tools__item" href="account_wishlist.html">
@@ -794,6 +796,7 @@
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script>
     $(document).ready(function() {
+        cartCount();
         $('#Search_products').autocomplete({
             source: function(request, response) {
                 $.ajax({
@@ -814,4 +817,34 @@
             minLength: 1
         });
     });
+
+
+    function cartCount() {
+        $.ajax({
+            method: 'GET',
+            url: "{{ url('cart-count') }}",
+
+            success: function(response) {
+                $('.cart-count').html('');
+                $('.cart-count').html(response.count);
+                console.log(response.count);
+            }
+        });
+    }
 </script>
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/661be3b9a0c6737bd12ba60e/1href351m';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
+<script src="{{ asset('js/abc.js')}}"></script>

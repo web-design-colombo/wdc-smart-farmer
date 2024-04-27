@@ -17,13 +17,7 @@
             <textarea id="description" name="description" rows="3" placeholder="Enter category description" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
         </div>
         <div class="mb-4 flex">
-            <div class="w-1/2 mr-2">
-                <label for="status" class="block text-gray-700 text-sm font-bold mb-2">Status</label>
-                <select id="status" name="status" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-            </div>
+
             <div class="w-1/2 ml-2">
                 <label for="popular" class="block text-gray-700 text-sm font-bold mb-2">Popular</label>
                 <input type="checkbox" id="popular" name="popular" class="mr-2 leading-tight">

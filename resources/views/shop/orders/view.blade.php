@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>{{ $item->products->name }}</td>
                                     <td>{{ $item->qty }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{ $item->products->selling_price }}</td>
                                     <td ><img src="{{ asset('uploads/product/'.$item->products->image) }}" alt="Product Image" width="60" ></td>
                                 </tr>
                             @endforeach
