@@ -36,7 +36,7 @@ Route::middleware([
 
 
 //admin route
-Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], function () {
+Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], function () {
     Route::get('/admin', function () {
         return view('admin.index');
     });
@@ -91,6 +91,11 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:2']], func
     Route::get('orderhistory', 'App\Http\Controllers\OrderController@orderhistory');
 
 
+//ads
+Route::get('viewaddss/{id}', 'App\Http\Controllers\AdsController@view');
+Route::put('adsupdate/{id}', 'App\Http\Controllers\AdsController@update');
+
+Route::get('oldads', 'App\Http\Controllers\AdsController@orderhistory');
 
 });
 
@@ -132,8 +137,30 @@ Route::get('view-order/{id}', 'App\Http\Controllers\UserController@viewOrder');
 
 //vegetable
 Route::get('vegetables', 'App\Http\Controllers\VegetableController@indexfront');
-Route::get('/more', function () {
-    return view('vegetables.viewdetails');
-});
 
+Route::get('vegetablessss', 'App\Http\Controllers\VegetableController@index');
+
+Route::get('morevege/{id}', 'App\Http\Controllers\VegetableController@show');
+
+// Route::get('morevege', function () {
+//     return view('vegetables.viewdetails');
+// });
+
+//massage
+// routes/web.php
+use App\Http\Controllers\MessageController;
+
+Route::get('/messages', [MessageController::class, 'index']);
+Route::post('/messages', [MessageController::class, 'store']);
+Route::delete('/messages/{id}', [MessageController::class, 'destroy']);
+
+
+
+
+//buyers route
+// Route::post('/vegetable-buyers', 'AdsController@store')->name('vegetable.buyers.store');
+Route::post('store', 'App\Http\Controllers\AdsController@store');
+Route::get('newads', 'App\Http\Controllers\AdsController@index');
+Route::get('ads', 'App\Http\Controllers\AdsController@indexfrontend');
+Route::get('viewadds/{id}', 'App\Http\Controllers\AdsController@viewmore');
 

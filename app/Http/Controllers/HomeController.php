@@ -11,15 +11,20 @@ class HomeController extends Controller
     public function index(){
         $role=Auth::user()->role->value;
 
-        if ($role == 2){
+        if ($role == 1){
             return view("admin.index");
         }
 
-        if ($role== 1){
-            return view("admin.index");
+        if ($role== 2){
+            return view("buyersdashboard");
         }
+        if ($role== 3){
+            return view("dashboard");
+        }
+
         else {
-            return view('dashboard');        }
+            return view('dashboard');      
+          }
 
     }
 

@@ -661,7 +661,6 @@ dd {
 
 img {
 	height: 60px;
-
 	/* Make sure images are scaled correctly. */
 	max-width: 100%;
 	/* Adhere to container width. */

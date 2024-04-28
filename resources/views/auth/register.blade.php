@@ -16,7 +16,7 @@
         </div>
         <br>
         <div>
-            <x-label for="address" value="{{ __('address') }}" />
+            <x-label for="address" value="{{ __('Address') }}" />
             <x-input id="address" class="block mt-1 w-full" type="text" name="address"
                      :value="old('address')" required autofocus autocomplete="address" />
         </div>
@@ -29,6 +29,13 @@
                      :value="old('phone')" required autofocus autocomplete="tel" />
         </div>
 
+        {{-- select option for student ,and teacher  --}}
+        <div class="mt-4">
+            <x-label for="role" value="{{ __('Role') }}" />
+            <select name="role" id="role" class="block mt-1 w-full">
+                <option value="2">Buyer</option>
+                <option value="3">Farmer</option>
+            </select>
 
         <div class="mt-4">
             <x-label for="email" value="{{ __('Email') }}" />

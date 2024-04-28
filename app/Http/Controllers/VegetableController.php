@@ -21,6 +21,9 @@ class VegetableController extends Controller
 
     }
 
+
+
+
     //save all data in data base
     public function add(Request $request)
     {
@@ -45,6 +48,13 @@ $Vegetable->howtogrow_description = $request->howtogrow_description ?? '';
 $Vegetable->save();
 return redirect('adminvegetable')->with('status', 'Vegetable added successfully');
 
+    }
+
+//view more detail page in vegetable use id
+    public function show($id)
+    {
+        $Vegetable = Vegetable::find($id);
+        return view('vegetables.viewdetails', compact('Vegetable'));
     }
 
 

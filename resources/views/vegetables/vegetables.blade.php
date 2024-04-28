@@ -37,12 +37,12 @@
                                 data-settings='{"resizeObserver": true}'>
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <a href="product1_simple.html"><img loading="lazy"
+                                        <a href="{{ url('morevege/' . $Vegetable->id) }}"><img loading="lazy"
                                                 src="{{ asset('uploads/vegetables/' . $Vegetable->imagehome) }}" width="258" height="313"
                                                 alt="Cropped Faux leather Jacket" class="pc__img"></a>
                                     </div><!-- /.pc__img-wrapper -->
                                     <div class="swiper-slide">
-                                        <a href="product1_simple.html"><img loading="lazy"
+                                        <a href="{{ url('morevege/' . $Vegetable->id) }}"><img loading="lazy"
                                                 src="{{ asset('uploads/vegetables/' . $Vegetable->imagehome) }}" width="258" height="313"
                                                 alt="Cropped Faux leather Jacket" class="pc__img"></a>
                                     </div><!-- /.pc__img-wrapper -->

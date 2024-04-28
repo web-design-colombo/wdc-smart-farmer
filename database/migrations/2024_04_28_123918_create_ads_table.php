@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('ads', function (Blueprint $table) {
+            $table->id();
+            $table->string('user_name');
+            $table->string('user_nic');
+            $table->string('shop_name');
+            $table->string('shop_address');
+            $table->string('phone_number');
+            $table->json('vegetables'); // Store vegetables as JSON
+            $table->text('description');
+            $table->string('image');
+            
+
+            $table->string('city');
+
+
+            $table->timestamps();
+            $table->tinyInteger('status')->default(0);
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('ads');
+    }
+};

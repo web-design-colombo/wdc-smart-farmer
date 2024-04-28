@@ -108,16 +108,16 @@
 
                                                 </ul>
                                             </li>
-                                            <li><a href="#">Services</a>
+                                            <li><a href="#">Farming</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="{{ url('/ads') }}">Sell Vegetables</a></li>
+                                                    <li><a href="{{ url('/fi') }}">Vegetable</a></li>
                                                     <li><a href="index.html">Advice</a></li>
 
 
                                                 </ul>
                                             </li>
 
-                                            <li><a href="#"> Farming </a></li>
+                                            <li><a href="#"> Services </a></li>
 
 
                                             <li><a href="{{ url('shop') }}">Shop</a></li>
@@ -188,163 +188,75 @@
     </header>
 
 
-    {{ $slot }}
 
-    <footer id="footer" class="footer ">
-        <!-- Footer Top -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>About Us</h2>
-                            <p>Discover excellence with us. We're your dedicated source for quality services and expert
-                                guidance, committed to your success</p>
-                            <!-- Social -->
-                            <ul class="social">
-                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                                <li><a href="#"><i class="icofont-google-plus"></i></a></li>
-                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                                <li><a href="#"><i class="icofont-pinterest"></i></a></li>
-                            </ul>
-                            <!-- End Social -->
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer f-link">
-                            <h2>Quick Links</h2>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Home</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>About
-                                                Us</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Services</a></li>
-                                        <!-- <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	 -->
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Consuling</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Finance</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Testimonials</a></li>
-                                        <!-- <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li> -->
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Contact
-                                                Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>Open Hours</h2>
-                            <img src="img/24-hours.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>Newsletter</h2>
-                            <p>Stay informed and inspired! Sign up for our newsletter to receive the latest updates,
-                                exclusive offers, and valuable insights directly to your inbox</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="email" placeholder="Email Address" class="common-input"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                    required="" type="email">
-                                <button class="button"><i class="icofont icofont-paper-plane"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- cart section --}}
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container py-5">
+        <!-- For Demo Purpose-->
+        <header class="text-center mb-5">
+          <h1 class="display-4 font-weight-bold">Look At The Best Buyers Here.</h1>
+          <p class="font-italic text-muted mb-0">Browse through our diverse range of buyers in this section.</p>
+          </p>
+        </header>
+
+        {{-- filtering systerm Filter City , Vegetble with filter button --}}
+
+
+
+
+        <div class="row pb-5 mb-4">
+
+            @foreach ($ads as $ads)
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <!-- Card-->
+            <div class="card rounded shadow-sm border-0">
+              <div class="card-body p-4"><a href="{{ url('viewadds/' . $ads->id) }}"><img src="{{ asset('uploads/shopads/' . $ads->image) }}" alt="" class="img-fluid d-block mx-auto mb-3"></a>
+                <h5> <a href="{{ url('viewadds/' . $ads->id) }}" class="text-dark">Name: {{$ads->user_name}}</a></h5>
+                <p class="small text-muted font-italic">Shop Name: {{$ads->user_name}}</p>
+                <p class="small text-muted font-italic">City: {{$ads->user_name}}</p>
+
+                <ul class="list-inline small">
+                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                  <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+                </ul>
+              </div>
             </div>
+          </div>
+          @endforeach
+
+
         </div>
-        <!--/ End Footer Top -->
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="copyright-content">
-                            <p>© Copyright 2018 | All Rights Reserved by Irosha Rajapaksha</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ End Copyright -->
-    </footer>
-    <!--/ End Footer Area -->
-
-    <!-- jquery Min JS -->
-    <script src="/js/jquery.min.js"></script>
-    <!-- jquery Migrate JS -->
-    <script src="/js/jquery-migrate-3.0.0.js"></script>
-    <!-- jquery Ui JS -->
-    <script src="/js/jquery-ui.min.js"></script>
-    <!-- Easing JS -->
-    <script src="/js/easing.js"></script>
-    <!-- Color JS -->
-    <script src="/js/colors.js"></script>
-    <!-- Popper JS -->
-    <script src="/js/popper.min.js"></script>
-    <!-- Bootstrap Datepicker JS -->
-    <script src="/js/bootstrap-datepicker.js"></script>
-    <!-- Jquery Nav JS -->
-    <script src="/js/jquery.nav.js"></script>
-    <!-- Slicknav JS -->
-    <script src="/js/slicknav.min.js"></script>
-    <!-- ScrollUp JS -->
-    <script src="/js/jquery.scrollUp.min.js"></script>
-    <!-- Niceselect JS -->
-    <script src="/js/niceselect.js"></script>
-    <!-- Tilt Jquery JS -->
-    <script src="/js/tilt.jquery.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="/js/owl-carousel.js"></script>
-    <!-- counterup JS -->
-    <script src="/js/jquery.counterup.min.js"></script>
-    <!-- Steller JS -->
-    <script src="/js/steller.js"></script>
-    <!-- Wow JS -->
-    <script src="/js/wow.min.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <!-- Counter Up CDN JS -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="/js/bootstrap.min.js"></script>
-    <!-- Main JS -->
-    <script src="/js/main.js"></script>
-
-    {{-- message --}}
-    <script src="{{ asset('/js/chat.js') }}"></script>
 
 
-    <!--Start of Tawk.to Script-->
 
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/661be3b9a0c6737bd12ba60e/1href351m';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
-</body>
 
-</html>
+
+
+
+

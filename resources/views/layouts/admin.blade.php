@@ -567,6 +567,21 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item {{ request()->is('form-Vegetable*') ? 'active' : '' }}">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#form-Vegetable" aria-expanded="false" aria-controls="form-product">
+                            <i class="menu-icon mdi mdi-card-text-outline"></i>
+                            <span class="menu-title">Vegetable</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="form-Vegetable">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="{{ url('/vegetablessss') }}">Add Vegetables</a></li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="{{ url('showproduct') }}">Show All Vegetables</a></li>
+                            </ul>
+                        </div>
+                    </li>
 
                     <li class="nav-item {{ request()->is('form-Orders*') ? 'active' : '' }}">
                         <a class="nav-link" data-bs-toggle="collapse" href="#form-Orders" aria-expanded="false" aria-controls="form-Orders">
@@ -584,6 +599,30 @@
                         </div>
                     </li>
 
+
+
+                    <li class="nav-item nav-category">Ads Management</li>
+                    <li class="nav-item {{ Request::is('#form-ads') ? 'active' : '' }}">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#form-ads" aria-expanded="false"
+                            aria-controls="form-elements">
+                            <i class="menu-icon mdi mdi-card-text-outline"></i>
+                            <span class="menu-title">Ads For Buyers</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="form-ads">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item {{ Request::is('category') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ url('newads') }}">New Ads</a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item {{ Request::is('#') ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ url('oldads') }}">Old Ads</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
 
 
                     {{--                <li class="nav-item"> --}}

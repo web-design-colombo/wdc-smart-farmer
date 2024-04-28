@@ -1,4 +1,4 @@
-   <x-site-layout>
+   <x-app-layout>
 
        {{-- COntent  --}}
        <div class="breadcrumbs overlay" style="height: 20px; margin-bottom: 40px">
@@ -139,4 +139,4 @@
            </section>
        </div>
        </div>
-   </x-site-layout>
+   </x-app-layout>

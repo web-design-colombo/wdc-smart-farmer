@@ -707,12 +707,7 @@ pre code {
 }
 
 .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px
+
 }
 
 .no-gutters {
@@ -5352,7 +5347,6 @@ button.close {
 }
 
 .modal-footer>:not(:last-child) {
-    margin-right: .25rem
 }
 
 .modal-scrollbar-measure {
