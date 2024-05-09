@@ -135,17 +135,17 @@
                                 </table>
                             </div>
 
-                            <button class="btn btn-primary btn-checkout" id="place-order-btn">PLACE ORDER /
+                            <button class="btn btn-primary btn-checkout" id="place-order-btn" value="">PLACE ORDER /
                                 COD</button>
                             {{-- <button type="button" class="btn btn-primary razorpay_btn" style="margin-top: 6px">PLACE
                                 ORDER / BANK</button> --}}
                             {{-- create form and button --}}
-                            <form  action="{{url("session")}}" method="POST">
 
+                            <form  action="{{url("session")}}" method="POST">
                                 <button id="checkout-live-button" type="submit" class="btn" style="margin-top: 6px">PLACE ORDER / BANK</button>
                             </form>
 
-                            
+
                             {{-- end cart payment  --}}
 
                             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

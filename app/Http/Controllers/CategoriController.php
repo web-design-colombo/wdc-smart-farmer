@@ -10,9 +10,11 @@ class CategoriController extends Controller
 {
     //create index,add,delete,edit,update function
     public function index()
-    {
-        return view('admin.productcategory.create');
-    }
+{
+    $categories = Category::all();
+    return view('admin.productcategory.create', compact('categories'));
+}
+
 
     public function add(Request $request)
     {

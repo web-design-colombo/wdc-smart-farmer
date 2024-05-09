@@ -1,6 +1,6 @@
 <x-admin-layout>
-    <body>
-  
+
+
   </nav>
         <!-- partial -->
         <div class="main-panel">
@@ -106,5 +106,5 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-  </body>
+
 </x-admin-layout>

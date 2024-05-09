@@ -102,16 +102,14 @@ Route::get('oldads', 'App\Http\Controllers\AdsController@orderhistory');
 
 //front end ui (shop)
 Route::get('/shop', 'App\Http\Controllers\ShopController@index');
-Route::get('/view-category/{slug}', 'App\Http\Controllers\ShopController@viewCategory');
+Route::get('view-category/{slug}', 'App\Http\Controllers\ShopController@viewCategory');
 Route::get('product-list', 'App\Http\Controllers\ShopController@productAjax');
 
 Route::get('searchproduct', 'App\Http\Controllers\ShopController@searchproduct');
-
 Route::get('more/{slug}', 'App\Http\Controllers\ShopController@more');
 Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->name('addToCart');
 
 //front end card
-Route::post('addToCart/{id}', 'App\Http\Controllers\CartController@addToCart')->name('addToCart');
 Route::get('cart', 'App\Http\Controllers\CartController@show');
 Route::put('cartupdate/{id}', 'App\Http\Controllers\CartController@updateQuantity');
 Route::get('cartdelete/{id}', 'App\Http\Controllers\CartController@delete')->name('cart.delete');
@@ -163,4 +161,34 @@ Route::post('store', 'App\Http\Controllers\AdsController@store');
 Route::get('newads', 'App\Http\Controllers\AdsController@index');
 Route::get('ads', 'App\Http\Controllers\AdsController@indexfrontend');
 Route::get('viewadds/{id}', 'App\Http\Controllers\AdsController@viewmore');
+
+//add to wishlist
+Route::get('wishlist', 'App\Http\Controllers\WishlistController@index');
+//wishliststore
+
+//middlweware for auth
+Route::get('auth', function () {
+    Route::post('wishliststore', 'App\Http\Controllers\WishlistController@add');
+});
+
+
+
+
+//booking appointment
+Route::get('appointment', 'App\Http\Controllers\BookingController@index');
+//book
+Route::post('book', 'App\Http\Controllers\BookingController@store');
+//seeallappoinment
+Route::get('seeallappoinment', 'App\Http\Controllers\BookingController@show');
+//editbooks
+Route::get('editbooks/{id}', 'App\Http\Controllers\BookingController@edit');
+//update
+Route::put('update/{id}', 'App\Http\Controllers\BookingController@update');
+//deleteapprov
+Route::delete('deleteapprov/{id}', 'App\Http\Controllers\BookingController@destroy');
+
+
+
+//rating
+Route::post('add-rating', 'App\Http\Controllers\RatingController@add');
 

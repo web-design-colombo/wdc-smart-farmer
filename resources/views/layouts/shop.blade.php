@@ -783,12 +783,13 @@
 {{ $slot }}
 
 <!-- External JavaScripts -->
-<script src="shopassets/js/plugins/jquery.min.js"></script>
-<script src="shopassets/js/plugins/bootstrap.bundle.min.js"></script>
-<script src="shopassets/js/plugins/bootstrap-slider.min.js"></script>
+<script src="{{ asset('shopassets/js/plugins/jquery.min.js') }}"></script>
+<script src="{{ asset('shopassets/js/plugins/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('shopassets/js/plugins/bootstrap-slider.min.js') }}"></script>
 
-<script src="shopassets/js/plugins/swiper.min.js"></script>
-<script src="shopassets/js/plugins/countdown.js"></script>
+<script src="{{ asset('shopassets/js/plugins/swiper.min.js') }}"></script>
+<script src="{{ asset('shopassets/js/plugins/countdown.js') }}"></script>
+<script src="{{ asset('shopassets/js/plugins/jquery.fancybox.js') }}"></script>
 
 <!-- Footer Scripts -->
 <script src="shopassets/js/theme.js"></script>

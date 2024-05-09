@@ -3268,33 +3268,24 @@ body{
 	display: block;
 	cursor: pointer;
 	font-weight: 400;
-	padding: 15px 0 15px 18px;
+	padding: 10px 0 10px 18px;
 	border-radius: 0;
 	background: #fff;
 	color: #333;
-	border: 1px solid #eee;
+	/* border: 1px solid #eee; */
 }
 .accordion a:hover {
   color:#fff !important;
   background:rgb(40, 142, 40)
  !important;
 }
-.accordion a:after {
-  position: absolute;
-  right: 20px;
-  content: "+";
-  top: 16px;
-  color: #232323;
-  font-size: 25px;
-  font-weight: 700;
-}
+
 .accordion a:hover:after {
   color: #fff !important;
 }
 .accordion li {
   position: relative;
   list-style-type: none;
-  margin-bottom: 30px;
 }
 .accordion li:first-child {
   border-top: 0;

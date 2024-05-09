@@ -28,19 +28,19 @@
                                     </svg>
                                 </button>
                             </h5>
-                            <div id="accordion-filter-1" class="accordion-collapse collapse" aria-labelledby="accordion-heading-11" data-bs-parent="#categories-list">
+                            <div id="accordion-filter-1" class="accordion-collapse collapse show border-0"
+                                aria-labelledby="accordion-heading-11" data-bs-parent="#categories-list">
                                 <div class="accordion-body px-0 pb-0">
                                     <ul class="list-group list-group-flush">
-                                        @foreach ($category ?? [] as $Category)
+                                        @foreach ($trandin ?? [] as $Category)
                                             @if (is_object($Category))
                                                 <li class="list-group-item">
-                                                    <a href="{{ url('view-category/' . $Category->slug) }}" class="menu-link">{{ $Category->name }}</a>
+                                                    <a href="{{ url('view-category/' . $Category->slug) }}"
+                                                        class="menu-link">{{ $Category->name }}</a>
                                                 </li>
                                             @endif
                                         @endforeach
-                                        <li class="list-group-item">
-                                            <a href="{{ url('view-all-products') }}" class="menu-link">Show All Products</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#accordion-filter-brand"
                                     aria-expanded="true" aria-controls="accordion-filter-brand">
-                                    Product Categories
+                                    All Categories
                                     <svg class="accordion-button__icon type2" viewBox="0 0 10 6"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g aria-hidden="true" stroke="none" fill-rule="evenodd">
@@ -75,40 +75,23 @@
                                 aria-labelledby="accordion-heading-brand" data-bs-parent="#brand-filters">
                                 <div class="search-field multi-select accordion-body px-0 pb-0">
 
-                                    <div class="search-field__input-wrapper mb-3">
-                                        <input type="text" name="search_text"
-                                            class="search-field__input form-control form-control-sm border-light border-2"
-                                            placeholder="SEARCH">
-                                    </div>
+
                                     <ul class="multi-select__list list-unstyled">
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Adidas</span>
-                                            <span class="text-secondary">2</span>
-                                        </li>
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Balmain</span>
-                                            <span class="text-secondary">7</span>
-                                        </li>
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Balenciaga</span>
-                                            <span class="text-secondary">10</span>
-                                        </li>
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Burberry</span>
-                                            <span class="text-secondary">39</span>
-                                        </li>
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Kenzo</span>
-                                            <span class="text-secondary">95</span>
-                                        </li>
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Givenchy</span>
-                                            <span class="text-secondary">1092</span>
-                                        </li>
-                                        <li class="search-suggestion__item multi-select__item text-primary">
-                                            <span class="me-auto">Zara</span>
-                                            <span class="text-secondary">48</span>
-                                        </li>
+
+
+
+                                        @foreach ($product as $Category)
+                                            @if (is_object($Category))
+                                                <li class="search-suggestion__item">
+                                                    <a href="{{ url('view-category/' . $Category->slug) }}"
+                                                        style="margin-top: -10px">
+                                                        <span class="me-auto">{{ $Category->name }}</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+
+                                        <!-- Add more items here if needed -->
                                     </ul>
 
                                 </div>
@@ -159,7 +142,8 @@
 
                     <div class="d-flex justify-content-between mb-4 pb-md-2">
                         <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
-                            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+                            <a href="{{ url('shop') }}"
+                                class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
                             <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
                             <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Smart Farmer's
                                 Shop</a>
@@ -180,17 +164,7 @@
                                 <option value="3">Date, new to old</option>
                             </select>
 
-                            <div class="shop-asc__seprator mx-3 bg-light d-none d-md-block order-md-0"></div>
 
-                            <div class="col-size align-items-center order-1 d-none d-lg-flex">
-                                <span class="text-uppercase fw-medium me-2">View</span>
-                                <button class="btn-link fw-medium me-2 js-cols-size" data-target="products-grid"
-                                    data-cols="2">2</button>
-                                <button class="btn-link fw-medium me-2 js-cols-size" data-target="products-grid"
-                                    data-cols="3">3</button>
-                                <button class="btn-link fw-medium js-cols-size" data-target="products-grid"
-                                    data-cols="4">4</button>
-                            </div><!-- /.col-size -->
 
                             <div class="shop-filter d-flex align-items-center order-0 order-md-3 d-lg-none">
                                 <button class="btn-link btn-link_f d-flex align-items-center ps-0 js-open-aside"
@@ -207,113 +181,95 @@
 
                     <div class="products-grid row row-cols-2 row-cols-md-3" id="products-grid">
                         @foreach ($product as $Product)
-                            <div class="product-card-wrapper">
-                                <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                                    <div class="pc__img-wrapper">
-                                        <div class="swiper-container background-img js-swiper-slider"
-                                            data-settings='{"resizeObserver": true}'>
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide">
-                                                    <a href="{{ url('more/' . $Product->slug) }}"><img loading="lazy"
-                                                            src="{{ asset('uploads/product/' . $Product->image) }}"
-                                                            width="330" height="400"
-                                                            alt="Cropped Faux leather Jacket" class="pc__img"></a>
-                                                </div><!-- /.pc__img-wrapper -->
-                                                <div class="swiper-slide">
-                                                    <a href="{{ url('more/' . $Product->slug) }}"><img loading="lazy"
-                                                            src="{{ asset('uploads/product/' . $Product->image) }}"
-                                                            width="330" height="400"
-                                                            alt="Cropped Faux leather Jacket" class="pc__img"></a>
-                                                </div><!-- /.pc__img-wrapper -->
+                                <div class="product-card-wrapper">
+                                    <div class="product-card mb-3 mb-md-4 mb-xxl-5">
+                                        <div class="pc__img-wrapper">
+                                            <div class="swiper-container background-img js-swiper-slider"
+                                                data-settings='{"resizeObserver": true}'>
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <a href="{{ url('more/' . $Product->slug) }}"><img
+                                                                loading="lazy"
+                                                                src="{{ asset('uploads/product/' . $Product->image) }}"
+                                                                width="330" height="400"
+                                                                alt="Cropped Faux leather Jacket" class="pc__img"></a>
+                                                    </div><!-- /.pc__img-wrapper -->
+                                                    <div class="swiper-slide">
+                                                        <a href="{{ url('more/' . $Product->slug) }}"><img
+                                                                loading="lazy"
+                                                                src="{{ asset('uploads/product/' . $Product->image) }}"
+                                                                width="330" height="400"
+                                                                alt="Cropped Faux leather Jacket" class="pc__img"></a>
+                                                    </div><!-- /.pc__img-wrapper -->
+                                                </div>
+                                                <span class="pc__img-prev"><svg width="7" height="11"
+                                                        viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+                                                        <use href="#icon_prev_sm" />
+                                                    </svg></span>
+                                                <span class="pc__img-next"><svg width="7" height="11"
+                                                        viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+                                                        <use href="#icon_next_sm" />
+                                                    </svg></span>
                                             </div>
-                                            <span class="pc__img-prev"><svg width="7" height="11"
-                                                    viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_prev_sm" />
-                                                </svg></span>
-                                            <span class="pc__img-next"><svg width="7" height="11"
-                                                    viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_next_sm" />
-                                                </svg></span>
-                                        </div>
-                                        {{--                                <a href="more"> --}}
-                                        {{--                                <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium " data-aside="cartDrawer" title="Add To Cart">Add to Cart</button></a> --}}
-                                        {{--                          --}}
-                                    </div>
-
-                                    <div class="pc__info position-relative">
-                                        <p class="pc__category">Dresses</p>
-                                        <h6 class="pc__title"><a
-                                                href="{{ url('more/' . $Product->slug) }}">{{ $Product->name }}</a></h6>
-                                        <div class="product-card__price d-flex">
-                                            <span class="money price">Rs.{{ $Product->selling_price }}</span>
-                                        </div>
-                                        <div class="product-card__review d-flex align-items-center">
-                                            <div class="reviews-group d-flex">
-                                                <svg class="review-star" viewBox="0 0 9 9"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_star" />
-                                                </svg>
-                                                <svg class="review-star" viewBox="0 0 9 9"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_star" />
-                                                </svg>
-                                                <svg class="review-star" viewBox="0 0 9 9"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_star" />
-                                                </svg>
-                                                <svg class="review-star" viewBox="0 0 9 9"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_star" />
-                                                </svg>
-                                                <svg class="review-star" viewBox="0 0 9 9"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use href="#icon_star" />
-                                                </svg>
-                                            </div>
-                                            <span class="reviews-note text-lowercase text-secondary ms-1">8k+
-                                                reviews</span>
+                                            {{--                                <a href="more"> --}}
+                                            {{--                                <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium " data-aside="cartDrawer" title="Add To Cart">Add to Cart</button></a> --}}
+                                            {{--                          --}}
                                         </div>
 
-                                        <button
-                                            class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                            title="Add To Wishlist">
-                                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <use href="#icon_heart" />
-                                            </svg>
-                                        </button>
+                                        <div class="pc__info position-relative">
+                                            <h6 class="pc__title"><a
+                                                    href="{{ url('more/' . $Product->slug) }}">{{ $Product->name }}</a>
+                                            </h6>
+                                            <div class="product-card__price d-flex">
+                                                <span class="money price">Rs.{{ $Product->selling_price }}</span>
+                                            </div>
+                                            <div class="product-card__review d-flex align-items-center">
+                                                <div class="reviews-group d-flex">
+                                                    @for ($i = 1; $i <= $rating_value; $i++)
+                                                        <svg class="review-star" viewBox="0 0 9 9"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <use href="#icon_star" />
+                                                        </svg>
+                                                    @endfor
+
+                                                    @for ($j = $rating_value; $j < 5; $j++)
+                                                        <svg class="review-starblank" viewBox="0 0 9 9"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <use href="#icon_star" />
+                                                        </svg>
+                                                    @endfor
+                                                </div>
+                                                {{-- <span class="reviews-note text-lowercase text-secondary ms-1">{{number_format($rating_value)}}
+                                                reviews</span> --}}
+                                            </div>
+                                            <form action="{{ url('wishliststore') }}" method="POST"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0"
+                                                    title="Add To Wishlist">
+                                                    <svg width="16" height="16" viewBox="0 0 20 20"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                        class="addToWishlist">
+                                                        <use href="#icon_heart" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+
+
+
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         @endforeach
-
-
 
                     </div><!-- /.products-grid row -->
 
-                    <nav class="shop-pages d-flex justify-content-between mt-3" aria-label="Page navigation">
-                        <a href="#" class="btn-link d-inline-flex align-items-center">
-                            <svg class="me-1" width="7" height="11" viewBox="0 0 7 11"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use href="#icon_prev_sm" />
-                            </svg>
-                            <span class="fw-medium">PREV</span>
-                        </a>
-                        <ul class="pagination mb-0">
-                            <li class="page-item"><a class="btn-link px-1 mx-2 btn-link_active" href="#">1</a>
-                            </li>
-                            <li class="page-item"><a class="btn-link px-1 mx-2" href="#">2</a></li>
-                            <li class="page-item"><a class="btn-link px-1 mx-2" href="#">3</a></li>
-                            <li class="page-item"><a class="btn-link px-1 mx-2" href="#">4</a></li>
-                        </ul>
-                        <a href="#" class="btn-link d-inline-flex align-items-center">
-                            <span class="fw-medium me-1">NEXT</span>
-                            <svg width="7" height="11" viewBox="0 0 7 11"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <use href="#icon_next_sm" />
-                            </svg>
-                        </a>
-                    </nav>
+                    {{ $product->links() }}
+
+
+
                 </div>
             </section><!-- /.shop-main container -->
         </main>
@@ -1030,6 +986,12 @@
 
         <!-- Page Overlay -->
         <div class="page-overlay"></div><!-- /.page-overlay -->
+
+
+        {{-- scrip for add to wish list CLASS NAME=addToWishlist --}}
+
+
+
 
 
     </body>

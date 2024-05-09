@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/adminassets/vendors/css/vendor.bundle.base.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/adminassets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
