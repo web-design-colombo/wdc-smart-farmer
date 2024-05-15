@@ -1,328 +1,540 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-<head>
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Site keywords here">
-    <meta name="description" content="">
-    <meta name='copyright' content=''>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Title -->
-    <title>Smart Farmer</title>
-    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="{{ asset('shopassets/css/style.css') }}" type="text/css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/img/logo-color.png">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
-        rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="/css/nice-select.css">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <!-- icofont CSS -->
-    <link rel="stylesheet" href="/css/icofont.css">
-    <!-- Slicknav -->
-    <link rel="stylesheet" href="/css/slicknav.min.css">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="/css/owl-carousel.css">
-    <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="/css/datepicker.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="/css/animate.min.css">
-    <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="/css/magnific-popup.css">
-
-    <!-- Medipro CSS -->
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-
-</head>
-
 <body>
 
-    <!-- Preloader -->
-    {{-- <div class="preloader"> --}}
-    {{--    <div class="loader"> --}}
-    {{--        <div class="loader-outter"></div> --}}
-    {{--        <div class="loader-inner"></div> --}}
+    <head>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
 
-    {{--        <div class="indicator"> --}}
-    {{--            <svg width="16px" height="12px"> --}}
-    {{--                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline> --}}
-    {{--                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline> --}}
-    {{--            </svg> --}}
-    {{--        </div> --}}
-    {{--    </div> --}}
-    {{-- </div> --}}
-    <!-- End Preloader -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Smart Farmer</title>
+        <!-- favicons Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png" />
+        <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+        <meta name="description" content="Agriox HTML Template For Agriculture Farming Services" />
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Shadows+Into+Light&amp;display=swap"
+            rel="stylesheet">
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Styles -->
+        @livewireStyles
+
+        <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/animate/custom-animate.css" />
+        <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css" />
+        <link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+        <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.pips.css" />
+        <link rel="stylesheet" href="/assets/vendors/odometer/odometer.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/swiper/swiper.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/icomoon-icons/style.css">
+        <link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/reey-font/stylesheet.css" />
+        <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.carousel.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/twentytwenty/twentytwenty.css" />
+
+        <!-- template styles -->
+        <link rel="stylesheet" href="/assets/css/agriox.css" />
+
+        <!-- RTL CSS -->
+        <link rel="stylesheet" href="/assets/css/agriox-rtl.css">
 
 
-    <header class="header">
-        <!-- Topbar -->
+        <!-- mode css -->
+        <link rel="stylesheet" id="jssMode" href="/assets/css/modes/agriox-light.css">
 
-        <!-- End Topbar -->
-        <!-- Header Inner -->
-        <div class="header-inner">
-            <div class="container">
-                <div class="inner">
-                    <div class="inner">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <!-- Start Logo -->
-                                <div class="logo">
-                                    <a href="/"><img src="{{ asset('img/logo-no-background.png') }}"
-                                            alt="#"></a>
+        <!-- toolbar css -->
+        <link rel="stylesheet" href="/assets/vendors/toolbar/css/toolbar.css">
 
-                                </div>
-                                <!-- End Logo -->
-                                <!-- Mobile Nav -->
-                                <div class="mobile-nav">
-                                </div>
-                                <!-- End Mobile Nav -->
+    </head>
+
+    <div class="style-switcher">
+        <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
+        <h3>Layout Options</h3>
+        <div class="language-feature">
+            <button class="ltr-switcher" data-href="#googtrans(en|en)">LTR</button><!-- /.ltr-switcher -->
+            <button class="rtl-switcher" data-href="#googtrans(en|ar)">RTL</button><!-- /.rtl-switcher -->
+        </div><!-- /.language-feature -->
+        <div class="layout-feature" id="colorMode">
+            <a href="#" class="dark-switcher" data-theme="agriox-dark">Dark</a>
+            <a href="#" class="light-switcher" data-theme="agriox-light">Light</a>
+            <button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
+        </div><!-- /.language-feature -->
+    </div>
+
+    <div class="page-wrapper">
+
+        <header class="main-header main-header--one  clearfix">
+            <div class="main-header--one__wrapper">
+                <div class="main-header--one__top clearfix">
+                    <div class="auto-container">
+
+                        <div class="main-header--one__top-left">
+                            <div class="text">
+                                <p>Welcome to Smart Farmer</p>
                             </div>
-                            <div class="col-lg-7 col-md-9 col-12">
-                                <!-- Main Menu -->
-                                <div class="main-menu">
-                                    <nav class="navigation">
-                                        <ul class="nav menu">
-                                            <li class="active"><a href="#">Get Involved</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Take action</a></li>
-                                                    <li>
-                                                        <a href="{{ url('/chatify') }}">Chat</a>
-                                                    </li>
-                                                    <li><a href="index.html">Join the SmartFarmer</a></li>
-                                                    <li><a href="index.html">Support us</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Services</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="{{ url('/ads') }}">Sell Vegetables</a></li>
-                                                    <li><a href="index.html">Advice</a></li>
-
-
-                                                </ul>
-                                            </li>
-
-                                            <li><a href="#"> Farming </a></li>
-
-
-                                            <li><a href="{{ url('shop') }}">Shop</a></li>
-                                            </li>
-                                            <li><a href="#">Chat</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="{{url('/messages')}}">Chat With All Farmers</a></li>
-                                                    <li>
-                                                        <a href="{{ url('/chatify') }}">Chat Private </a>
-                                                    </li>
-                                                    <li><a href="index.html">Book Our Guides</a></li>
-
-                                                </ul>
-                                            </li>
-
-                                            </li>
-
-                                            <li><a href="contact.html">Contact</a></li>
-
-
-
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!--/ End Main Menu -->
+                            <div class="social-link clearfix">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
                             </div>
-                            <div class="col-lg-2 col-12">
-
-
-                                <div class="get-quote">
-                                    @if (Route::has('login'))
-                                        <div class="sm:fixed sm:top-0   text-right z-10"
-                                            style="margin-left: 10px; margin-top:28px">
-                                            @auth
-                                                <a href="{{ url('/redirects') }}"
-                                                    class="font-semibold text-gray-600 hover:text-gray-900 focus:outline
-                                                    focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                                    <p id="dd">Hi, {{ Auth::user()->name }}</p>
-                                                </a>
-                                            @else
-                                                <a class="btn" href="{{ route('login') }}"
-                                                    class="font-semibold text-gray-600 hover:text-gray-900 focus:outline
-                                                    focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                                                    in</a>
-
-                                                @if (Route::has('register'))
-                                                    <a class="btn" href="{{ route('register') }}"
-                                                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline
-                                                         focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                                                @endif
-                                            @endauth
-
-                                        </div>
-
-
-                                    @endif
-                                    {{-- <a href="appointment.html" class="btn">Login</a> --}}
-                                </div>
-
-                            </div>
-
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ End Header Inner -->
-    </header>
 
-
-    {{ $slot }}
-
-    <footer id="footer" class="footer ">
-        <!-- Footer Top -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>About Us</h2>
-                            <p>Discover excellence with us. We're your dedicated source for quality services and expert
-                                guidance, committed to your success</p>
-                            <!-- Social -->
-                            <ul class="social">
-                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                                <li><a href="#"><i class="icofont-google-plus"></i></a></li>
-                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                                <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                                <li><a href="#"><i class="icofont-pinterest"></i></a></li>
+                        <div class="main-header--one__top-right clearfix">
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:needhelp@company.com">SmartFarmer@gmail.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-clock"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Mon - Sat 8:00 - 6:30, Sunday - CLOSED</p>
+                                    </div>
+                                </li>
                             </ul>
-                            <!-- End Social -->
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer f-link">
-                            <h2>Quick Links</h2>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Home</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>About
-                                                Us</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Services</a></li>
-                                        <!-- <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	 -->
-                                    </ul>
+                </div>
+
+                <div class="main-header--one__bottom clearfix">
+                    <div class="auto-container">
+                        <div class="main-header--one__bottom-inner">
+                            <nav class="main-menu main-menu--1">
+                                <div class="main-menu__inner">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+
+                                    <div class="stricky-one-logo">
+                                        <div class="logo">
+                                            <a href="index-main.html">
+                                                <img class="dark-logo" src="{{ asset('img/logo-no-background.png') }}"
+                                                    alt="" style="width: 180px">
+                                                <img class="light-logo" src="assets/images/resources/logo-2.png"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-header--one__bottom-left">
+                                        <ul class="main-menu__list">
+                                            <li class="dropdown megamenu">
+                                                <a href="/">Home</a>
+
+                                            </li>
+                                            {{-- <li><a href="about.html">About</a></li> --}}
+                                            <li class="dropdown">
+                                                <a>Services</a>
+                                                <ul>
+                                                    <li><a href="{{ url('/ads') }}">Sell Vegetables</a></li>
+                                                    <li><a href="{{ url('/vegetables') }}">Grow Vegetables</a>
+                                                    </li>
+                                                    <li><a href="{{ url('/export your vegetables') }}">Export Your
+                                                            Vegetables</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="{{ url('/farming') }}">Farming</a>
+                                                <ul>
+                                                    <li><a href="farmers.html">Farmers</a></li>
+                                                    <li><a href="projects-details.html">Projects Details</a></li>
+                                                    <li><a href="faq.html">Faq</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="{{ url('/shop') }}">Shop</a>
+                                                <ul>
+                                                    <li><a href="{{ url('/shop') }}">All Products</a></li>
+                                                    <li><a href="{{ url('my-orders') }}">My Orders</a></li>
+                                                    <li><a href="projects-details.html">Wishlist</a></li>
+                                                    <li><a href="{{ url('cart') }}">Cart</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#">Chat</a>
+                                                <ul>
+                                                    <li class="dropdown">
+                                                        <a href="{{ url('/messages') }}">Chat With All Farmers</a>
+
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ url('/chatify') }}">Chat Private</a>
+
+                                                    </li>
+                                                    <li><a href="https://calendly.com/iro7899rajapaksha/book-guider">Book
+                                                            Oure Guides</a></li>
+                                                </ul>
+                                            </li>
+                                            {{-- <li><a href="contact.html">Contact</a></li> --}}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-12">
+                            </nav>
+
+                            <div class="main-header--one__bottom-middel">
+                                <div class="logo">
+                                    <a href="index-main.html">
+                                        <img class="dark-logo" src="{{ asset('img/logo-no-background.png') }}"
+                                            alt="" style="width: 190px">
+                                        <img class="light-logo" src="{{ asset('img/logo-no-background.png') }}"
+                                            alt="" style="width: 190px">
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="main-header--one__bottom-right clearfix">
+                                <div class="search-cart">
+                                    <a href="#" class="search search-toggler"><span
+                                            class="icon-magnifying-glass"></span></a>
+
+                                            <a href="{{ url('cart') }}" class="relative inline-block" style="margin-right: 6px">
+                                                <span class="icon-shopping-cart text-2xl"></span>
+                                                <span class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count" style="background-color: green"></span>
+                                              </a>
+
+
+                                    <!-- Check if the user is a guest (not logged in) -->
+                                    @guest
+                                        <a href="{{ route('login') }}">
+                                            <span class="fas fa-user"></span>
+                                        </a>
+                                    @endguest
+
+                                    <!-- Check if the user is authenticated (logged in) -->
+                                    @auth
+
+
+                                        <a href="{{ route('profile.show') }}">
+                                            <span class="fas fa-sign-in-alt"></span>
+                                        </a>
+                                    @endauth
+
+
+
+
+                                </div>
+
+                                <div class="contact-box">
+                                    <div class="icon">
+                                        <span class="icon-phone-call-2"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Call Anytime</p>
+                                        <a href="tel:123456789">+9477 684 0032</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content">
+
+            </div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+
+
+
+
+
+        {{ $slot }}
+        <!--Start Footer One-->
+        <footer class="footer-one">
+            <div class="footer-one__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-one__top-wrapper">
+                                <div class="footer-one__bg"><img
+                                        src="https://pixydrops.com/agriox/assets/images/backgrounds/footer-one-bg.png"
+                                        alt="" /></div>
+                                <div class="row">
+                                    <!--Start Footer Widget Column-->
+                                    <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp"
+                                        data-wow-delay="0.1s">
+                                        <div class="footer-widget__column footer-widget__about">
+                                            <div class="footer-widget__about-logo">
+                                                <a href="https://pixydrops.com/agriox/index-main.html"><img
+                                                        src="https://pixydrops.com/agriox/assets/images/resources/footer-logo.png"
+                                                        alt=""></a>
+                                            </div>
+                                            <p class="footer-widget__about-text">Lorem ipsum dolor sit amet consect
+                                                etur
+                                                adi pisicing elit sed.</p>
+                                            <div class="footer-widget__about-contact-box">
+                                                <p class="phone"><a href="tel:123456789"><i
+                                                            class="fas fa-phone-square-alt"></i>+92 666 888 0000</a>
+                                                </p>
+                                                <p><a href="mailto:needhelp@company.com"><i
+                                                            class="fa fa-envelope"></i>needhelp@company.com</a></p>
+                                                <p class="text"><i class="fas fa-map-marker-alt"></i>666 road,
+                                                    broklyn
+                                                    street new york</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Footer Widget Column-->
+
+                                    <!--Start Footer Widget Column-->
+                                    <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp"
+                                        data-wow-delay="0.3s">
+                                        <div class="footer-widget__column footer-widget__news">
+                                            <h2 class="footer-widget__title">News</h2>
+                                            <ul class="footer-widget__news-list">
+                                                <li class="footer-widget__news-list-item">
+                                                    <div class="footer-widget__news-list-item-img">
+                                                        <img src="https://pixydrops.com/agriox/assets/images/resources/footer-widget-news-img1.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="footer-widget__news-list-item-title">
+                                                        <p>20 Jul, 2021</p>
+                                                        <h5><a href="#">A Clean Water Gives More<br> Good
+                                                                Taste</a></h5>
+                                                    </div>
+                                                </li>
+
+                                                <li class="footer-widget__news-list-item">
+                                                    <div class="footer-widget__news-list-item-img">
+                                                        <img src="https://pixydrops.com/agriox/assets/images/resources/footer-widget-news-img2.png"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="footer-widget__news-list-item-title">
+                                                        <p>20 Jul, 2021</p>
+                                                        <h5><a href="#">A Clean Water Gives More<br> Good
+                                                                Taste</a></h5>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--End Footer Widget Column-->
+
+                                    <!--Start Footer Widget Column-->
+                                    <div class="col-xl-2 col-lg-6 col-md-6 wow animated fadeInUp"
+                                        data-wow-delay="0.5s">
+                                        <div class="footer-widget__column footer-widget__explore">
+                                            <h2 class="footer-widget__title">Explore</h2>
+                                            <ul class="footer-widget__explore-list">
+                                                <li class="footer-widget__explore-list-item"><a
+                                                        href="https://pixydrops.com/agriox/projects.html">New
+                                                        Projects</a></li>
+                                                <li class="footer-widget__explore-list-item"><a
+                                                        href="https://pixydrops.com/agriox/services.html">Our
+                                                        Services</a></li>
+                                                <li class="footer-widget__explore-list-item"><a
+                                                        href="https://pixydrops.com/agriox/about.html">About
+                                                        Us</a></li>
+                                                <li class="footer-widget__explore-list-item"><a href="#">Get in
+                                                        Touch</a></li>
+                                                <li class="footer-widget__explore-list-item"><a
+                                                        href="#">Volunteers</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--End Footer Widget Column-->
+
+                                    <!--Start Footer Widget Column-->
+                                    <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp"
+                                        data-wow-delay="0.7s">
+                                        <div class="footer-widget__column footer-widget__newletter">
+                                            <h2 class="footer-widget__title">Newletter</h2>
+                                            <p class="footer-widget__newletter-text">Sign up now to get daily latest
+                                                news & updates from us</p>
+                                            <form class="subscribe-form" action="#">
+                                                <input type="email" name="email" placeholder="Email address">
+                                                <button type="submit">Go</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--End Footer Widget Column-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Start Footer One Bottom-->
+            <div class="footer-one__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-one__bottom-inner">
+                                <div class="footer-one__bottom-text">
+                                    <p>&copy; Copyright 2021 by <a href="#">Layerdrops.com</a></p>
+                                </div>
+                                <div class="footer-one__bottom-social-links">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Consuling</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Finance</a></li>
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Testimonials</a></li>
-                                        <!-- <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li> -->
-                                        <li><a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Contact
-                                                Us</a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>Open Hours</h2>
-                            <img src="img/24-hours.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>Newsletter</h2>
-                            <p>Stay informed and inspired! Sign up for our newsletter to receive the latest updates,
-                                exclusive offers, and valuable insights directly to your inbox</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="email" placeholder="Email Address" class="common-input"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                    required="" type="email">
-                                <button class="button"><i class="icofont icofont-paper-plane"></i></button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-        <!--/ End Footer Top -->
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="copyright-content">
-                            <p>© Copyright 2018 | All Rights Reserved by Irosha Rajapaksha</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ End Copyright -->
-    </footer>
-    <!--/ End Footer Area -->
+            <!--End Footer One Bottom-->
+        </footer>
+        <!--End Footer One-->
 
-    <!-- jquery Min JS -->
-    <script src="/js/jquery.min.js"></script>
-    <!-- jquery Migrate JS -->
-    <script src="/js/jquery-migrate-3.0.0.js"></script>
-    <!-- jquery Ui JS -->
-    <script src="/js/jquery-ui.min.js"></script>
-    <!-- Easing JS -->
-    <script src="/js/easing.js"></script>
-    <!-- Color JS -->
-    <script src="/js/colors.js"></script>
-    <!-- Popper JS -->
-    <script src="/js/popper.min.js"></script>
-    <!-- Bootstrap Datepicker JS -->
-    <script src="/js/bootstrap-datepicker.js"></script>
-    <!-- Jquery Nav JS -->
-    <script src="/js/jquery.nav.js"></script>
-    <!-- Slicknav JS -->
-    <script src="/js/slicknav.min.js"></script>
-    <!-- ScrollUp JS -->
-    <script src="/js/jquery.scrollUp.min.js"></script>
-    <!-- Niceselect JS -->
-    <script src="/js/niceselect.js"></script>
-    <!-- Tilt Jquery JS -->
-    <script src="/js/tilt.jquery.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="/js/owl-carousel.js"></script>
-    <!-- counterup JS -->
-    <script src="/js/jquery.counterup.min.js"></script>
-    <!-- Steller JS -->
-    <script src="/js/steller.js"></script>
-    <!-- Wow JS -->
-    <script src="/js/wow.min.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <!-- Counter Up CDN JS -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="/js/bootstrap.min.js"></script>
-    <!-- Main JS -->
-    <script src="/js/main.js"></script>
+
+    </div><!-- /.page-wrapper -->
+
+
+
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="https://pixydrops.com/agriox/index-main.html" aria-label="logo image"><img
+                        src="https://pixydrops.com/agriox/assets/images/resources/mobilemenu_logo.png" width="155"
+                        alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="icon-phone-call"></i>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@agriox.com</a>
+                </li>
+                <li>
+                    <i class="icon-letter"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn2">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://pixydrops.com/agriox/assets/vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/odometer/odometer.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/swiper/swiper.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/wow/wow.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/isotope/isotope.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/countdown/countdown.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/twentytwenty/twentytwenty.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/twentytwenty/jquery.event.move.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/parallax/parallax.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/tilt.js/tilt.jquery.js"></script>
+
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+
+    <!-- template js -->
+    <script src="https://pixydrops.com/agriox/assets/js/agriox.js"></script>
+
+
+    <!-- toolbar js -->
+    <script src="https://pixydrops.com/agriox/assets/vendors/toolbar/js/js.cookie.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/toolbar/js/jQuery.style.switcher.min.js"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/toolbar/js/toolbar.lang.js"></script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://pixydrops.com/agriox/assets/vendors/toolbar/js/toolbar.js"></script>
+
+
 
     {{-- message --}}
     <script src="{{ asset('/js/chat.js') }}"></script>
@@ -344,6 +556,49 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
+    <script src="shopassets/js/theme.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            cartCount();
+            $('#Search_products').autocomplete({
+                source: function(request, response) {
+                    $.ajax({
+                        url: "{{ url('product-list') }}",
+                        type: 'GET',
+                        data: {
+                            term: request.term
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+                            var resp = $.map(data, function(obj) {
+                                return obj.name;
+                            });
+                            response(resp);
+                        }
+                    });
+                },
+                minLength: 1
+            });
+        });
+
+
+        function cartCount() {
+            $.ajax({
+                method: 'GET',
+                url: "{{ url('cart-count') }}",
+
+                success: function(response) {
+                    $('.cart-count').html('');
+                    $('.cart-count').html(response.count);
+                    console.log(response.count);
+                }
+            });
+        }
+    </script>
+
+
 </body>
 
 </html>

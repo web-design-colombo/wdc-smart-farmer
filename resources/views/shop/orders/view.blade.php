@@ -1,68 +1,74 @@
 
-<x-shop-layout>
+<x-site-layout>
 
+    <main class="bg-gray-100 min-h-screen">
+        <div class="container mx-auto py-8">
+            <section class="shop-checkout bg-white rounded-lg shadow-md">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-4">Order Summary</h2>
 
-    <main>
-        <div class="mb-4 pb-4"></div>
-        <section class="shop-checkout container">
-
-            <div class="order-complete">
-                @foreach($orders as $order)
-
-                <div class="order-info">
-
-                    <div class="order-info__item">
-                        <label>Full Name</label>
-                        <span>{{ $order->name }}</span>
-                    </div>
-                    <div class="order-info__item">
-                        <label>Email</label>
-                        <span>{{ $order->email }}</span>
-                    </div>
-                    <div class="order-info__item">
-                        <label>Contact No.</label>
-                        <span>{{ $order->phone }}</span>
-                    </div>
-                    <div class="order-info__item">
-                        <label>Shipping Address</label>
-                        <span>{{ $order->address }}</span>
-                    </div>
-                    <div class="order-info__item">
-                        <label>Zip Code</label>
-                        <span>{{ $order->zip_code }}</span>
-                    </div>
-                </div>
-                @endforeach
-                <div class="checkout__totals-wrapper">
-                    <div class="checkout__totals">
-                        <h3>Your Order ITEMS</h3>
-                        <table class="checkout-cart-items">
-                            <thead>
-                            <tr>
-                                <th>PRODUCT NAME</th>
-                                <th>QUANTITY</th>
-                                <th>PRICE</th>
-
-                                <th>Image</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($order->items as $item)
-                                <tr>
-                                    <td>{{ $item->products->name }}</td>
-                                    <td>{{ $item->qty }}</td>
-                                    <td>{{ $item->products->selling_price }}</td>
-                                    <td ><img src="{{ asset('uploads/product/'.$item->products->image) }}" alt="Product Image" width="60" ></td>
-                                </tr>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            @foreach($orders as $order)
+                            <div class="mb-4">
+                                <h3 class="text-lg font-semibold mb-2">Order Information</h3>
+                                <div class="flex items-center mb-2">
+                                    <label class="w-32">Full Name</label>
+                                    <span>{{ $order->name }}</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <label class="w-32">Email</label>
+                                    <span>{{ $order->email }}</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <label class="w-32">Contact No.</label>
+                                    <span>{{ $order->phone }}</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <label class="w-32">Shipping Address</label>
+                                    <span>{{ $order->address }}</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <label class="w-32">Zip Code</label>
+                                    <span>{{ $order->zip_code }}</span>
+                                </div>
+                            </div>
                             @endforeach
+                        </div>
 
+                        <div>
+                            <div class="mb-4">
+                                <h3 class="text-lg font-semibold mb-2">Your Order Items</h3>
+                                <table class="w-full border-collapse">
+                                    <thead>
+                                        <tr>
+                                            <th class="px-4 py-2">PRODUCT NAME</th>
+                                            <th class="px-4 py-2">QUANTITY</th>
+                                            <th class="px-4 py-2">PRICE</th>
+                                            <th class="px-4 py-2">Image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($order->items as $item)
+                                        <tr>
+                                            <td class="px-4 py-2">{{ $item->products->name }}</td>
+                                            <td class="px-4 py-2">{{ $item->qty }}</td>
+                                            <td class="px-4 py-2">Rs. {{ $item->products->selling_price }}</td>
+                                            <td class="px-4 py-2"><img src="{{ asset('uploads/product/'.$item->products->image) }}" alt="Product Image" class="w-16 h-16 object-cover"></td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
 
-                            </tbody>
-                        </table>
+                            <div class="flex justify-end">
+                                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">Place Order</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
-</x-shop-layout>
+</x-site-layout>

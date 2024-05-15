@@ -62,7 +62,7 @@ public function viewCategory($slug)
     if(Category::where('slug', $slug)->exists()){
         $category = Category::where('slug', $slug)->first();
         // $product = Product::where('cate_id', $category->id)->get();
-        $product = Product::where('cate_id', $category->id)->paginate(9);
+        $product = Product::where('cate_id', $category->id)->paginate(6);
 
         return view('shop.shophome', compact('category', 'product'));
     }else{

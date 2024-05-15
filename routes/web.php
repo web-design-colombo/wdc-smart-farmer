@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\models\user;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,11 +118,9 @@ Route::get('cart-count', 'App\Http\Controllers\CartController@cartcount');
 
 
 //checkout controller
-    Route::get('checkout', 'App\Http\Controllers\CheckoutController@index');
-    Route::post('/place-oder', 'App\Http\Controllers\CheckoutController@placeOrder');
-
-    // Route::post('/session', 'PaymentController@session')->name('session');
-    Route::get('session', 'App\Http\Controllers\CheckoutController@session');
+Route::get('checkout', 'App\Http\Controllers\CheckoutController@index');
+Route::post('/place-oder', 'App\Http\Controllers\CheckoutController@placeOrder');
+Route::get('/session', 'App\Http\Controllers\CheckoutController@razorpayCheck')->name('checkout.razorpay.check');
 
 
 //order confirmation
@@ -134,6 +133,10 @@ Route::get('view-order/{id}', 'App\Http\Controllers\UserController@viewOrder');
 
 
 //vegetable
+//add
+Route::POST('/addvegetable', 'App\Http\Controllers\VegetableController@create');
+Route::GET('/addvegetable', 'App\Http\Controllers\VegetableController@create');
+
 Route::get('vegetables', 'App\Http\Controllers\VegetableController@indexfront');
 
 Route::get('vegetablessss', 'App\Http\Controllers\VegetableController@index');

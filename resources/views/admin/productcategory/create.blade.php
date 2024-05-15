@@ -25,8 +25,8 @@
             <div class="w-1/2 ml-2">
                 <label for="status" class="block text-gray-700 text-sm font-bold mb-2">Status</label>
                 <select id="status" name="status" class="block w-full px-4 py-2 border rounded-md">
-                    <option value="0" {{ !empty($categories) && $categories->status == '0' ? 'selected' : '' }}>All Category</option>
-                    <option value="1" {{ !empty($categories) && $categories->status == '1' ? 'selected' : '' }}>Trending</option>
+                    <option value="0" {{ !empty($categories) && $categories->status == '0' ? 'selected' : '' }}>......</option>
+                    <option value="1" {{ !empty($categories) && $categories->status == '1' ? 'selected' : '' }}>All Category(Trending)</option>
                 </select>
             </div>
 

@@ -95,45 +95,11 @@ class CheckoutController extends Controller
     }
 
 
-    public function session(Request $request){   //retur and view home page
-    return view('shop');
-
+   //razorpaycheck
+   public function razorpayCheck(Request $request)
+{
+    // Handle your logic here
+    return view('dfgd');
 }
-
-
-    // public function processtopay(Request $request)
-    // {
-    //     $cartItems = Cart::where('user_id', Auth::id())->get();
-    //     $total = 0;
-    //     foreach ($cartItems as $item) {
-    //         $total += $item->product->selling_price * $item->prod_qty; // Assuming 'product' is the relationship name
-    //     }
-
-    //     // Retrieve other form input data
-    //     $firstname = $request->input('firstname');
-    //     $lastname = $request->input('lastname');
-    //     $email = $request->input('email');
-    //     $phone = $request->input('phone');
-    //     $address = $request->input('address');
-    //     $city = $request->input('city');
-    //     $state = $request->input('state');
-    //     $zipcode = $request->input('zipcode');
-    //     $country = $request->input('country');
-    //     $province = $request->input('province');
-
-    //     return response()->json([
-    //         'firstname' => $firstname,
-    //         'lastname' => $lastname,
-    //         'email' => $email,
-    //         'phone' => $phone,
-    //         'address' => $address,
-    //         'city' => $city,
-    //         'state' => $state,
-    //         'zipcode' => $zipcode,
-    //         'country' => $country,
-    //         'province' => $province,
-    //         'total' => $total,
-    //     ]);
-    // }
 
 }

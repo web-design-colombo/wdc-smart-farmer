@@ -1,185 +1,213 @@
-<x-shop-layout>
-    <main>
-        <div class="mb-4 pb-4"></div>
-        <section class="shop-checkout container">
-            <h2 class="page-title">Shipping and Checkout</h2>
-            <div class="checkout-steps">
-                <a href="shop_cart.html" class="checkout-steps__item active">
-                    <span class="checkout-steps__item-number">01</span>
-                    <span class="checkout-steps__item-title">
-                        <span>Shopping Bag</span>
-                        <em>Manage Your Items List</em>
-                    </span>
-                </a>
-                <a href="shop_checkout.html" class="checkout-steps__item active">
-                    <span class="checkout-steps__item-number">02</span>
-                    <span class="checkout-steps__item-title">
-                        <span>Shipping and Checkout</span>
-                        <em>Checkout Your Items List</em>
-                    </span>
-                </a>
+<x-site-layout>
 
+    <!--Page Header Start-->
+    <section class="page-header clearfix"
+        style="background-image: url(https://pixydrops.com/agriox/assets/images/backgrounds/page-header-bg.jpg);">
+        <div class="container">
+            <div class="page-header__inner text-center clearfix">
+                <ul class="thm-breadcrumb">
+                    <li><a href="https://pixydrops.com/agriox/index-main.html">Home</a></li>
+                    <li><a href="https://pixydrops.com/agriox/shop.html">Shop</a></li>
+                    <li>Checkout</li>
+                </ul>
+                <h2>Checkout</h2>
             </div>
-            <form action="{{ url('place-oder') }}" method="POST">
-                @csrf
-                <div class="checkout-form">
-                    <div class="billing-info__wrapper">
-                        <h4>BILLING DETAILS</h4>
+        </div>
+    </section>
+    <!--Page Header End-->
+
+
+
+
+
+    <section class="checkout-page">
+        <form action="{{ url('place-oder') }}" method="POST">
+            @csrf
+            <div class="auto-container">
+                <div class="row">
+
+                    <h3 class="checkout__title">Billing Details</h3><!-- /.checkout__title -->
+
+
+                    <div class="comment-one__form">
                         <div class="row">
+                            <!-- /.col-md-12 -->
                             <div class="col-md-6">
-                                <div class="form-floating my-3">
-                                    <input type="text" value="{{ Auth::user()->name }}"
-                                        class="form-control firstname" id="checkout_first_name" placeholder="First Name"
-                                        name="name">
-                                    <label for="checkout_first_name">First Name</label>
-                                </div>
-                            </div>
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="First Name" name="name">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
                             <div class="col-md-6">
-                                <div class="form-floating my-3">
-                                    <input type="text" value="{{ Auth::user()->name }}" class="form-control lastname"
-                                        id="checkout_last_name" placeholder="Last Name" name="last_name">
-                                    <label for="checkout_last_name">Last Name</label>
-                                </div>
-                            </div>
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Last Name" name="last_name">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
                             <div class="col-md-12">
-                                <div class="form-floating my-3">
-                                    <input type="text" class="form-control country" id="checkout_country"
-                                        placeholder="Country" name="country">
-                                    <label for="checkout_country">Country</label>
-                                </div>
-                            </div>
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Country" name="country">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Address" name="address">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
+                            <!-- /.col-md-12 -->
+                            <div class="col-md-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Town / City" name="city">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-6">
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Province" name="province">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-6">
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Zip Code" name="zip_code">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-6">
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Email Address" name="email">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-6">
+                                <div class="comment-form__input-box">
+                                    <input type="text" placeholder="Phone" name="phone">
+                                </div><!-- /.comment-form__input-box -->
+                            </div><!-- /.col-md-12 -->
 
-                            <div class="col-md-12">
-                                <div class="form-floating mt-3 mb-3">
-                                    <input type="text" class="form-control address" id="checkout_address"
-                                        placeholder="Street Address" name="address">
-                                    <label for="checkout_address">Street Address</label>
-                                </div>
-
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating my-3">
-                                    <input type="text" class="form-control city" id="checkout_city"
-                                        placeholder="Town / City" name="city">
-                                    <label for="checkout_city">Town / City</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating my-3">
-                                    <input type="text" class="form-control zipcode" id="checkout_zipcode"
-                                        placeholder="Postcode / ZIP" name="zip_code">
-                                    <label for="checkout_zipcode">Postcode / ZIP</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating my-3">
-                                    <input type="text" class="form-control province" id="checkout_province"
-                                        placeholder="Province" name="province">
-                                    <label for="checkout_province">Province</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating my-3">
-                                    <input type="text" class="form-control phone" id="checkout_phone"
-                                        placeholder="Phone" name="phone">
-                                    <label for="checkout_phone">Phone</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating my-3">
-                                    <input type="email" value="{{ Auth::user()->email }}" class="form-control email"
-                                        id="checkout_email" placeholder="Your Mail" name="email">
-                                    <label for="checkout_email">Your Mail</label>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-12">
-                            <div class="mt-3">
-                                <textarea name="order_notes" class="form-control form-control_gray" placeholder="Order Notes (optional)" cols="30"
-                                    rows="8"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkout__totals-wrapper">
-                        <div class="sticky-content">
-                            <div class="checkout__totals">
-                                <h3>Your Order</h3>
-                                <table class="checkout-cart-items">
-                                    <thead>
-                                        <tr>
-                                            <th>PRODUCT</th>
-                                            <th>SUBTOTAL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                        </div><!-- /.row -->
+                    </div><!-- /.comment-one__form -->
+                    <!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <h3 class="checkout__title">Your order</h3><!-- /.checkout__title -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="table-responsive">
+                            <table class="table checkout__table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                                        $grandTotal = 0; // Initialize the grand total variable
+                                    @endphp
+                                    @foreach ($cartItem as $item)
                                         @php
-                                            $grandTotal = 0; // Initialize the grand total variable
+                                            $totalItemPrice = $item->prod_price * $item->prod_qty; // Calculate the total for this item
+                                            $grandTotal += $totalItemPrice; // Add this item's total to the grand total
                                         @endphp
-                                        @foreach ($cartItem as $item)
-                                            @php
-                                                $totalItemPrice = $item->prod_price * $item->prod_qty; // Calculate the total for this item
-                                                $grandTotal += $totalItemPrice; // Add this item's total to the grand total
-                                            @endphp
-                                            <tr>
-                                                <td>{{ $item->prod_name }}</td>
-                                                <td>{{ number_format($totalItemPrice, 2) }}</td>
-                                            </tr>
-                                        @endforeach
                                         <tr>
-                                            <td><strong>Total:</strong></td>
-                                            <td><strong>{{ number_format($grandTotal, 2) }}</strong></td>
+                                            <td>{{ $item->prod_name }}</td>
+                                            <td>{{ number_format($totalItemPrice, 2) }}</td>
                                         </tr>
-                                    </tbody>
+                                    @endforeach
+                                    <tr>
+                                        <td><strong>Total</strong></td>
+                                        <td><strong>{{ number_format($grandTotal, 2) }}</strong></td>
+                                    </tr>
 
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
+                        </div><!-- /.table-responsive -->
+                    </div><!-- /.col-lg-6 -->
+                    {{-- <div class="col-lg-6">
+                        <div class="checkout__payment">
+                            <div class="checkout__payment__item checkout__payment__item--active">
+                                <h3 class="checkout__payment__title">Direct Bank Transfer</h3>
+                                <div class="checkout__payment__content">
+                                    Make your payment directly into our bank account. Please
+                                    use your Order ID as the payment reference. Your order
+                                    wont be shipped until the funds have cleared.
+                                </div><!-- /.checkout__payment__content -->
+                            </div><!-- /.checkout__payment__item -->
+                            <div class="checkout__payment__item">
+                                <h3 class="checkout__payment__title">Paypal payment <img
+                                        src="https://pixydrops.com/agriox/assets/images/update-14-09-2021/shop/paypal-1-1.png"
+                                        alt=""></h3>
+                                <div class="checkout__payment__content">
+                                    Make your payment directly into our bank account. Please
+                                    use your Order ID as the payment reference. Your order
+                                    wont be shipped until the funds have cleared.
+                                </div><!-- /.checkout__payment__content -->
+                            </div><!-- /.checkout__payment__item -->
+                        </div><!-- /.checkout__payment -->
+                        <div class="text-right d-flex justify-content-end">
 
-                            <button class="btn btn-primary btn-checkout" id="place-order-btn" value="">PLACE ORDER /
-                                COD</button>
-                            {{-- <button type="button" class="btn btn-primary razorpay_btn" style="margin-top: 6px">PLACE
-                                ORDER / BANK</button> --}}
-                            {{-- create form and button --}}
+                            <a class="thm-btn" href="https://pixydrops.com/agriox/checkout.html">
+                                Place your order
+                            </a>
+                        </div><!-- /.text-right -->
 
-                            <form  action="{{url("session")}}" method="POST">
-                                <button id="checkout-live-button" type="submit" class="btn" style="margin-top: 6px">PLACE ORDER / BANK</button>
-                            </form>
+                    </div><!-- /.col-lg-6 --> --}}
 
-
-                            {{-- end cart payment  --}}
-
-                            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                            @if (session('success'))
-                                <script>
-                                    swal("Order Complete !", "{{ session('success') }}", "success");
-                                </script>
-                            @endif
-
-                            @if (session('fail'))
-                                <script>
-                                    swal("!");
-                                </script>
-                            @endif
-
-                            @if (session('error'))
-                                <script>
-                                    swal("You must be logged in to Order products ");
-                                </script>
-                            @endif
-
-                            @if ($errors->any())
-                                <script>
-                                    swal("Validation Error", "{{ $errors->first() }}", "error");
-                                </script>
-                            @endif
-
-
-
+                    {{-- submite button --}}
+                    <div class="col-lg-6">
+                        <div class="text-right d-flex justify-content-end">
+                            <button type="submit" class="thm-btn">Place Your Order Cash on Delivery</button>
                         </div>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </main>
+                        <br>
+                        <div class="text-right d-flex justify-content-end">
 
-</x-shop-layout>
+                            <button type="button" id="bankTransferBtn" class="thm-btn"
+                                style="background-color: rgb(184, 239, 184); width: 417px">Place Your Order Bank
+                                Transfer</button>
+
+                            <script>
+                                document.getElementById('bankTransferBtn').addEventListener('click', function() {
+                                    window.location.href = "{{ url('/session') }}";
+                                });
+                            </script>
+
+
+                        </div><!-- /.text-right -->
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                    @if (session('success'))
+                        <script>
+                            swal("Order Complete !", "{{ session('success') }}", "success");
+                        </script>
+                    @endif
+
+                    @if (session('fail'))
+                        <script>
+                            swal("!");
+                        </script>
+                    @endif
+
+                    @if (session('error'))
+                        <script>
+                            swal("You must be logged in to Order products ");
+                        </script>
+                    @endif
+
+                    @if ($errors->any())
+                        <script>
+                            swal("Validation Error", "{{ $errors->first() }}", "error");
+                        </script>
+                    @endif
+
+
+
+
+
+
+                    <!-- /.row -->
+                </div>
+        </form>
+
+        <!-- /.container -->
+    </section><!-- /.checkout-page -->
+
+
+
+</x-site-layout>
