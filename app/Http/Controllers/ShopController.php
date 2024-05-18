@@ -20,7 +20,7 @@ class ShopController extends Controller
     $trandin = Category::where('status', '1')->get();
 
     $category = Category::all();
-    $product = Product::paginate(9);
+    $product = Product::where('status', '1')->paginate(9);
 
     $rating_value = 0; // Default value
 
@@ -99,5 +99,27 @@ public function searchproduct(Request $request)
     $product = Product::where('name', 'like', '%' . $search . '%')->paginate(9);
     return view('shop.shophome', compact('product'));
 }
+
+
+//sort product
+public function sortProduct(Request $request)
+    {
+        $sort = $request->sort;
+        if ($sort == 'lowest_price') {
+            $product = Product::orderBy('selling_price', 'asc')->paginate(9);
+        } elseif ($sort == 'highest_price') {
+            $product = Product::orderBy('selling_price', 'desc')->paginate(9);
+        } elseif ($sort == 'best_selling') {
+            $product = Product::orderBy('trending', 'desc')->paginate(9); // Assuming you have a sales column to sort by best selling
+        } elseif ($sort == 'newest') {
+            $product = Product::orderBy('created_at', 'asc')->paginate(9); // Assuming you have a sales column to sort by best selling
+        } elseif ($sort == 'oldest') {
+            $product = Product::orderBy('created_at', 'desc')->paginate(9); // Assuming you have a sales column to sort by best selling
+        } else {
+            $product = Product::paginate(9);
+        }
+        return view('shop.shophome', compact('product', 'sort'));
+    }
+
 
 }

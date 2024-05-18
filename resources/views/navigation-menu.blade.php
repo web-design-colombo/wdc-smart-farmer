@@ -1,29 +1,6 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <style>#logout-form {
-        display: inline;
-        margin: 0; /* Remove default margin */
-    }
 
-    #logout-btn {
-        background-color: red;
-        border: none;
-        padding: 10px 20px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        border-radius: 5px;
-    }
-
-    #logout-btn:hover {
-        background-color: darkred; /* Change color on hover */
-    }
-
-    #logout-btn h5 {
-        margin: 0; /* Remove default margin for h5 */
-    }
-    </style>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
@@ -38,15 +15,7 @@
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
-                @auth
-                <form action="{{ route('logout') }}" method="POST" id="logout-form">
-                    @csrf
-                    <button type="submit" id="logout-btn">
-                        <h5>Click Here to Log Out</h5>
-                    </button>
-                </form>
-
-            @endauth
+                
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
                         <x-dropdown align="right" width="60">

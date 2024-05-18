@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\models\user;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ShopController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +99,11 @@ Route::get('viewaddss/{id}', 'App\Http\Controllers\AdsController@view');
 Route::put('adsupdate/{id}', 'App\Http\Controllers\AdsController@update');
 
 Route::get('oldads', 'App\Http\Controllers\AdsController@orderhistory');
+
+//sellpro farmers
+Route::get('viewsellpro/{id}', 'App\Http\Controllers\AdsController@viewmoresellpro');
+Route::put('sellproupdate/{id}', 'App\Http\Controllers\AdsController@update');
+Route::put('adsupdatepro/{id}', 'App\Http\Controllers\AdsController@updatepro');
 
 });
 
@@ -194,4 +201,23 @@ Route::delete('deleteapprov/{id}', 'App\Http\Controllers\BookingController@destr
 
 //rating
 Route::post('add-rating', 'App\Http\Controllers\RatingController@add');
+
+//sort
+Route::get('/sort', [ShopController::class, 'sortProduct'])->name('sort.product');
+
+
+//buyers
+Route::get('/buyers', function () {
+    return view('buyersdashboard');
+});
+
+
+//sell vedget
+
+Route::get('vegesell', 'App\Http\Controllers\AdsController@vegesell');
+
+Route::post('product-addfarmer', 'App\Http\Controllers\AdsController@addfarmer');
+Route::get('newproduct', 'App\Http\Controllers\AdsController@indexproduct');
+Route::get('ads', 'App\Http\Controllers\AdsController@indexfrontend');
+
 

@@ -64,9 +64,12 @@
                                 @endforeach
                             </ul>
                         </div> --}}
-                        <div class="shop-one__sidebar__item shop-one__sidebar__price">
+                        {{-- <div class="shop-one__sidebar__item shop-one__sidebar__price">
                             <h3 class="shop-one__sidebar__item__title">Price</h3>
                             <!-- /.shop-one__sidebar__item__title -->
+
+
+
                             <div class="shop-one__sidebar__price-range">
                                 <div class="range-slider-price" data-range-min="10" data-range-max="200"
                                     data-limit="200" data-start-min="30" data-start-max="150" id="range-slider-price">
@@ -84,19 +87,32 @@
                                     </div><!-- /.right -->
                                 </div>
                             </div>
-                        </div><!-- /.shop-one__sidebar__item -->
+
+
+                        </div><!-- /.shop-one__sidebar__item --> --}}
                     </div><!-- /.shop-one__sidebar -->
                 </div><!-- /.col-lg-3 -->
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-lg-12 shop-one__sorter">
-                            <p class="shop-one__product-count">Showing 1–9 of 12 results</p>
-                            <select class="shop-one__product-sorter" name="" id="">
-                                <option value="">Sort by Popular</option>
-                                <option value="">Sort by Popular</option>
-                                <option value="">Sort by Popular</option>
-                            </select>
-                        </div><!-- /.col-lg-12 -->
+
+
+                        <form action="{{ url('sort') }}" method="get" class="search-field container">
+                            @csrf
+                            <div class="col-lg-12 shop-one__sorter">
+                                <p class="shop-one__product-count">Showing 1–9 of 12 results</p>
+                                <select class="shop-one__product-sorter" name="sort" id="sort" onchange="this.form.submit()">
+                                    <option value="" disabled selected>Sort By</option>
+                                    <option value="best_selling">Best Selling</option>
+                                    <option value="lowest_price">Lowest Price</option>
+                                    <option value="highest_price">Highest Price</option>
+                                    <option value="highest_price">Highest Price</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="oldest">Oldest</option>
+                                </select>
+                            </div>
+                        </form>
+
+
                     </div><!-- /.row -->
                     <div class="row">
                         @foreach ($product as $Product)

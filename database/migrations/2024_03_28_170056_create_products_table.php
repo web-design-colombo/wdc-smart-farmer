@@ -25,7 +25,7 @@ return new class extends Migration
             $table->bigInteger('cate_id');
             $table->string('qty');
             $table->string('tax');
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->default(0);;
             $table->tinyInteger('trending');
             $table->string('meta_title');
             $table->text('meta_description');

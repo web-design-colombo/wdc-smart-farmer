@@ -59,6 +59,7 @@
         <!-- toolbar css -->
         <link rel="stylesheet" href="/assets/vendors/toolbar/css/toolbar.css">
 
+
     </head>
 
     <div class="style-switcher">
@@ -74,6 +75,11 @@
             <button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
         </div><!-- /.language-feature -->
     </div>
+
+    {{-- <div class="preloader">
+		<img class="preloader__image" width="300" src="{{ asset('img/logo-no-background.png') }}" alt="" />
+	</div> <!-- /.preloader -->
+	<div class="page-wrapper"> --}}
 
     <div class="page-wrapper">
 
@@ -147,11 +153,18 @@
                                             <li class="dropdown">
                                                 <a>Services</a>
                                                 <ul>
-                                                    <li><a href="{{ url('/ads') }}">Sell Vegetables</a></li>
+                                                    <li><a href="{{ url('/ads') }}">Look At The Vegetables Buyers</a></li>
+                                                    <li><a href="{{ url('/vegesell') }}">Sell Vegetables</a></li>
+
                                                     <li><a href="{{ url('/vegetables') }}">Grow Vegetables</a>
                                                     </li>
                                                     <li><a href="{{ url('/export your vegetables') }}">Export Your
                                                             Vegetables</a></li>
+                                                    {{-- if only user id = 2 ,then show this li  --}}
+                                                    @if (auth()->check() && auth()->user()->role->value == 2)
+                                                    <li><a href="{{ url('/buyers') }}">Create Your Advertisement</a></li>
+                                                @endif
+
 
                                                 </ul>
                                             </li>
@@ -210,28 +223,46 @@
                                     <a href="#" class="search search-toggler"><span
                                             class="icon-magnifying-glass"></span></a>
 
-                                            <a href="{{ url('cart') }}" class="relative inline-block" style="margin-right: 6px">
-                                                <span class="icon-shopping-cart text-2xl"></span>
-                                                <span class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count" style="background-color: green"></span>
-                                              </a>
+                                    <a href="{{ url('cart') }}" class="relative inline-block"
+                                        style="margin-right: 6px">
+                                        <span class="icon-shopping-cart text-2xl"></span>
+                                        <span
+                                            class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count"
+                                            style="background-color: green"></span>
+                                    </a>
 
+                                    @if (Route::has('login'))
+                                        @auth
+                                            <a href="{{ url('/user/profile') }}" style="width: 60px; ">
+                                                <img src="{{ Auth::user()->profile_photo_url }}"
+                                                    alt="{{ Auth::user()->name }}" class="rounded-full"
+                                                    style="margin-left: 8px; margin-bottom:-8px">
+                                            </a>
 
-                                    <!-- Check if the user is a guest (not logged in) -->
-                                    @guest
-                                        <a href="{{ route('login') }}">
-                                            <span class="fas fa-user"></span>
-                                        </a>
-                                    @endguest
+                                            <a>
+                                                <form method="post" action="{{ route('logout') }}" x-data>
+                                                    @csrf
+                                                    <button type="submit" @click.prevent="$root.submit();"
+                                                        style="border: none;">
+                                                        <i class="fas fa-sign-out-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('login') }}" style="margin-left: 10px">
+                                                <i class="fas fa-user"></i>
+                                            </a>
 
-                                    <!-- Check if the user is authenticated (logged in) -->
-                                    @auth
+                                        @endauth
+                                    @endif
 
-
-                                        <a href="{{ route('profile.show') }}">
-                                            <span class="fas fa-sign-in-alt"></span>
-                                        </a>
-                                    @endauth
-
+                                    @if (Auth::check() == false)
+                                        <div class="hamburger-menu d-block d-xl-none">
+                                            <div class="hamburger-inner">
+                                                <div class="icon open-menu"><i class="fal fa-bars"></i></div>
+                                            </div>
+                                        </div>
+                                    @endif
 
 
 
@@ -439,12 +470,38 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="icon-phone-call"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@agriox.com</a>
+                    <a href="mailto:needhelp@packageName__.com">SmartFarmer@Gmail.com</a>
                 </li>
                 <li>
                     <i class="icon-letter"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:666-888-0000">+9477 684 003 2</a>
                 </li>
+                <li>
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/user/profile') }}" style="width: 30px; ">
+                                <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
+                                    class="rounded-full" style="margin-left: 8px; margin-bottom:-8px">
+                            </a>
+
+                            <a>
+                                <form method="post" action="{{ route('logout') }}" x-data>
+                                    @csrf
+                                    <button type="submit" @click.prevent="$root.submit();"
+                                        style="border: none; margin-left: 30px; color:white; margin-top: 10px; ">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </form>
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}" style="margin-left: 20px">
+                                <i class="fas fa-user"></i>
+                            </a>
+
+                        @endauth
+                    @endif
+                </li>
+
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">

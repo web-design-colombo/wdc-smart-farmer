@@ -1,23 +1,20 @@
 <x-app-layout>
-    <div class="breadcrumbs overlay">
+
+    <section class="page-header clearfix"
+        style="background-image: url(https://pixydrops.com/agriox/assets/images/backgrounds/page-header-bg.jpg);">
         <div class="container">
-            <div class="bread-inner">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Create Your Advertisement</h2>
-                        <ul class="bread-list">
-                            <li><a href="{{url("/")}}">Home</a></li>
-                            <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">Create Your Advertisement</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="page-header__inner text-center clearfix">
+                <ul class="thm-breadcrumb">
+                    <li><a href="https://pixydrops.com/agriox/index-main.html">Home</a></li>
+                    <li>Create Your Advertisement</li>
+                </ul>
+                <h2>Create Your Advertisement</h2>
             </div>
         </div>
-    </div>
+    </section>
 
 
-    <div class="container mt-5" style="margin-bottom: 20px">
+    <div class="container mt-5" style="margin-bottom: 20px; ">
         <div class="card">
             <div class="card-header bg-green text-white">
                 <h2 class="mb-0">Vegetable Buyer's Form</h2>
@@ -32,6 +29,10 @@
                     <div class="form-group">
                         <label for="userNIC">User NIC</label>
                         <input type="text" class="form-control" id="userNIC" name="user_nic" placeholder="Enter your NIC">
+                    </div>
+                    <div class="form-group">
+                        <label for="userNIC">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter your Email">
                     </div>
                     {{-- add city --}}
                     <div class="form-group">
@@ -52,6 +53,8 @@
                         <label for="shopAddress">Shop Address</label>
                         <input type="text" class="form-control" id="shopAddress" name="shop_address" placeholder="Enter shop address">
                     </div>
+
+
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number</label>
                         <input type="tel" class="form-control" id="phoneNumber" name="phone_number" placeholder="Enter phone number">
@@ -64,6 +67,7 @@
                             <div class="col">
                                 <input type="number" class="form-control" placeholder="Price(1 Kg)" name="vegetables[0][vegetable_price]">
                             </div>
+                            
                             <div class="col-auto">
                                 <button type="button" class="btn btn-danger btn-sm remove-vegetable" onclick="removeVegetable('vegetable-1')">Remove</button>
                             </div>
@@ -108,4 +112,5 @@
             vegetableToRemove.parentNode.removeChild(vegetableToRemove);
         }
     </script>
+
 </x-app-layout>

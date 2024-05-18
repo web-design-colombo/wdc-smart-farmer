@@ -16,14 +16,14 @@ class HomeController extends Controller
         }
 
         if ($role== 2){
-            return view("buyersdashboard");
+            return view("welcome");
         }
         if ($role== 3){
-            return view("dashboard");
+            return view("welcome");
         }
 
         else {
-            return view('dashboard');      
+            return view('welcome');
           }
 
     }

@@ -20,6 +20,7 @@ class ProductController extends Controller
      {
          //get all product data
             $product = Product::all();
+
             return view('admin.product.showproduct', compact('product'));
 
      }
@@ -112,4 +113,9 @@ class ProductController extends Controller
 
     return redirect('product')->with('status', 'Product updated successfully');
 }
+
+
+//farmer
+
+
 }
