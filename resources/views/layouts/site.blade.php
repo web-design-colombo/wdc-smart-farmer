@@ -5,8 +5,18 @@
 
     <head>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <meta charset="UTF-8" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Smart Farmer</title>
         <!-- favicons Icons -->
@@ -59,7 +69,11 @@
         <!-- toolbar css -->
         <link rel="stylesheet" href="/assets/vendors/toolbar/css/toolbar.css">
 
-
+        <style>
+            #xx {
+                font-size: 16px;
+            }
+        </style>
     </head>
 
     <div class="style-switcher">
@@ -153,7 +167,8 @@
                                             <li class="dropdown">
                                                 <a>Services</a>
                                                 <ul>
-                                                    <li><a href="{{ url('/ads') }}">Look At The Vegetables Buyers</a></li>
+                                                    <li><a href="{{ url('/ads') }}">Look At The Vegetables Buyers</a>
+                                                    </li>
                                                     <li><a href="{{ url('/vegesell') }}">Sell Vegetables</a></li>
 
                                                     <li><a href="{{ url('/vegetables') }}">Grow Vegetables</a>
@@ -162,8 +177,9 @@
                                                             Vegetables</a></li>
                                                     {{-- if only user id = 2 ,then show this li  --}}
                                                     @if (auth()->check() && auth()->user()->role->value == 2)
-                                                    <li><a href="{{ url('/buyers') }}">Create Your Advertisement</a></li>
-                                                @endif
+                                                        <li><a href="{{ url('/buyers') }}">Create Your
+                                                                Advertisement</a></li>
+                                                    @endif
 
 
                                                 </ul>
@@ -200,6 +216,9 @@
                                                             Oure Guides</a></li>
                                                 </ul>
                                             </li>
+                                            </li>
+
+
                                             {{-- <li><a href="contact.html">Contact</a></li> --}}
                                         </ul>
                                     </div>
@@ -214,28 +233,17 @@
                                         <img class="light-logo" src="{{ asset('img/logo-no-background.png') }}"
                                             alt="" style="width: 190px">
                                     </a>
-
                                 </div>
                             </div>
 
                             <div class="main-header--one__bottom-right clearfix">
                                 <div class="search-cart">
-
                                     <a href="{{ url('cart') }}" class="relative inline-block"
-                                        style="margin-right: 6px">
-                                        <span class="fas fa-bell"></span>
+                                        style="margin-right: 4px; ">
+                                        <span class="icon-shopping-cart text-2xl" style="margin-right: 8px"></span>
                                         <span
                                             class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count"
-                                            style="background-color: green"></span>
-                                    </a>
-
-
-                                    <a href="{{ url('cart') }}" class="relative inline-block"
-                                        style="margin-right: 6px">
-                                        <span class="icon-shopping-cart text-2xl"></span>
-                                        <span
-                                            class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count"
-                                            style="background-color: green"></span>
+                                            style="background-color: green; "></span>
                                     </a>
 
                                     @if (Route::has('login'))
@@ -246,7 +254,7 @@
                                                     style="margin-left: 8px; margin-bottom:-8px">
                                             </a>
 
-                                            <a>
+                                            <a style="margin-right: -10px">
                                                 <form method="post" action="{{ route('logout') }}" x-data>
                                                     @csrf
                                                     <button type="submit" @click.prevent="$root.submit();"
@@ -256,7 +264,8 @@
                                                 </form>
                                             </a>
                                         @else
-                                            <a href="{{ route('login') }}" style="margin-left: 10px">
+                                            <a href="{{ route('login') }}"
+                                                style="margin-left: 10px;  margin-right: 18px; ">
                                                 <i class="fas fa-user"></i>
                                             </a>
 
@@ -271,6 +280,19 @@
                                         </div>
                                     @endif
 
+                                    <a href="#" class="dropdown-toggle" id="notificationDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <span class="fas fa-bell"></span>
+                                        <span
+                                            class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white rounded-full cart-count"
+                                            style="background-color: red; ">4</span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="notificationDropdown">
+                                        <a id="xx" class="dropdown-item" href="#">Notification 2</a>
+                                        <a id="xx" class="dropdown-item" href="#">Notification 3</a>
+                                        <!-- Add more notifications as needed -->
+                                    </div>
 
 
                                 </div>
@@ -473,6 +495,8 @@
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
             <!-- /.mobile-nav__container -->
+
+
 
             <ul class="mobile-nav__contact list-unstyled">
 
