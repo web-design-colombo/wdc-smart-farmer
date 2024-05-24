@@ -6,6 +6,7 @@ use App\models\user;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ShopController;
 
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +63,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], func
     Route::get('edit/{id}', 'App\Http\Controllers\CategoriController@edit');
     Route::get('showcategory', 'App\Http\Controllers\CategoriController@show');
     Route::put('update-category/{id}', 'App\Http\Controllers\CategoriController@update');
-
+    // Route::get('edit/{id', function () {
+    //     return view('admin.productcategory.edit');
+    // });
 //product route
     Route::get('product', 'App\Http\Controllers\ProductController@index');
     Route::get('showproduct', 'App\Http\Controllers\ProductController@show');
@@ -73,7 +76,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], func
     Route::get('/admin/category/update', 'App\Http\Controllers\ProductController@update');
     Route::get('editproduct/{id}', 'App\Http\Controllers\ProductController@edit');
     Route::delete('deleteproduct/{id}', 'App\Http\Controllers\ProductController@delete');
-    Route::put('productshgop-add/{id}', 'App\Http\Controllers\ProductController@update');
+    Route::put('products/{id}', [ProductController::class, 'update']);
 
 
 //admin vegetable
@@ -104,6 +107,8 @@ Route::get('oldads', 'App\Http\Controllers\AdsController@orderhistory');
 Route::get('viewsellpro/{id}', 'App\Http\Controllers\AdsController@viewmoresellpro');
 Route::put('sellproupdate/{id}', 'App\Http\Controllers\AdsController@update');
 Route::put('adsupdatepro/{id}', 'App\Http\Controllers\AdsController@updatepro');
+
+Route::get('orderhistoraay', 'App\Http\Controllers\OrderController@sellhistory');
 
 });
 
@@ -220,4 +225,14 @@ Route::post('product-addfarmer', 'App\Http\Controllers\AdsController@addfarmer')
 Route::get('newproduct', 'App\Http\Controllers\AdsController@indexproduct');
 Route::get('ads', 'App\Http\Controllers\AdsController@indexfrontend');
 
+
+//admin search
+Route::get('adminsearch', 'App\Http\Controllers\ProductController@search');
+Route::get('product-listadmin', 'App\Http\Controllers\ProductController@productAjax');
+
+Route::get('adminsearchcate', 'App\Http\Controllers\ProductController@searchcate');
+Route::get('cate', 'App\Http\Controllers\ProductController@productAjaxx');
+
+//admin  sorting
+Route::get('sortorders', 'App\Http\Controllers\OrderController@sortorders');
 

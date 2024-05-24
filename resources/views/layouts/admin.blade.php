@@ -1,802 +1,886 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="dark">
+
+<!-- Mirrored from flowbite-admin-dashboard.vercel.app/crud/products/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 May 2024 09:13:44 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Smart Farmer Shop</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="/adminassets/vendors/feather/feather.css">
-    <link rel="stylesheet" href="/adminassets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/adminassets/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="/adminassets/vendors/typicons/typicons.css">
-    <link rel="stylesheet" href="/adminassets/vendors/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="/adminassets/vendors/css/vendor.bundle.base.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Get started with a free and open-source admin dashboard layout built with Tailwind CSS and Flowbite featuring charts, widgets, CRUD layouts, authentication pages, and more">
+    <meta name="author" content="Themesberg">
+    <meta name="generator" content="Hugo 0.58.2">
 
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="/adminassets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-    <link rel="stylesheet" type="text/css" href="/adminassets/js/select.dataTables.min.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/adminassets/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="/adminassets/images/favicon.png" />
+    <title>Tailwind CSS Products Page - Flowbite</title>
+
+    <link rel="canonical" href="index.html">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/adminassets/app.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="icon" type="image/png" href="../../favicon.ico">
+    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+    <meta name="twitter:title" content="Tailwind CSS Products Page - Flowbite">
+    <meta name="twitter:description"
+        content="Get started with a free and open-source admin dashboard layout built with Tailwind CSS and Flowbite featuring charts, widgets, CRUD layouts, authentication pages, and more">
+    <meta name="twitter:image" content="../../images/og-image.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="index.html">
+    <meta property="og:title" content="Tailwind CSS Products Page - Flowbite">
+    <meta property="og:description"
+        content="Get started with a free and open-source admin dashboard layout built with Tailwind CSS and Flowbite featuring charts, widgets, CRUD layouts, authentication pages, and more">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../images/og-image.png">
+    <meta property="og:image:type" content="image/png">
+
+
+
+
+
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
-<body class="with-welcome-text">
-    <div class="container-scroller">
+<body class="bg-gray-50 dark:bg-gray-800">
 
-        <!-- partial:partials/_navbar.html -->
-        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <div class="me-3">
-                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
-                        data-bs-toggle="minimize">
-                        <span class="icon-menu"></span>
+
+
+
+    <nav class="fixed z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start">
+                    <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar"
+                        class="p-2 text-gray-600 rounded cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="toggleSidebarMobileClose" class="hidden w-6 h-6" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
                     </button>
-                </div>
-                <div style="height: 50px; margin-left: 10px">
-                    <a class="navbar-brand brand-logo" href="../index.html">
-                        <img src="/img/logo-no-background.png" alt="logo" />
+                    <a href="../../index.html" class="flex ml-2 md:mr-24">
+                        <img src="{{ asset('img/logo-no-background.png') }}" class="h-8 mr-3" style="width: 150px"
+                            alt="FlowBite Logo" />
                     </a>
-                    <a class="navbar-brand brand-logo-mini" href="../index.html">
-                        <img src="/img/logo-no-background.png" alt="logo" />
-                    </a>
-                </div>
-            </div>
-            <div class="navbar-menu-wrapper d-flex align-items-top " >
-                <ul class="navbar-nav" style="margin-left: -40px">
-                    @if (auth()->check())
-                        <li class="nav-item font-weight-semibold d-none d-lg-block ">
-                            <h1 class="welcome-text">Hello, <span
-                                    class="text-black fw-bold">{{ auth()->user()->name }}</span></h1>
-                        </li>
-                    @endif
-
-
-
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown d-none d-lg-block">
-
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-                            aria-labelledby="messageDropdown">
-                            <a class="dropdown-item py-3">
-                                <p class="mb-0 font-weight-medium float-left">Select category</p>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Bootstrap Bundle
-                                    </p>
-                                    <p class="fw-light small-text mb-0">This is a Bundle featuring 16 unique dashboards
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Angular Bundle</p>
-                                    <p class="fw-light small-text mb-0">Everything you’ll ever need for your Angular
-                                        projects</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">VUE Bundle</p>
-                                    <p class="fw-light small-text mb-0">Bundle of 6 Premium Vue Admin Dashboard</p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">React Bundle</p>
-                                    <p class="fw-light small-text mb-0">Bundle of 8 Premium React Admin Dashboard</p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item d-none d-lg-block">
-                        <div id="liveDateTime" class="live-date-time bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg shadow">
-                        </div>
-                    </li>
-
-
-                    <script>
-                        // Function to update date and time every second
-                        function updateDateTime() {
-                            const now = new Date();
-                            const formattedDateTime = now.toLocaleString(); // Adjust format as needed
-                            document.getElementById('liveDateTime').innerText = formattedDateTime;
-                        }
-
-                        // Update date and time initially
-                        updateDateTime();
-
-                        // Update date and time every second
-                        setInterval(updateDateTime, 1000);
-                    </script>
-
-                    <li class="nav-item">
-                        <form class="search-form" action="#">
-                            <i class="icon-search"></i>
-                            <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-                        </form>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator" id="notificationDropdown" href="#"
-                            data-bs-toggle="dropdown">
-                            <i class="icon-bell"></i>
-                            <span class="count"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-                            aria-labelledby="notificationDropdown">
-                            <a class="dropdown-item py-3 border-bottom">
-                                <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                                <span class="badge badge-pill badge-primary float-right">View all</span>
-                            </a>
-                            <a class="dropdown-item preview-item py-3">
-                                <div class="preview-thumbnail">
-                                    <i class="mdi mdi-alert m-auto text-primary"></i>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject fw-normal text-dark mb-1">Application Error</h6>
-                                    <p class="fw-light small-text mb-0"> Just now </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item py-3">
-                                <div class="preview-thumbnail">
-                                    <i class="mdi mdi-settings m-auto text-primary"></i>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject fw-normal text-dark mb-1">Settings</h6>
-                                    <p class="fw-light small-text mb-0"> Private message </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item py-3">
-                                <div class="preview-thumbnail">
-                                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject fw-normal text-dark mb-1">New user registration</h6>
-                                    <p class="fw-light small-text mb-0"> 2 days ago </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator" id="countDropdown" href="#"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icon-mail icon-lg"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-                            aria-labelledby="countDropdown">
-                            <a class="dropdown-item py-3">
-                                <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
-                                <span class="badge badge-pill badge-primary float-right">View all</span>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="../adminassets/images/faces/face10.jpg" alt="image"
-                                        class="img-sm profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                                    <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="../adminassets/images/faces/face12.jpg" alt="image"
-                                        class="img-sm profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                                    <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item">
-                                <div class="preview-thumbnail">
-                                    <img src="../adminassets/images/faces/face1.jpg" alt="image"
-                                        class="img-sm profile-pic">
-                                </div>
-                                <div class="preview-item-content flex-grow py-2">
-                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins
-                                    </p>
-                                    <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <!-- Trigger Button -->
-                    <div class="relative">
-                        @if (Auth::check())
-                            <button onclick="toggleDropdown()"
-                                class="inline-flex items-center text-sm leading-4 font-medium rounded-md text-gray-500 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
-                                style="margin-left: 10px; margin-top:4px;">
-                                <img src="{{ Auth::user()->profile_photo_url }}" alt="User Profile"
-                                    class="h-8 w-8 rounded-full object-cover mr-2" />
-                                <svg class="-me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    <form action="#" method="GET" class="hidden lg:block lg:pl-3.5">
+                        <label for="topbar-search" class="sr-only">Search</label>
+                        <div class="relative mt-1 lg:w-96">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd"></path>
                                 </svg>
-                            </button>
-                        @endif
-
-
-                        <!-- Dropdown Content -->
-                        <div id="dropdownContent"
-                            class="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
-                            style="display: none;">
-                            <!-- Account Management -->
-                            <div onclick="manageAccount()"
-                                class="block px-4 py-2 text-xs text-gray-400 cursor-pointer hover:bg-gray-100">
-                                {{ __('Manage Account') }}
                             </div>
-
-                            <a href="{{ route('profile.show') }}"
-                                class="block px-4 py-2 text-xs text-gray-900 hover:bg-gray-100">{{ __('Profile') }}</a>
-
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <a href="{{ route('api-tokens.index') }}"
-                                    class="block px-4 py-2 text-xs text-gray-900 hover:bg-gray-100">{{ __('API Tokens') }}</a>
-                            @endif
-
-                            <div class="border-t border-gray-200"></div>
-
-                            <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit"
-                                    class="block w-full px-4 py-2 text-left text-xs text-gray-900 hover:bg-gray-100">{{ __('Log Out') }}</button>
-                            </form>
+                            <input type="text" name="email" id="topbar-search"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Search">
                         </div>
-                    </div>
-
-                    <script>
-                        function toggleDropdown() {
-                            var dropdownContent = document.getElementById("dropdownContent");
-                            dropdownContent.style.display = (dropdownContent.style.display === "none") ? "block" : "none";
-                        }
-
-                        function manageAccount() {
-                            // Add your logic for handling the 'Manage Account' click
-                            alert("Manage Account Clicked!");
-                        }
-                    </script>
-
-            </div>
-        </nav>
-
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_settings-panel.html -->
-            <div class="theme-setting-wrapper">
-                <div id="settings-trigger"><i class="ti-settings"></i></div>
-                <div id="theme-settings" class="settings-panel">
-                    <i class="settings-close ti-close"></i>
-                    <p class="settings-heading">SIDEBAR SKINS</p>
-                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
-                        <div class="img-ss rounded-circle bg-light border me-3"></div>Light
-                    </div>
-                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
-                        <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
-                    </div>
-                    <p class="settings-heading mt-2">HEADER SKINS</p>
-                    <div class="color-tiles mx-0 px-4">
-                        <div class="tiles success"></div>
-                        <div class="tiles warning"></div>
-                        <div class="tiles danger"></div>
-                        <div class="tiles info"></div>
-                        <div class="tiles dark"></div>
-                        <div class="tiles default"></div>
-                    </div>
+                    </form>
                 </div>
-            </div>
-            <div id="right-sidebar" class="settings-panel">
-                <i class="settings-close ti-close"></i>
-                <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section"
-                            role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section"
-                            role="tab" aria-controls="chats-section">CHATS</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="setting-content">
-                    <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
-                        aria-labelledby="todo-section">
-                        <div class="add-items d-flex px-3 mb-0">
-                            <form class="form w-100">
-                                <div class="form-group d-flex">
-                                    <input type="text" class="form-control todo-list-input"
-                                        placeholder="Add To-do">
-                                    <button type="submit" class="add btn btn-primary todo-list-add-btn"
-                                        id="add-task">Add</button>
-                                </div>
-                            </form>
+                <div class="flex items-center">
+                    <div class="hidden mr-3 -mb-1 sm:block">
+                        <a class="github-button" href="https://github.com/themesberg/flowbite-admin-dashboard"
+                            data-color-scheme="no-preference: dark; light: light; dark: light;"
+                            data-icon="octicon-star" data-size="large" data-show-count="true"
+                            aria-label="Star themesberg/flowbite-admin-dashboard on GitHub">Star</a>
+                    </div>
+
+                    <button id="toggleSidebarMobileSearch" type="button"
+                        class="p-2 text-gray-500 rounded-lg lg:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <span class="sr-only">Search</span>
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" data-dropdown-toggle="notification-dropdown"
+                        class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
+                        <span class="sr-only">View notifications</span>
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="z-20 z-50 hidden max-w-sm my-4 overflow-hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow-lg dark:divide-gray-600 dark:bg-gray-700"
+                        id="notification-dropdown">
+                        <div
+                            class="block px-4 py-2 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            Notifications
                         </div>
-                        <div class="list-wrapper px-3">
-                            <ul class="d-flex flex-column-reverse todo-list">
+                        <div>
+                            <a href="#"
+                                class="flex px-4 py-3 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                                <div class="flex-shrink-0">
+                                    <img class="rounded-full w-11 h-11" src="../../images/users/bonnie-green.png"
+                                        alt="Jese image">
+                                    <div
+                                        class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 border border-white rounded-full bg-primary-700 dark:border-gray-700">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                                            </path>
+                                            <path
+                                                d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="w-full pl-3">
+                                    <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400">New
+                                        message from <span class="font-semibold text-gray-900 dark:text-white">Bonnie
+                                            Green</span>: "Hey, what's up? All set for the presentation?"</div>
+                                    <div class="text-xs font-medium text-primary-700 dark:text-primary-400">a few
+                                        moments ago</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex px-4 py-3 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                                <div class="flex-shrink-0">
+                                    <img class="rounded-full w-11 h-11" src="../../images/users/jese-leos.png"
+                                        alt="Jese image">
+                                    <div
+                                        class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-gray-900 border border-white rounded-full dark:border-gray-700">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="w-full pl-3">
+                                    <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"><span
+                                            class="font-semibold text-gray-900 dark:text-white">Jese leos</span> and
+                                        <span class="font-medium text-gray-900 dark:text-white">5 others</span> started
+                                        following you.
+                                    </div>
+                                    <div class="text-xs font-medium text-primary-700 dark:text-primary-400">10 minutes
+                                        ago</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex px-4 py-3 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                                <div class="flex-shrink-0">
+                                    <img class="rounded-full w-11 h-11" src="../../images/users/joseph-mcfall.png"
+                                        alt="Joseph image">
+                                    <div
+                                        class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-red-600 border border-white rounded-full dark:border-gray-700">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="w-full pl-3">
+                                    <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"><span
+                                            class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
+                                        and <span class="font-medium text-gray-900 dark:text-white">141 others</span>
+                                        love your story. See it and view more stories.</div>
+                                    <div class="text-xs font-medium text-primary-700 dark:text-primary-400">44 minutes
+                                        ago</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex px-4 py-3 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600">
+                                <div class="flex-shrink-0">
+                                    <img class="rounded-full w-11 h-11" src="../../images/users/leslie-livingston.png"
+                                        alt="Leslie image">
+                                    <div
+                                        class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-green-400 border border-white rounded-full dark:border-gray-700">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="w-full pl-3">
+                                    <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"><span
+                                            class="font-semibold text-gray-900 dark:text-white">Leslie
+                                            Livingston</span> mentioned you in a comment: <span
+                                            class="font-medium text-primary-700 dark:text-primary-500">@bonnie.green</span>
+                                        what do you say?</div>
+                                    <div class="text-xs font-medium text-primary-700 dark:text-primary-400">1 hour ago
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <div class="flex-shrink-0">
+                                    <img class="rounded-full w-11 h-11" src="../../images/users/robert-brown.png"
+                                        alt="Robert image">
+                                    <div
+                                        class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-purple-500 border border-white rounded-full dark:border-gray-700">
+                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="w-full pl-3">
+                                    <div class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"><span
+                                            class="font-semibold text-gray-900 dark:text-white">Robert Brown</span>
+                                        posted a new video: Glassmorphism - learn how to implement the new design trend.
+                                    </div>
+                                    <div class="text-xs font-medium text-primary-700 dark:text-primary-400">3 hours ago
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#"
+                            class="block py-2 text-base font-normal text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:hover:underline">
+                            <div class="inline-flex items-center ">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                    <path fill-rule="evenodd"
+                                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                View all
+                            </div>
+                        </a>
+                    </div>
+
+                    <button type="button" data-dropdown-toggle="apps-dropdown"
+                        class="hidden p-2 text-gray-500 rounded-lg sm:flex hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
+                        <span class="sr-only">View notifications</span>
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="z-20 z-50 hidden max-w-sm my-4 overflow-hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow-lg dark:bg-gray-700 dark:divide-gray-600"
+                        id="apps-dropdown">
+                        <div
+                            class="block px-4 py-2 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            Apps
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 p-4">
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Sales</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                                    </path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Users</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Inbox</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Profile</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Settings</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"></path>
+                                    <path fill-rule="evenodd"
+                                        d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Products</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Pricing</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Billing</div>
+                            </a>
+                            <a href="#"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <svg class="mx-auto mb-1 text-gray-500 w-7 h-7 dark:text-gray-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                    </path>
+                                </svg>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Logout</div>
+                            </a>
+                        </div>
+                    </div>
+                    <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button"
+                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="tooltip-toggle" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                        Toggle dark mode
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <div class="flex items-center ml-3">
+                        <div>
+                            <button type="button"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                id="user-menu-button-2" aria-expanded="false" data-dropdown-toggle="dropdown-2">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="w-8 h-8 rounded-full"
+                                    src="../../../flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                    alt="user photo">
+                            </button>
+                        </div>
+
+                        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                            id="dropdown-2">
+                            <div class="px-4 py-3" role="none">
+                                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                    Neil Sims
+                                </p>
+                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                                    role="none">
+                                    neil.sims@flowbite.com
+                                </p>
+                            </div>
+                            <ul class="py-1" role="none">
                                 <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox">
-                                            Team review meeting at 3.00 PM
-                                        </label>
-                                    </div>
-                                    <i class="remove ti-close"></i>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Dashboard</a>
                                 </li>
                                 <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox">
-                                            Prepare for presentation
-                                        </label>
-                                    </div>
-                                    <i class="remove ti-close"></i>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Settings</a>
                                 </li>
                                 <li>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox">
-                                            Resolve all the low priority tickets due today
-                                        </label>
-                                    </div>
-                                    <i class="remove ti-close"></i>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Earnings</a>
                                 </li>
-                                <li class="completed">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox" checked>
-                                            Schedule meeting for next week
-                                        </label>
-                                    </div>
-                                    <i class="remove ti-close"></i>
-                                </li>
-                                <li class="completed">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="checkbox" type="checkbox" checked>
-                                            Project review
-                                        </label>
-                                    </div>
-                                    <i class="remove ti-close"></i>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Sign out</a>
                                 </li>
                             </ul>
                         </div>
-                        <h4 class="px-3 text-muted mt-5 fw-light mb-0">Events</h4>
-                        <div class="events pt-4 px-3">
-                            <div class="wrapper d-flex mb-2">
-                                <i class="ti-control-record text-primary me-2"></i>
-                                <span>Feb 11 2018</span>
-                            </div>
-                            <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
-                            <p class="text-gray mb-0">The total number of sessions</p>
-                        </div>
-                        <div class="events pt-4 px-3">
-                            <div class="wrapper d-flex mb-2">
-                                <i class="ti-control-record text-primary me-2"></i>
-                                <span>Feb 7 2018</span>
-                            </div>
-                            <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
-                            <p class="text-gray mb-0 ">Call Sarah Graves</p>
-                        </div>
                     </div>
-                    <!-- To do section tab ends -->
-                    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
-                        <div class="d-flex align-items-center justify-content-between border-bottom">
-                            <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-                            <small
-                                class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal">See
-                                All</small>
-                        </div>
-                        <ul class="chat-list">
-                            <li class="list active">
-                                <div class="profile"><img src="../adminassets/images/faces/face1.jpg"
-                                        alt="image"><span class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Thomas Douglas</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">19 min</small>
-                            </li>
-                            <li class="list">
-                                <div class="profile"><img src="../adminassets/images/faces/face2.jpg"
-                                        alt="image"><span class="offline"></span>
-                                </div>
-                                <div class="info">
-                                    <div class="wrapper d-flex">
-                                        <p>Catherine</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    {{-- slote --}}
+    {{ $slot }}
+
+
+    <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
+
+        <aside id="sidebar"
+            class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+            aria-label="Sidebar">
+            <div
+                class="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
+                    <div
+                        class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                        <ul class="pb-2 space-y-2">
+                            <li>
+                                <form action="#" method="GET" class="lg:hidden">
+                                    <label for="mobile-search" class="sr-only">Search</label>
+                                    <div class="relative">
+                                        <div
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <svg class="w-5 h-5 text-gray-500" fill="currentColor"
+                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <input type="text" name="email" id="mobile-search"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            placeholder="Search">
                                     </div>
-                                    <p>Away</p>
-                                </div>
-                                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-                                <small class="text-muted my-auto">23 min</small>
+                                </form>
                             </li>
-                            <li class="list">
-                                <div class="profile"><img src="../adminassets/images/faces/face3.jpg"
-                                        alt="image"><span class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Daniel Russell</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">14 min</small>
+                            <li>
+                                <a href="../../index.html"
+                                    class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+                                    <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                                    </svg>
+                                    <span class="ml-3" sidebar-toggle-item>Dashboard</span>
+                                </a>
                             </li>
-                            <li class="list">
-                                <div class="profile"><img src="../adminassets/images/faces/face4.jpg"
-                                        alt="image"><span class="offline"></span>
-                                </div>
-                                <div class="info">
-                                    <p>James Richardson</p>
-                                    <p>Away</p>
-                                </div>
-                                <small class="text-muted my-auto">2 min</small>
+
+                            <li>
+                                <button type="button"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                    aria-controls="vv" aria-expanded="false" data-collapse-toggle="vv">
+                                    <svg class="h-6 w-6 text-gray-500" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
+                                        <rect x="9" y="3" width="6" height="4" rx="2" />
+                                    </svg> <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                                        data-sidebar-toggle-item>Pages</span>
+                                    <svg data-sidebar-toggle-item class="w-6 h-6" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="vv" class="hidden space-y-2 py-2">
+                                    <li>
+                                        <a href="{{ url('/vegetablessss') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700 bg-gray-100 dark:bg-gray-700">Vegetables</a>
+                                    </li>
+                                    <li>
+                                        <a href="../users/index.html"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700">Old
+                                            Order</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="list">
-                                <div class="profile"><img src="../adminassets/images/faces/face5.jpg"
-                                        alt="image"><span class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Madeline Kennedy</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">5 min</small>
+
+                            <li>
+                                <a href="../../index.html"
+                                    class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+                                    <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    <span class="ml-3" sidebar-toggle-item>Users</span>
+                                </a>
                             </li>
-                            <li class="list">
-                                <div class="profile"><img src="../adminassets/images/faces/face6.jpg"
-                                        alt="image"><span class="online"></span>
-                                </div>
-                                <div class="info">
-                                    <p>Sarah Graves</p>
-                                    <p>Available</p>
-                                </div>
-                                <small class="text-muted my-auto">47 min</small>
+                            <li>
+                                <a href="{{ url('showproduct') }}"
+                                    class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+                                    <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                    </svg>
+                                    <span class="ml-3" sidebar-toggle-item>Product</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ url('showcategory') }}"
+                                    class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+                                    <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                                    </svg>
+                                    <span class="ml-3" sidebar-toggle-item>Category</span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <button type="button"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                    aria-controls="cccx" aria-expanded="false" data-collapse-toggle="cccx">
+                                    <svg class="h-6 w-6 text-gray-500" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <circle cx="7" cy="17" r="2" />
+                                        <circle cx="17" cy="17" r="2" />
+                                        <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                                    </svg>
+                                    <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                                        data-sidebar-toggle-item>Orders</span>
+                                    <svg data-sidebar-toggle-item class="w-6 h-6" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="cccx" class="hidden space-y-2 py-2">
+                                    <li>
+                                        <a href="{{ url('orders') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700 bg-gray-100 dark:bg-gray-700">New
+                                            Order</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('orderhistory') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700">
+                                            Order History</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+                            <li>
+                                <button type="button"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                    aria-controls="zz" aria-expanded="false" data-collapse-toggle="zz">
+                                    <svg class="h-6 w-6 text-gray-500" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                                        <path d="M7 15v-4a2 2 0 0 1 4 0v4" />
+                                        <line x1="7" y1="13" x2="11" y2="13" />
+                                        <path d="M17 9v6h-1.5a1.5 1.5 0 1 1 1.5 -1.5" />
+                                    </svg>
+                                    <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                                        data-sidebar-toggle-item>Buyer's
+                                        Ads</span>
+                                    <svg data-sidebar-toggle-item class="w-6 h-6" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="zz" class="hidden space-y-2 py-2">
+                                    <li>
+                                        <a href="{{ url('newads') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700 bg-gray-100 dark:bg-gray-700">New
+                                            Ads</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('oldads') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700">Old
+                                            Ads</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+                            <li>
+                                <button type="button"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                    aria-controls="ccc" aria-expanded="false" data-collapse-toggle="ccc">
+                                    <svg class="h-6 w-6 text-gray-500" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <circle cx="5" cy="17" r="2" />
+                                        <circle cx="14" cy="17" r="2" />
+                                        <line x1="7" y1="17" x2="12" y2="17" />
+                                        <path d="M3 17v-6h13v6" />
+                                        <path d="M5 11v-4h4" />
+                                        <path d="M9 11v-6h4l3 6" />
+                                        <path d="M22 15h-3v-10" />
+                                        <line x1="16" y1="13" x2="19" y2="13" />
+                                    </svg>
+                                    <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                                        data-sidebar-toggle-item>Farmer's Product</span>
+                                    <svg data-sidebar-toggle-item class="w-6 h-6" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="ccc" class="hidden space-y-2 py-2">
+                                    <li>
+                                        <a href="{{ url('newproduct') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700 bg-gray-100 dark:bg-gray-700">New
+                                            Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('orderhistoraay') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700">Old
+                                            Product</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 justify-center hidden w-full p-4 space-x-4 bg-white lg:flex dark:bg-gray-800"
+                    sidebar-bottom-menu>
+                    <a href="#"
+                        class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="../../settings/index.html" data-tooltip-target="tooltip-settings"
+                        class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <div id="tooltip-settings" role="tooltip"
+                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Settings page
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <button type="button" data-dropdown-toggle="language-dropdown"
+                        class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <svg class="h-5 w-5 rounded-full mt-0.5" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900">
+                            <path fill="#b22234" d="M0 0h7410v3900H0z" />
+                            <path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff"
+                                stroke-width="300" />
+                            <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+                            <g fill="#fff">
+                                <g id="d">
+                                    <g id="c">
+                                        <g id="e">
+                                            <g id="b">
+                                                <path id="a"
+                                                    d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" />
+                                                <use xlink:href="#a" y="420" />
+                                                <use xlink:href="#a" y="840" />
+                                                <use xlink:href="#a" y="1260" />
+                                            </g>
+                                            <use xlink:href="#a" y="1680" />
+                                        </g>
+                                        <use xlink:href="#b" x="247" y="210" />
+                                    </g>
+                                    <use xlink:href="#c" x="494" />
+                                </g>
+                                <use xlink:href="#d" x="988" />
+                                <use xlink:href="#c" x="1976" />
+                                <use xlink:href="#e" x="2470" />
+                            </g>
+                        </svg>
+                    </button>
+
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700"
+                        id="language-dropdown">
+                        <ul class="py-1" role="none">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">
+                                    <div class="inline-flex items-center">
+                                        <svg class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                                            id="flag-icon-css-us" viewBox="0 0 512 512">
+                                            <g fill-rule="evenodd">
+                                                <g stroke-width="1pt">
+                                                    <path fill="#bd3d44"
+                                                        d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                                                        transform="scale(3.9385)" />
+                                                    <path fill="#fff"
+                                                        d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                                                        transform="scale(3.9385)" />
+                                                </g>
+                                                <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
+                                                <path fill="#fff"
+                                                    d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
+                                                    transform="scale(3.9385)" />
+                                            </g>
+                                        </svg>
+                                        English (US)
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">
+                                    <div class="inline-flex items-center">
+                                        <svg class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                                            id="flag-icon-css-de" viewBox="0 0 512 512">
+                                            <path fill="#ffce00" d="M0 341.3h512V512H0z" />
+                                            <path d="M0 0h512v170.7H0z" />
+                                            <path fill="#d00" d="M0 170.7h512v170.6H0z" />
+                                        </svg>
+                                        Deutsch
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">
+                                    <div class="inline-flex items-center">
+                                        <svg class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                                            id="flag-icon-css-it" viewBox="0 0 512 512">
+                                            <g fill-rule="evenodd" stroke-width="1pt">
+                                                <path fill="#fff" d="M0 0h512v512H0z" />
+                                                <path fill="#009246" d="M0 0h170.7v512H0z" />
+                                                <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
+                                            </g>
+                                        </svg>
+                                        Italiano
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">
+                                    <div class="inline-flex items-center">
+                                        <svg class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn"
+                                            viewBox="0 0 512 512">
+                                            <defs>
+                                                <path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z" />
+                                            </defs>
+                                            <path fill="#de2910" d="M0 0h512v512H0z" />
+                                            <use width="30" height="20"
+                                                transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a" />
+                                            <use width="30" height="20"
+                                                transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a" />
+                                            <use width="30" height="20"
+                                                transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a" />
+                                            <use width="30" height="20"
+                                                transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a" />
+                                            <use width="30" height="20"
+                                                transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a" />
+                                        </svg>
+                                        中文 (繁體)
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
-                    <!-- chat tab ends -->
                 </div>
             </div>
-            <!-- partial -->
-            <!-- partial:partials/_sidebar.html -->
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
-                <ul class="nav" style="margin-right: 4px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="mdi mdi-grid-large menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
-                        </a>
-                    </li>
+        </aside>
 
 
 
-                    <li class="nav-item nav-category">User Management</li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
-                            aria-controls="form-elements">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">User C_R_U_D</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-elements">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="chartjs.html">Basic Elements</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ui-basic">
-                            <i class="menu-icon mdi mdi-floor-plan"></i>
-                            <span class="menu-title"> View All users
-                            </span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                    </li>
+        <script async defer src="/adminassets/buttons.js"></script>
+        <script src="/adminassets/app.bundle.js"></script>
+        <script src="/adminassets/ajax/libs/flowbite/1.6.2/datepicker.min.js"></script>
 
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        @if (session('status'))
+            <script>
+                swal("Good job!", "{{ session('status') }}", "success");
+            </script>
+        @endif
+        <script src="shopassets/js/theme.js"></script>
 
-
-
-
-                    <li class="nav-item nav-category">Shop Management</li>
-                    <li class="nav-item {{ Request::is('#form-category') ? 'active' : '' }}">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-category" aria-expanded="false"
-                            aria-controls="form-elements">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">Category</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-category">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item {{ Request::is('category') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ url('category') }}">Create Category</a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item {{ Request::is('#') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ url('showcategory') }}">Show All Categories</a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </li>
-
-                    {{--                <li class="nav-item {{Request::is('#form-subcategory') ? 'active':''}}"> --}}
-                    {{--                    <a class="nav-link" data-bs-toggle="collapse" href="#form-subcategory" aria-expanded="false" --}}
-                    {{--                       aria-controls="form-elements"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-card-text-outline"></i> --}}
-                    {{--                        <span class="menu-title">Sub Category</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                    <div class="collapse" id="form-subcategory"> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"><a class="nav-link" href="chartjs.html">Create Sub Category</a> --}}
-                    {{--                            </li> --}}
-                    {{--                        </ul> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"><a class="nav-link" href="chartjs.html">Show All Sub Categories</a> --}}
-                    {{--                            </li> --}}
-                    {{--                        </ul> --}}
-                    {{--                    </div> --}}
-                    {{--                </li> --}}
-
-
-
-
-
-                    <li class="nav-item {{ request()->is('form-product*') ? 'active' : '' }}">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-product" aria-expanded="false" aria-controls="form-product">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">Product</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-product">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/product') }}">Add Product</a></li>
-                            </ul>
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ url('showproduct') }}">Show All Products</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item {{ request()->is('form-Vegetable*') ? 'active' : '' }}">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-Vegetable" aria-expanded="false" aria-controls="form-product">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">Vegetable</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-Vegetable">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ url('/vegetablessss') }}">Add Vegetables</a></li>
-                            </ul>
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ url('showproduct') }}">Show All Vegetables</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item {{ request()->is('form-Orders*') ? 'active' : '' }}">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-Orders" aria-expanded="false" aria-controls="form-Orders">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">Orders</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-Orders">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ url('orders') }}">New Orders</a></li>
-                            </ul>
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ url('orderhistory') }}">Order History</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-
-                    <li class="nav-item nav-category">Ads Management</li>
-                    <li class="nav-item {{ Request::is('#form-ads') ? 'active' : '' }}">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-ads" aria-expanded="false"
-                            aria-controls="form-elements">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">Ads For Buyers</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-ads">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item {{ Request::is('category') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ url('newads') }}">New Ads</a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item {{ Request::is('#') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ url('oldads') }}">Old Ads</a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </li>
-
-                    <li class="nav-item {{ Request::is('#form-ads') ? 'active' : '' }}">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-adsd" aria-expanded="false"
-                            aria-controls="form-elements">
-                            <i class="menu-icon mdi mdi-card-text-outline"></i>
-                            <span class="menu-title">Product For Farmers</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="form-adsd">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item {{ Request::is('category') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ url('newproduct') }}">New Product</a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item {{ Request::is('#') ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ url('oldads') }}">Old Product</a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </li>
-
-
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" href="#form-elements" aria-expanded="false" aria-controls="form-elements"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-card-text-outline"></i> --}}
-                    {{--                        <span class="menu-title">Product</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                </li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" href="#form-product" aria-expanded="false" aria-controls="form-elements"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-card-text-outline"></i> --}}
-                    {{--                        <span class="menu-title">Orders</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                </li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" href="#form-elements" aria-expanded="false" aria-controls="form-elements"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-card-text-outline"></i> --}}
-                    {{--                        <span class="menu-title">Discount</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                </li> --}}
-
-                    {{--                <li class="nav-item nav-category">Analytics and Reporting</li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-file-document"></i> --}}
-                    {{--                        <span class="menu-title">Shipping</span> --}}
-                    {{--                    </a> --}}
-                    {{--                </li> --}}
-
-
-
-                    {{--                <li class="nav-item nav-category">Forms and Datas</li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" --}}
-                    {{--                       aria-controls="form-elements"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-card-text-outline"></i> --}}
-                    {{--                        <span class="menu-title">Orders</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                    <div class="collapse" id="form-elements"> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"><a class="nav-link" href="../pages/forms/basic_elements.html">Basic Elements</a> --}}
-                    {{--                            </li> --}}
-                    {{--                        </ul> --}}
-                    {{--                    </div> --}}
-                    {{--                </li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-chart-line"></i> --}}
-                    {{--                        <span class="menu-title">Discount</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                    <div class="collapse" id="charts"> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"> <a class="nav-link" href="../pages/charts/chartjs.html">ChartJs</a></li> --}}
-                    {{--                        </ul> --}}
-                    {{--                    </div> --}}
-                    {{--                </li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-table"></i> --}}
-                    {{--                        <span class="menu-title">Tables</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                    <div class="collapse" id="tables"> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"> <a class="nav-link" href="../pages/tables/basic-table.html">Basic table</a></li> --}}
-                    {{--                        </ul> --}}
-                    {{--                    </div> --}}
-                    {{--                </li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-layers-outline"></i> --}}
-                    {{--                        <span class="menu-title">Icons</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                    <div class="collapse" id="icons"> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"> <a class="nav-link" href="../pages/icons/mdi.html">Mdi icons</a></li> --}}
-                    {{--                        </ul> --}}
-                    {{--                    </div> --}}
-                    {{--                </li> --}}
-
-
-
-
-                    {{--                <li class="nav-item nav-category">pages</li> --}}
-                    {{--                <li class="nav-item"> --}}
-                    {{--                    <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth"> --}}
-                    {{--                        <i class="menu-icon mdi mdi-account-circle-outline"></i> --}}
-                    {{--                        <span class="menu-title">User Pages</span> --}}
-                    {{--                        <i class="menu-arrow"></i> --}}
-                    {{--                    </a> --}}
-                    {{--                    <div class="collapse" id="auth"> --}}
-                    {{--                        <ul class="nav flex-column sub-menu"> --}}
-                    {{--                            <li class="nav-item"> <a class="nav-link" href="../pages/samples/login.html"> Login </a></li> --}}
-                    {{--                        </ul> --}}
-                    {{--                    </div> --}}
-                    {{--                </li> --}}
-
-                    {{--            </ul> --}}
-            </nav>
-
-
-
-            <!-- partial -->
-            <div class="main-panel" style="background-color: #F4F5F7;">
-
-                {{ $slot }}
-
-            </div>
-            <!-- main-panel ends -->
-        </div>
-        <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if (session('status'))
-        <script>
-            swal("Good job!", "{{ session('status') }}", "success");
-        </script>
-    @endif
-    <!-- plugins:js -->
-    <script src="adminassets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="adminassets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="adminassets/vendors/chart.js/Chart.min.js"></script>
-    <script src="adminassets/vendors/progressbar.js/progressbar.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="adminassets/js/off-canvas.js"></script>
-    <script src="adminassets/js/hoverable-collapse.js"></script>
-    <script src="adminassets/js/template.js"></script>
-    <script src="adminassets/js/settings.js"></script>
-    <script src="adminassets/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="adminassets/js/jquery.cookie.js" type="text/javascript"></script>
-    <script src="adminassets/js/dashboard.js"></script>
-    <script src="adminassets/js/proBanner.js"></script>
-    <script src="js/checkout.js"></script>
-
-    <!-- <script src="../../adminassets/js/Chart.roundedBarCharts.js"></script> -->
-    <!-- End custom js for this page-->
-
+        
 
 </body>
+
+
+<!-- Mirrored from flowbite-admin-dashboard.vercel.app/crud/products/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 May 2024 09:13:44 GMT -->
 
 </html>

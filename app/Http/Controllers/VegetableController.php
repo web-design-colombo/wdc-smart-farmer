@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vegetable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class VegetableController extends Controller
 {
@@ -23,81 +24,106 @@ class VegetableController extends Controller
 
     public function create(Request $request)
     {
-        // Validate the incoming request data
-        $validatedData = $request->validate([
-            'name' => 'required|string',
-            'heading' => 'required|string',
-            'heading_description' => 'required|string',
-            'first_description' => 'required|string',
-            'variety_description' => 'required|array',
-            'soil_preparation' => 'required|array',
-            'planting_techniques' => 'required|array',
-            'watering_practices_dis' => 'required|string',
-            'watering_practices' => 'required|array',
-            'fertilization_strategy_dis' => 'required|string',
-            'fertilization_strategy' => 'required|array',
-            'weed_management_dis' => 'required|string',
-            'weed_management' => 'required|array',
-            'managing_pests_and_diseases' => 'required|string',
-            'harvesting_discription' => 'required|string',
-            'harvesting_table' => 'required|array',
-            'faqs' => 'required|array',
-            'common_mistakestoavoid' => 'required|array',
-            'advanced_tips_for_maximizing_yield' => 'required|array',
-            'first_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'variety_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'soil_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'planting_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'care_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
 
-        // Create a new Vegetable instance
-        $vegetable = new Vegetable();
+        $Vegetable = new Vegetable();
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/ss/', $filename);
+            $Vegetable->image = $filename;
+        }
+        $Vegetable->name = $request->name;
+        $Vegetable->heading = $request->heading;
+        $Vegetable->heading_description = $request->heading_description;
 
-        // Assign values from the request to the Vegetable instance
-        $vegetable->name = $validatedData['name'];
-        $vegetable->heading = $validatedData['heading'];
-        $vegetable->heading_description = $validatedData['heading_description'];
-        $vegetable->first_description = $validatedData['first_description'];
+        foreach ($request->faqs as $data) {
+            $faq = [
+                'name' => $data['question'],
+                'management' => $data['answer'],
+            ];
 
-        // Handle image uploads and assign filenames to the Vegetable instance
-        $imageFields = ['first_image', 'variety_image', 'soil_image', 'planting_image', 'care_image'];
-        foreach ($imageFields as $field) {
-            if ($request->hasFile($field)) {
-                $filename = time() . '_' . $request->file($field)->getClientOriginalName();
-                $request->file($field)->move(public_path('uploads/veg/'), $filename);
-                $vegetable->{$field} = $filename;
+            if (isset($data['image'])) {
+                $file = $data['image'];
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->move('uploads/aaa/', $filename);
+                $faq['image_path'] = $filename; // Add image path to the FAQ data
             }
+
+            $faqs[] = $faq;
         }
 
-        // Assign other fields to the Vegetable instance
-        $vegetable->variety_description = json_encode($validatedData['variety_description']);
-        $vegetable->soil_preparation = json_encode($validatedData['soil_preparation']);
-        $vegetable->planting_techniques = json_encode($validatedData['planting_techniques']);
-        $vegetable->watering_practices_dis = $validatedData['watering_practices_dis'];
-        $vegetable->watering_practices = json_encode($validatedData['watering_practices']);
-        $vegetable->fertilization_strategy_dis = $validatedData['fertilization_strategy_dis'];
-        $vegetable->fertilization_strategy = json_encode($validatedData['fertilization_strategy']);
-        $vegetable->weed_management_dis = $validatedData['weed_management_dis'];
-        $vegetable->weed_management = json_encode($validatedData['weed_management']);
-        $vegetable->managing_pests_and_diseases = $validatedData['managing_pests_and_diseases'];
-        $vegetable->harvesting_discription = $validatedData['harvesting_discription'];
-        $vegetable->harvesting_table = json_encode($validatedData['harvesting_table']);
-        $vegetable->faqs = json_encode($validatedData['faqs']);
-        $vegetable->common_mistakestoavoid = json_encode($validatedData['common_mistakestoavoid']);
-        $vegetable->advanced_tips_for_maximizing_yield = json_encode($validatedData['advanced_tips_for_maximizing_yield']);
+        $Vegetable->variety = json_encode($faqs);
 
-        // Save the Vegetable instance to the database
-        $vegetable->save();
 
-        // Redirect with success message
-        return redirect('vegetablessss')->with('success', 'Vegetable created successfully!');
-    }
+        $Vegetable->climaticrequirements = $request->climaticrequirements;
+        $Vegetable->areas = $request->areas;
+
+        $Vegetable->soil = $request->soil;
+        $Vegetable->Seed_requirement = $request->Seed_requirement;
+        $Vegetable->Nursery_Management = $request->Nursery_Management;
+        $Vegetable->Land_preparation = $request->Land_preparation;
+        $Vegetable->Planting = $request->Planting;
+        $Vegetable->Spacing = $request->Spacing;
+        $Vegetable->Fertilizer = json_encode($request->fertilizers);
+
+        $Vegetable->Water_supply = $request->Water_supply;
+        $Vegetable->Weed_Control = $request->Weed_Control;
+
+        $diseasesData = [];
+        foreach ($request->diseases as $disease) {
+            $diseaseData = [
+                'name' => $disease['name'],
+                'management' => $disease['management'],
+            ];
+
+            if (isset($disease['image'])) {
+                $file = $disease['image'];
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->move('uploads/aaa/', $filename);
+                $diseaseData['image_path'] = $filename; // Add image path to the disease data
+            }
+
+            $diseasesData[] = $diseaseData;
+        }
+        $Vegetable->Disease_Management = json_encode($diseasesData);
+
+
+
+        $pestsData = [];
+        foreach ($request->pests as $pestData) {
+            $pest = [
+                'name' => $pestData['question'],
+                'management' => $pestData['answer'],
+            ];
+
+            if (isset($pestData['image'])) {
+                $file = $pestData['image'];
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->move('uploads/aaa/', $filename);
+                $pest['image_path'] = $filename; // Add image path to the pest data
+            }
+
+            $pestsData[] = $pest;
+        }
+
+        $Vegetable->Pest_Management = json_encode($pestsData);
+
+        $Vegetable->Harvesting = $request->Harvesting;
+        $Vegetable->Yield = $request->Yield;
+
+        $Vegetable->save();
+        return redirect()->back()->with('status', 'Saved successfully!');    }
 
 //view more detail page in vegetable use id
     public function show($id)
     {
         $Vegetable = Vegetable::find($id);
-        return view('vegetables.viewdetails', compact('Vegetable'));
+        $Vegetables = Vegetable::all();
+
+        return view('vegetables.viewdetails', compact('Vegetable', 'Vegetables'));
     }
 }

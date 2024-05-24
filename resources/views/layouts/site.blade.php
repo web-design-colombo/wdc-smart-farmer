@@ -220,8 +220,15 @@
 
                             <div class="main-header--one__bottom-right clearfix">
                                 <div class="search-cart">
-                                    <a href="#" class="search search-toggler"><span
-                                            class="icon-magnifying-glass"></span></a>
+
+                                    <a href="{{ url('cart') }}" class="relative inline-block"
+                                        style="margin-right: 6px">
+                                        <span class="fas fa-bell"></span>
+                                        <span
+                                            class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count"
+                                            style="background-color: green"></span>
+                                    </a>
+
 
                                     <a href="{{ url('cart') }}" class="relative inline-block"
                                         style="margin-right: 6px">
@@ -468,6 +475,8 @@
             <!-- /.mobile-nav__container -->
 
             <ul class="mobile-nav__contact list-unstyled">
+
+
                 <li>
                     <i class="icon-phone-call"></i>
                     <a href="mailto:needhelp@packageName__.com">SmartFarmer@Gmail.com</a>

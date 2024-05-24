@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -35,10 +36,46 @@ class OrderController extends Controller
         return redirect('orders')->with('status', 'Order status updated successfully');
     }
 
+    public function sellhistory()
+    {
+        $ads = Product::where('status', '1')->get();
+        return view('admin.farmers.old', compact('ads'));
+    }
+
+
     public function orderhistory()
     {
-        $orders = Order::where('status', '1')->get();
-        return view('admin.order.history', compact('orders'));
+        $ads = Order::where('status', '1')->get();
+        return view('admin.order.history', compact('ads'));
     }
+
+    public function sortorders(Request $request)
+    {
+        // Define the available sorting options
+        $sortOptions = [
+            'Newest' => ['created_at', 'desc'],
+            'Oldest' => ['created_at', 'asc'],
+            'Highest Price Orders' => ['tot', 'desc'],
+            'Lowest Price Orders' => ['tot', 'asc'],
+        ];
+
+        // Get the sort parameter from the request
+        $sort = $request->input('sort');
+
+        // Determine the sorting option
+        $sortColumn = 'created_at'; // Default column
+        $sortDirection = 'desc'; // Default direction
+
+        if (array_key_exists($sort, $sortOptions)) {
+            [$sortColumn, $sortDirection] = $sortOptions[$sort];
+        }
+
+        // Fetch the orders with the determined sorting
+        $orders = Order::orderBy($sortColumn, $sortDirection)->get();
+
+        // Return the view with the sorted orders
+        return view('admin.order.index', compact('orders'));
+    }
+
 
 }

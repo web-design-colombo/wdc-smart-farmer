@@ -33,8 +33,6 @@ class CreateNewUser implements CreatesNewUsers
             //role
 
             'role' => $input['role'],
-            
-
         ]);
     }
 }

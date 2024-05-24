@@ -22,6 +22,9 @@ class CheckoutController extends Controller
 
     public function placeOrder(Request $request)
     {
+
+
+
         $validatedData = $request->validate([
             'name' => 'required|string',
             'last_name' => 'required|string',
@@ -92,6 +95,7 @@ class CheckoutController extends Controller
         Cart::where('user_id', Auth::id())->delete();
 
         return redirect()->to('/checkout')->with('success', 'Order Placed Successfully');
+
     }
 
 

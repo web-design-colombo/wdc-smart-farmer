@@ -16,6 +16,8 @@ class UserController extends Controller
     {
         $orders = Order::where('user_id', Auth::id())->get();
         return view('shop.orders.index', compact('orders'));
+
+
     }
 
     public function viewOrder($id)

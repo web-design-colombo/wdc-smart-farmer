@@ -14,39 +14,42 @@ return new class extends Migration
         Schema::create('vegetables', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image');
+
             $table->string('heading');
             $table->text('heading_description');
-            $table->text('first_description');
-            $table->string('first_image');
-            $table->string('variety_image');
-            $table->json('variety_description')->length(500)->nullable();
 
-            $table->string('soil_image');
-            $table->json('soil_preparation')->length(500)->nullable();//steps by steps Soil Preparation
+            $table->json('variety')->length(500)->nullable();
 
-            $table->string('planting_image');
-            $table->json('planting_techniques')->length(500)->nullable();//steps by steps Planting Techniques
+            $table->text('climaticrequirements');
+            $table->text('areas');
 
-            $table->string('care_image');
-            $table->string('watering_practices_dis',500)->nullable();
-            $table->json('watering_practices')->length(500)->nullable();
+            $table->string('soil');
 
-            $table->string('fertilization_strategy_dis',1000)->nullable();
-            $table->json('fertilization_strategy')->length(1000)->nullable();
+            $table->text('Seed_requirement');
 
-             $table->string('weed_management_dis',1000)->nullable();
-            $table->json('weed_management')->length(1000)->nullable();
+            $table->string('Nursery_Management');
 
-          $table->string('managing_pests_and_diseases',1000)->nullable();
+            $table->text('Land_preparation');
 
-            $table->string('harvesting_discription',1000)->nullable();
-            $table->json('harvesting_table')->length(1000)->nullable();
+            $table->text('Planting');
+
+            $table->text('Spacing');
+
+            $table->json('Fertilizer');
+
+            $table->text('Water_supply');
+
+            $table->text('Weed_Control');
+
+            $table->json('Pest_Management');
+            $table->json('Disease_Management');
+
+            $table->text('Harvesting');
+
+            $table->text('Yield');
 
 
-
-            $table->json('faqs')->length(500)->nullable();
-            $table->json('common_mistakestoavoid')->length(500)->nullable();
-            $table->json('advanced_tips_for_maximizing_yield')->length(500)->nullable();
             $table->timestamps();
         });
     }

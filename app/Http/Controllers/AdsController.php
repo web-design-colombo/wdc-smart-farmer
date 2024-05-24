@@ -28,6 +28,7 @@ class AdsController extends Controller
             $ads->shop_address = $request->shop_address;
             $ads->phone_number = $request->phone_number;
             $ads->vegetables = json_encode($request->vegetables);
+
             $ads->description = $request->description;
             $ads->city = $request->city;
 
@@ -156,7 +157,13 @@ public function indexproduct()
 public function viewmoresellpro($id)
 {
     $ads = Product::findOrFail($id);
-return view('admin.farmers.old', compact('ads'));
+return view('admin.farmers.vieworder', compact('ads'));
+}
+
+public function sellhistory()
+{
+    $orders = Product::where('status', '1')->get();
+    return view('admin.order.history', compact('orders'));
 }
 
 }
