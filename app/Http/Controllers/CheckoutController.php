@@ -168,7 +168,7 @@ class CheckoutController extends Controller
 
                 Cart::where('user_id', Auth::id())->delete();
 
-                return route('stripe.payment', ['id' => $order->id, 'total' => $order->tot]);
+                return redirect()->route('stripe.payment', ['id' => $order->id, 'total' => $order->tot]);
 
                 }
 

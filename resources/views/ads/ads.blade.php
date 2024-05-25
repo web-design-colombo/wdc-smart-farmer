@@ -31,7 +31,7 @@
                             </div>
                             <div class="meet-farmers-one__single-title text-center">
                                 <p>Shop Name: {{ $ad->user_name }}</p>
-                                <p>City: {{ $ad->user_name }}</p>
+                                <p>City: {{ $ad->city }}</p>
                                 <h2><a href="{{ url('viewadds/' . $ad->id) }}">{{ $ad->user_name }}</a></h2>
                                 <div class="social-link">
                                     <ul>

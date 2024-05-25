@@ -76,4 +76,5 @@
             </div>
         </form>
     </x-authentication-card>
+    <br>
 </x-site-layout>

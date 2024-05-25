@@ -21,7 +21,13 @@
 
 
     <section class="checkout-page">
+
         <div class="auto-container">
+            @if (session('success'))
+        <div class="alert alert-success" style="background-color: rgb(234, 196, 196); font-weight: bold">
+            {{ session('success') }}
+        </div>
+    @endif
             <p class="checkout-page__returning">Returning Customer? <a
                     href="login">Click here to Login</a></p>
             <div class="row">

@@ -171,8 +171,6 @@
                                                     </li>
                                                     <li><a href="{{ url('/vegesell') }}">Sell Vegetables</a></li>
 
-                                                    <li><a href="{{ url('/vegetables') }}">Grow Vegetables</a>
-                                                    </li>
                                                     <li><a href="{{ url('/export your vegetables') }}">Export Your
                                                             Vegetables</a></li>
                                                     {{-- if only user id = 2 ,then show this li  --}}
@@ -187,6 +185,9 @@
                                             <li class="dropdown">
                                                 <a href="{{ url('/farming') }}">Farming</a>
                                                 <ul>
+
+                                                    <li><a href="{{ url('/vegetables') }}">Grow Vegetables </a>
+                                                    </li>
                                                     <li><a href="farmers.html">Farmers</a></li>
                                                     <li><a href="projects-details.html">Projects Details</a></li>
                                                     <li><a href="faq.html">Faq</a></li>
@@ -286,7 +287,7 @@
                                         <span class="fas fa-bell"></span>
                                         <span
                                             class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white rounded-full cart-count"
-                                            style="background-color: red; ">4</span>
+                                            style="background-color: red; "></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="notificationDropdown">
                                         <a id="xx" class="dropdown-item"
@@ -343,7 +344,7 @@
                         <div class="col-xl-12">
                             <div class="footer-one__top-wrapper">
                                 <div class="footer-one__bg"><img
-                                        src="https://pixydrops.com/agriox/assets/images/backgrounds/footer-one-bg.png"
+                                        src="{{ asset('img/logo-no-background.png') }}"
                                         alt="" /></div>
                                 <div class="row">
                                     <!--Start Footer Widget Column-->
@@ -352,21 +353,19 @@
                                         <div class="footer-widget__column footer-widget__about">
                                             <div class="footer-widget__about-logo">
                                                 <a href="https://pixydrops.com/agriox/index-main.html"><img
-                                                        src="https://pixydrops.com/agriox/assets/images/resources/footer-logo.png"
-                                                        alt=""></a>
+                                                        src="{{ asset('img/logo-no-background.png') }}"
+                                                        alt="" style="width: 200px"></a>
                                             </div>
-                                            <p class="footer-widget__about-text">Lorem ipsum dolor sit amet consect
-                                                etur
-                                                adi pisicing elit sed.</p>
+                                            <p class="footer-widget__about-text">Smart Farmer is dedicated to revolutionizing the agricultural industry. Connect with us to learn more.</p>
                                             <div class="footer-widget__about-contact-box">
                                                 <p class="phone"><a href="tel:123456789"><i
-                                                            class="fas fa-phone-square-alt"></i>+92 666 888 0000</a>
+                                                            class="fas fa-phone-square-alt"></i>+94 7768400 32</a>
                                                 </p>
                                                 <p><a href="mailto:needhelp@company.com"><i
-                                                            class="fa fa-envelope"></i>needhelp@company.com</a></p>
-                                                <p class="text"><i class="fas fa-map-marker-alt"></i>666 road,
-                                                    broklyn
-                                                    street new york</p>
+                                                            class="fa fa-envelope"></i>SmartFarmer@gmail.com
+
+                                                        </a></p>
+                                                <p class="text"><i class="fas fa-map-marker-alt"></i>Colombo</p>
                                             </div>
                                         </div>
                                     </div>
@@ -410,22 +409,22 @@
                                     <div class="col-xl-2 col-lg-6 col-md-6 wow animated fadeInUp"
                                         data-wow-delay="0.5s">
                                         <div class="footer-widget__column footer-widget__explore">
-                                            <h2 class="footer-widget__title">Explore</h2>
+                                            <h2 class="footer-widget__title">Quick Links</h2>
                                             <ul class="footer-widget__explore-list">
                                                 <li class="footer-widget__explore-list-item"><a
-                                                        href="https://pixydrops.com/agriox/projects.html">New
-                                                        Projects</a></li>
+                                                        href="/">Home</a></li>
                                                 <li class="footer-widget__explore-list-item"><a
-                                                        href="https://pixydrops.com/agriox/services.html">Our
-                                                        Services</a></li>
+                                                        href="{{ url('/shop') }}">Shop</a></li>
                                                 <li class="footer-widget__explore-list-item"><a
-                                                        href="https://pixydrops.com/agriox/about.html">About
-                                                        Us</a></li>
-                                                <li class="footer-widget__explore-list-item"><a href="#">Get in
-                                                        Touch</a></li>
+                                                        href="{{ url('/messages') }}">Live Chat</a></li>
+                                                <li class="footer-widget__explore-list-item"><a href="{{ url('/export your vegetables') }}">Export Your
+                                                    Vegetables</a></li>
                                                 <li class="footer-widget__explore-list-item"><a
-                                                        href="#">Volunteers</a>
+                                                        href="{{ url('/vegesell') }}">Sell Vegetables</a>
                                                 </li>
+                                                <li class="footer-widget__explore-list-item"><a
+                                                    href="{{ url('/vegetables') }}">Grow Vegetables</a>
+                                            </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -460,7 +459,7 @@
                         <div class="col-xl-12">
                             <div class="footer-one__bottom-inner">
                                 <div class="footer-one__bottom-text">
-                                    <p>&copy; Copyright 2021 by <a href="#">Layerdrops.com</a></p>
+                                    <p>&copy; Copyright 2024 by <a href="#">Smart Farmer</a></p>
                                 </div>
                                 <div class="footer-one__bottom-social-links">
                                     <ul>

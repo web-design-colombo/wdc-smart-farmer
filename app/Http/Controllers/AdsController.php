@@ -33,8 +33,7 @@ class AdsController extends Controller
             $ads->city = $request->city;
 
             $ads->save();
-            return view('buyersdashboard')->with('status', 'Your ad submission was successful! Please wait for 24 hours for administrative approval of your ad.');
-
+            return redirect()->back()->with('success', 'Your advertisement will be approved within 24 hours.');
     }
 
     // public function index()
@@ -140,8 +139,8 @@ public function indexfrontend()
     $product->meta_description = $request->input('meta_description') ?? 0;
     $product->meta_keywords = $request->input('meta_keywords') ?? 0;
     $product->save();
+    return redirect()->back()->with('success', 'Your Product will be approved within 24 hours.');
 
-    return redirect('vegesell')->with('status', 'Product added successfully');
 }
 
 

@@ -148,8 +148,8 @@
                             <span class="icon-investment"></span>
                         </div>
                         <div class="title">
-                            <h2><span class="odometer" data-count="87600">00</span></h2>
-                            <p>Successfully Project Completed</p>
+                            <h2><span class="odometer" data-count="78998">00</span></h2>
+                            <p>Successfully Smart Farmers</p>
                         </div>
                     </div>
                 </div>
@@ -161,23 +161,21 @@
                 <div class="about-one__content">
                     <div class="sec-title">
                         <div class="icon">
-                            <img src="assets/images/resources/sec-title-icon1.png" alt="" />
+                            <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
                         </div>
                         <span class="sec-title__tagline">Our introduction</span>
-                        <h2 class="sec-title__title">Pure Agriculture and <br>Organic Form</h2>
+                        <h2 class="sec-title__title"> Cultivating Connections , Growing Success</h2>
                     </div>
 
-                    <h2 class="about-one__content-title">We’re Leader in Agriculture Market</h2>
-                    <p class="about-one__content-text">There are many variations of passages of available but
-                        the majority have suffered alteration in some form, by injected humou or randomised
-                        words even slightly believable.</p>
+                    <h2 class="about-one__content-title">Empowering Agriculture Through Innovation and Community</h2>
+                    <p class="about-one__content-text">Smart Farmer is dedicated to revolutionizing the agricultural industry by providing a comprehensive platform that connects farmers, buyers, and agricultural enthusiasts. Our mission is to foster a thriving agricultural community where knowledge, products, and services are easily accessible to everyone.</p>
                     <ul class="about-one__content-list">
                         <li>
                             <div class="icon">
                                 <i class="fa fa-check-circle" aria-hidden="true"></i>
                             </div>
                             <div class="text">
-                                <p>Lorem Ipsum is not simply random text</p>
+                                <p>Marketplace</p>
                             </div>
                         </li>
 
@@ -186,7 +184,7 @@
                                 <i class="fa fa-check-circle" aria-hidden="true"></i>
                             </div>
                             <div class="text">
-                                <p>If you are going to use a passage</p>
+                                <p>Knowledge Hub</p>
                             </div>
                         </li>
 
@@ -195,7 +193,7 @@
                                 <i class="fa fa-check-circle" aria-hidden="true"></i>
                             </div>
                             <div class="text">
-                                <p>Making this the first true generator on the Internet</p>
+                                <p>Community Interaction</p>
                             </div>
                         </li>
 
@@ -204,29 +202,12 @@
                                 <i class="fa fa-check-circle" aria-hidden="true"></i>
                             </div>
                             <div class="text">
-                                <p>Various versions have evolved over the years</p>
+                                <p>Export Services</p>
                             </div>
                         </li>
                     </ul>
 
-                    <div class="about-one__content-video-box">
-                        <div class="about-one__content-video-box-img-wrapper">
-                            <div class="about-one__content-video-box-img">
-                                <img src="assets/images/resources/about-v1-video-img.jpg" alt="" />
-                                <div class="icon">
-                                    <a class="video-popup wow zoomIn animated animated animated"
-                                        data-wow-delay="300ms" data-wow-duration="1500ms" title=" Video"
-                                        href="https://www.youtube.com/watch?v=8DP4NgupAhI">
-                                        <span class="icon-play-button-1"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!-- /.about-one__content-video-box-img-wrapper -->
-                        <div class="about-one__content-video-box-title">
-                            <p>Watch our video</p>
-                            <h3>Tips for Ripening your Fruits</h3>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <!--End About One Content-->
@@ -246,7 +227,7 @@
                     <div class="features-one__single-img">
                         <img src="assets/images/feauters/features-v1-img1.jpg" alt="" />
                         <div class="features-one__single-title text-center">
-                            <h3><a href="#">Best Quality <br> Standards</a></h3>
+                            <h3><a href="#">Comprehensive <span style="color: green"> Marketplace </span> Agricultural Products</a></h3>
                         </div>
                     </div>
                     <a href="services-details.html" class="features-one__single__more">
@@ -262,7 +243,7 @@
                     <div class="features-one__single-img">
                         <img src="assets/images/feauters/features-v1-img2.jpg" alt="" />
                         <div class="features-one__single-title text-center">
-                            <h3><a href="#">Smart Organic <br>Services</a></h3>
+                            <h3><a href="#">Personalized <span style="color: green"> Guidance </span> Support</a></h3>
                         </div>
                     </div>
                     <a href="services-details.html" class="features-one__single__more">
@@ -283,7 +264,7 @@
                         <img src="assets/images/feauters/features-v1-img3.jpg" alt="" />
                     </div>
                     <div class="features-one__single-title text-center">
-                        <h3><a href="#">Agriculture <br>products</a></h3>
+                        <h3><a href="#">Other <br>Services</a></h3>
                     </div>
                     <div class="button">
                         <a href="#" class="thm-btn">Discover More</a>
@@ -319,7 +300,7 @@
                     </div>
                     <div class="video-one__right">
                         <div class="icon wow zoomIn" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <a class="video-popup" title=" Video" href="https://www.youtube.com/watch?v=8DP4NgupAhI">
+                            <a class="video-popup" title=" Video" href="#">
                                 <span class="icon-play-button-1"></span>
                             </a>
                             <span class="border-animation border-1"></span>
@@ -343,7 +324,7 @@
     <div class="container">
         <div class="sec-title text-center">
             <div class="icon">
-                <img src="assets/images/resources/sec-title-icon1.png" alt="">
+                <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
             </div>
             <span class="sec-title__tagline">What we’re doing</span>
             <h2 class="sec-title__title">Services We Offer</h2>
@@ -361,8 +342,8 @@
                         <div class="services-one__single-img-icon">
                             <span class="icon-agriculture"></span>
                         </div>
-                        <h3><a href="services-details.html">Agriculture<br> Products</a></h3>
-                        <p>Lorem ium dolor sit ametad pisicing elit sed simply do ut.</p>
+                        <h3><a href="services-details.html">Marketplace for Agricultural Products</a></h3>
+                        <p>Buy and sell diverse agricultural items </p>
                         <a href="services-details.html" class="read-more-btn"><span
                                 class="icon-right-arrow-2"></span></a>
                     </div>
@@ -382,8 +363,8 @@
                         <div class="services-one__single-img-icon">
                             <span class="icon-harvest"></span>
                         </div>
-                        <h3><a href="services-details.html">Fresh <br>Vegetables</a></h3>
-                        <p>Lorem ium dolor sit ametad pisicing elit sed simply do ut.</p>
+                        <h3><a href="services-details.html">Expert Growing Guides</a></h3>
+                        <p>Learn best practices for growing and harvesting crops effectively.</p>
                         <a href="services-details.html" class="read-more-btn"><span
                                 class="icon-right-arrow-2"></span></a>
                     </div>
@@ -404,8 +385,8 @@
                         <div class="services-one__single-img-icon">
                             <span class="icon-growth"></span>
                         </div>
-                        <h3><a href="services-details.html">Oragnic <br>Products</a></h3>
-                        <p>Lorem ium dolor sit ametad pisicing elit sed simply do ut.</p>
+                        <h3><a href="services-details.html">Community Collaboration</a></h3>
+                        <p>Connect, share, and collaborate with fellow farmers and experts.</p>
                         <a href="services-details.html" class="read-more-btn"><span
                                 class="icon-right-arrow-2"></span></a>
                     </div>
@@ -425,8 +406,8 @@
                         <div class="services-one__single-img-icon">
                             <span class="icon-dairy-products"></span>
                         </div>
-                        <h3><a href="services-details.html">Dairy<br> Products</a></h3>
-                        <p>Lorem ium dolor sit ametad pisicing elit sed simply do ut.</p>
+                        <h3><a href="services-details.html">International Export Services</a></h3>
+                        <p>Connect with global buyers to export farm produce efficiently.</p>
                         <a href="services-details.html" class="read-more-btn"><span
                                 class="icon-right-arrow-2"></span></a>
                     </div>
@@ -447,8 +428,7 @@
             <div class="icon">
                 <img src="assets/images/resources/sec-title-icon1.png" alt="">
             </div>
-            <span class="sec-title__tagline">Recently completed work</span>
-            <h2 class="sec-title__title">Explore Our Projects</h2>
+            <h2 class="sec-title__title">Highlights of Services</h2>
         </div>
         <div class="row">
             <div class="col-xl-12">
@@ -614,10 +594,10 @@
                     <div class="testimonials-one__left-bg"></div>
                     <div class="sec-title">
                         <div class="icon">
-                            <img src="assets/images/resources/sec-title-icon1.png" alt="">
+                            <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
                         </div>
                         <span class="sec-title__tagline">Our testimonials</span>
-                        <h2 class="sec-title__title">What They’re <br>Talking About <br> Agriox</h2>
+                        <h2 class="sec-title__title">What They’re <br>Talking About <br> Smart Farmer</h2>
                     </div>
                 </div>
             </div>
@@ -631,9 +611,91 @@
                             <div class="testimonials-one__carousel owl-carousel owl-theme">
                                 <!--Start Single Testimonials One-->
                                 <div class="testimonials-one__single">
-                                    <p class="testimonials-one__single-text">Lorem ipsum is simply free text
-                                        dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod
-                                        tempor incididunt ut labore et dolore text.</p>
+                                    <p class="testimonials-one__single-text">The growing guides and personalized support have significantly improved my yields. Smart Farmer truly empowers the farming community</p>
+                                    <div class="testimonials-one__single-client-info">
+                                        <div class="testimonials-one__single-client-info-img">
+                                            <div class="testimonials-one__single-client-info-img-inner">
+                                                <img src="assets/images/testimonial/testimonials-v1-img1.jpg"
+                                                    alt="" />
+                                            </div>
+                                            <div class="icon">
+                                                <span class="icon-right-quotation-mark"></span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonials-one__single-client-info-title">
+                                            <h4>Kasun Silva</h4>
+                                            <p>Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Start Single Testimonials One-->
+
+                                <!--Start Single Testimonials One-->
+                                <div class="testimonials-one__single">
+                                    <p class="testimonials-one__single-text">Smart Farmer's marketplace transformed my business. I now reach more buyers and get expert advice on crop management.</p>
+                                    <div class="testimonials-one__single-client-info">
+                                        <div class="testimonials-one__single-client-info-img">
+                                            <div class="testimonials-one__single-client-info-img-inner">
+                                                <img src="assets/images/testimonial/testimonials-v1-img2.jpg"
+                                                    alt="" />
+                                            </div>
+                                            <div class="icon">
+                                                <span class="icon-right-quotation-mark"></span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonials-one__single-client-info-title">
+                                            <h4>Nimal Perera</h4>
+                                            <p>Colombo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Start Single Testimonials One-->
+
+                                <!--Start Single Testimonials One-->
+                                <div class="testimonials-one__single">
+                                    <p class="testimonials-one__single-text">The growing guides and personalized support have significantly improved my yields. Smart Farmer truly empowers the farming community</p>
+                                    <div class="testimonials-one__single-client-info">
+                                        <div class="testimonials-one__single-client-info-img">
+                                            <div class="testimonials-one__single-client-info-img-inner">
+                                                <img src="assets/images/testimonial/testimonials-v1-img1.jpg"
+                                                    alt="" />
+                                            </div>
+                                            <div class="icon">
+                                                <span class="icon-right-quotation-mark"></span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonials-one__single-client-info-title">
+                                            <h4>Lakshmal Silva</h4>
+                                            <p>Bandarawela</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Start Single Testimonials One-->
+
+                                <!--Start Single Testimonials One-->
+                                <div class="testimonials-one__single">
+                                    <p class="testimonials-one__single-text">The growing guides and personalized support have significantly improved my yields. Smart Farmer truly empowers the farming community</p>
+                                    <div class="testimonials-one__single-client-info">
+                                        <div class="testimonials-one__single-client-info-img">
+                                            <div class="testimonials-one__single-client-info-img-inner">
+                                                <img src="assets/images/testimonial/testimonials-v1-img2.jpg"
+                                                    alt="" />
+                                            </div>
+                                            <div class="icon">
+                                                <span class="icon-right-quotation-mark"></span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonials-one__single-client-info-title">
+                                            <h4>Rajith Bnadara</h4>
+                                            <p>Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Start Single Testimonials One-->
+
+                                <!--Start Single Testimonials One-->
+                                <div class="testimonials-one__single">
+                                    <p class="testimonials-one__single-text">The growing guides and personalized support have significantly improved my yields. Smart Farmer truly empowers the farming community</p>
                                     <div class="testimonials-one__single-client-info">
                                         <div class="testimonials-one__single-client-info-img">
                                             <div class="testimonials-one__single-client-info-img-inner">
@@ -654,9 +716,7 @@
 
                                 <!--Start Single Testimonials One-->
                                 <div class="testimonials-one__single">
-                                    <p class="testimonials-one__single-text">Lorem ipsum is simply free text
-                                        dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod
-                                        tempor incididunt ut labore et dolore text.</p>
+                                    <p class="testimonials-one__single-text">The growing guides and personalized support have significantly improved my yields. Smart Farmer truly empowers the farming community</p>
                                     <div class="testimonials-one__single-client-info">
                                         <div class="testimonials-one__single-client-info-img">
                                             <div class="testimonials-one__single-client-info-img-inner">
@@ -668,99 +728,7 @@
                                             </div>
                                         </div>
                                         <div class="testimonials-one__single-client-info-title">
-                                            <h4>Christine Eve</h4>
-                                            <p>Customer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Start Single Testimonials One-->
-
-                                <!--Start Single Testimonials One-->
-                                <div class="testimonials-one__single">
-                                    <p class="testimonials-one__single-text">Lorem ipsum is simply free text
-                                        dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod
-                                        tempor incididunt ut labore et dolore text.</p>
-                                    <div class="testimonials-one__single-client-info">
-                                        <div class="testimonials-one__single-client-info-img">
-                                            <div class="testimonials-one__single-client-info-img-inner">
-                                                <img src="assets/images/testimonial/testimonials-v1-img1.jpg"
-                                                    alt="" />
-                                            </div>
-                                            <div class="icon">
-                                                <span class="icon-right-quotation-mark"></span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonials-one__single-client-info-title">
-                                            <h4>Kevin Martin</h4>
-                                            <p>Customer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Start Single Testimonials One-->
-
-                                <!--Start Single Testimonials One-->
-                                <div class="testimonials-one__single">
-                                    <p class="testimonials-one__single-text">Lorem ipsum is simply free text
-                                        dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod
-                                        tempor incididunt ut labore et dolore text.</p>
-                                    <div class="testimonials-one__single-client-info">
-                                        <div class="testimonials-one__single-client-info-img">
-                                            <div class="testimonials-one__single-client-info-img-inner">
-                                                <img src="assets/images/testimonial/testimonials-v1-img2.jpg"
-                                                    alt="" />
-                                            </div>
-                                            <div class="icon">
-                                                <span class="icon-right-quotation-mark"></span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonials-one__single-client-info-title">
-                                            <h4>Christine Eve</h4>
-                                            <p>Customer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Start Single Testimonials One-->
-
-                                <!--Start Single Testimonials One-->
-                                <div class="testimonials-one__single">
-                                    <p class="testimonials-one__single-text">Lorem ipsum is simply free text
-                                        dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod
-                                        tempor incididunt ut labore et dolore text.</p>
-                                    <div class="testimonials-one__single-client-info">
-                                        <div class="testimonials-one__single-client-info-img">
-                                            <div class="testimonials-one__single-client-info-img-inner">
-                                                <img src="assets/images/testimonial/testimonials-v1-img1.jpg"
-                                                    alt="" />
-                                            </div>
-                                            <div class="icon">
-                                                <span class="icon-right-quotation-mark"></span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonials-one__single-client-info-title">
-                                            <h4>Kevin Martin</h4>
-                                            <p>Customer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Start Single Testimonials One-->
-
-                                <!--Start Single Testimonials One-->
-                                <div class="testimonials-one__single">
-                                    <p class="testimonials-one__single-text">Lorem ipsum is simply free text
-                                        dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod
-                                        tempor incididunt ut labore et dolore text.</p>
-                                    <div class="testimonials-one__single-client-info">
-                                        <div class="testimonials-one__single-client-info-img">
-                                            <div class="testimonials-one__single-client-info-img-inner">
-                                                <img src="assets/images/testimonial/testimonials-v1-img2.jpg"
-                                                    alt="" />
-                                            </div>
-                                            <div class="icon">
-                                                <span class="icon-right-quotation-mark"></span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonials-one__single-client-info-title">
-                                            <h4>Christine Eve</h4>
+                                            <h4>Kasun Bandara</h4>
                                             <p>Customer</p>
                                         </div>
                                     </div>
@@ -791,10 +759,9 @@
             <div class="col-xl-6 providing-quality-one__image-block clearfix">
                 <div class="providing-quality-one__image__line float-bob-y"></div>
                 <!-- /.providing-quality-one__image__line -->
-                <img src="assets/images/resources/providing-quality-v1-img.html" alt="">
+                <img src="assets/images/resources/team-spirit-2447163_1280 (1).jpg" alt="">
                 <div class="providing-quality-one__logo">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/providing-quality.png"
-                        alt="" />
+
                 </div>
             </div>
             <!--End Providing Quality One Img-->
@@ -804,11 +771,11 @@
                 <div class="providing-quality-one__content-box">
                     <div class="sec-title">
                         <div class="icon">
-                            <img src="https://pixydrops.com/agriox/assets/images/resources/sec-title-icon2.png"
-                                alt="">
+                            <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                         </div>
                         <span class="sec-title__tagline">Modern Agriculture</span>
-                        <h2 class="sec-title__title">Providing High Quality <br>Products</h2>
+                        <h2 class="sec-title__title">Join Our Farming Community</h2>
                     </div>
 
                     <ul class="providing-quality-one__content-box-list">
@@ -817,9 +784,8 @@
                                 <span class="icon-agriculture"></span>
                             </div>
                             <div class="text">
-                                <h3>Making Healthy Foods</h3>
-                                <p>There are many variations of pass available but the majority have simply free
-                                    text.</p>
+                                <h3>Connect with Fellow Farmers</h3>
+                                <p>Share experiences, tips, and support with like-minded agricultural enthusiasts.</p>
                             </div>
                         </li>
 
@@ -828,9 +794,8 @@
                                 <span class="icon-farm"></span>
                             </div>
                             <div class="text">
-                                <h3>Our Agriculture Growth</h3>
-                                <p>There are many variations of pass available but the majority have simply free
-                                    text.</p>
+                                <h3>Stay Updated with Latest Trends</h3>
+                                <p>Access up-to-date information on farming techniques and industry developments.</p>
                             </div>
                         </li>
                     </ul>
@@ -850,34 +815,29 @@
     <div class="container">
         <div class="sec-title text-center">
             <div class="icon">
-                <img src="https://pixydrops.com/agriox/assets/images/resources/sec-title-icon1.png" alt="">
+                <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
             </div>
-            <span class="sec-title__tagline">from the blog</span>
-            <h2 class="sec-title__title">News & Articles</h2>
+            <h2 class="sec-title__title">latest news</h2>
         </div>
         <div class="row">
             <!--Start Single Blog One-->
             <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div class="blog-one__single">
                     <div class="blog-one__single-img">
-                        <img src="https://pixydrops.com/agriox/assets/images/blog/blog-v1-img1.jpg" alt="" />
+                        <img src=" assets/images/resources/President-Ranil-Wickremesinghe-5.jpg " alt="" />
                         <div class="date-box">
-                            <span>30 July, 2021</span>
+                            <span>30 July, 2024</span>
                         </div>
                         <div class="overlay-icon">
-                            <a href="https://pixydrops.com/agriox/news-details.html"><span
+                            <a href=""><span
                                     class="icon-plus"></span></a>
                         </div>
                     </div>
 
                     <div class="blog-one__single-content">
-                        <ul class="meta-info">
-                            <li><a href="#"><i class="far fa-user-circle"></i>Jessica</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i>2 Comments</a></li>
-                        </ul>
-                        <h2><a href="https://pixydrops.com/agriox/news-details.html">Why Eco and Walking or Agriculture
-                                for the
-                                Environment?</a></h2>
+
+                        <h2><a href="">Sri Lanka must modernise agriculture, reorient towards growing export markets
+                        </a></h2>
                     </div>
                 </div>
             </div>
@@ -887,24 +847,21 @@
             <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
                 <div class="blog-one__single">
                     <div class="blog-one__single-img">
-                        <img src="https://pixydrops.com/agriox/assets/images/blog/blog-v1-img2.jpg" alt="" />
+                        <img src="assets/images/resources/AP21328565093345 (1).webp" alt="" />
                         <div class="date-box">
-                            <span>30 July, 2021</span>
+                            <span>29 May, 2024</span>
                         </div>
                         <div class="overlay-icon">
-                            <a href="https://pixydrops.com/agriox/news-details.html"><span
+                            <a href=""><span
                                     class="icon-plus"></span></a>
                         </div>
                     </div>
 
                     <div class="blog-one__single-content">
-                        <ul class="meta-info">
-                            <li><a href="#"><i class="far fa-user-circle"></i>Jessica</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i>2 Comments</a></li>
-                        </ul>
-                        <h2><a href="https://pixydrops.com/agriox/news-details.html">Bring to the table win-win
-                                survival strategies to
-                                ensure</a></h2>
+
+                        <h2><a href="">Agriculture is all<br>
+                             about trade-offs
+                        </a></h2>
                     </div>
                 </div>
             </div>
@@ -914,24 +871,19 @@
             <div class="col-xl-4 col-lg-4  wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
                 <div class="blog-one__single">
                     <div class="blog-one__single-img">
-                        <img src="https://pixydrops.com/agriox/assets/images/blog/blog-v1-img3.jpg" alt="" />
+                        <img src="assets/images/resources/big-news-network-slogan.jpg" alt="" />
                         <div class="date-box">
                             <span>30 July, 2021</span>
                         </div>
                         <div class="overlay-icon">
-                            <a href="https://pixydrops.com/agriox/news-details.html"><span
+                            <a href=""><span
                                     class="icon-plus"></span></a>
                         </div>
                     </div>
 
                     <div class="blog-one__single-content">
-                        <ul class="meta-info">
-                            <li><a href="#"><i class="far fa-user-circle"></i>Jessica</a></li>
-                            <li><a href="#"><i class="far fa-comments"></i>2 Comments</a></li>
-                        </ul>
-                        <h2><a href="https://pixydrops.com/agriox/news-details.html">Leverage agile frameworks to
-                                provide a robust
-                                synopsis</a></h2>
+
+                        <h2><a href="">Sri Lanka to use AI to facilitate agriculture modernization</a></h2>
                     </div>
                 </div>
             </div>
@@ -945,29 +897,26 @@
     <div class="container">
         <div class="sec-title text-center">
             <div class="icon">
-                <img src="https://pixydrops.com/agriox/assets/images/resources/sec-title-icon1.png" alt="">
+                <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
             </div>
-            <span class="sec-title__tagline">contact with us</span>
-            <h2 class="sec-title__title">Looking for Agriculture & <br> Organic Eco Services?</h2>
+            <h2 class="sec-title__title">Contact With Us</h2>
         </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="contact-one__content">
-                    <p class="contact-one__text">There are many variations of passages of available but the
-                        majority have suffered alteration in some form, by injected humou or randomised words
-                        even believable.</p>
+                    <p class="contact-one__text">Reach out for personalized guidance, support, and solutions for your agricultural needs</p>
                     <ul class="list-unstyled ml-0 contact-one__lists">
                         <li>
                             <i class="fa fa-check-circle"></i>
-                            Making this the first true generator on the Internet
+                            Experienced agricultural experts ready to assist you.
                         </li>
                         <li>
                             <i class="fa fa-check-circle"></i>
-                            Lorem Ipsum is not simply random text
+                            Prompt responses to your inquiries and concerns.
                         </li>
                         <li>
                             <i class="fa fa-check-circle"></i>
-                            If you are going to use a passage
+                            Connect with us easily via email, phone, or live chat.
                         </li>
                     </ul><!-- /.list-unstyled ml-0 -->
                     <div class="contact-one__images">
@@ -1041,44 +990,44 @@
             }}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide">
-                    <img src="https://pixydrops.com/agriox/assets/images/resources/Company-Logos-v1-logo1.png"
-                        alt="">
+                    <img src="{{ asset('img/logo-no-background.png') }}" alt="" style="width: 156px" />
+
                 </div><!-- /.swiper-slide -->
             </div>
         </div>
@@ -1087,32 +1036,6 @@
 <!--Company Logos One End-->
 
 
-<!--Cta One Start-->
-<section class="cta-one"
-    style="background-image: url(https://pixydrops.com/agriox/assets/images/backgrounds/cta-v1-bg.jpg);">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="cta-one__wrapper">
-                    <div class="cta-one__left">
-                        <div class="cta-one__left-icon">
-                            <span class="icon-farm"></span>
-                        </div>
-                        <div class="cta-one__left-title">
-                            <h2>We’re Leader in Agriculture Market</h2>
-                        </div>
-                    </div>
-                    <div class="cta-one__right">
-                        <div class="cta-one__right-btn">
-                            <a href="#" class="thm-btn">Discover More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Cta One End-->
 
 
 
@@ -1121,5 +1044,4 @@
 
 
 
-{{-- <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow-2"></i></a> --}}
 </x-site-layout>

@@ -5,7 +5,7 @@
         <div class="container">
             <div class="page-header__inner text-center clearfix">
                 <ul class="thm-breadcrumb">
-                    <li><a href="https://pixydrops.com/agriox/index-main.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                 </ul>
                 <h2>{{ $Vegetable->name }}</h2>
             </div>
@@ -25,12 +25,12 @@
                             <div class="services-details__sidebar-single-services wow fadeInUp animated"
                                 data-wow-delay="0.1s" data-wow-duration="1200m">
                                 <div class="title">
-                                    <h3>All Services</h3>
+                                    <h3>All Vegetables</h3>
                                 </div>
                                 <ul>
                                     @foreach ($Vegetables ?? [] as $Category)
                                         @if (is_object($Category))
-                                            <li><a href="{{ url('view-category/' . $Category->slug) }}">{{ $Category->name }}<i
+                                            <li><a href="{{ url('morevege/' . $Category->id) }}">{{ $Category->name }}<i
                                                         class="fa fa-angle-right"></i></a></li>
                                         @endif
                                     @endforeach
@@ -72,7 +72,7 @@
                     <div class="services-details__content">
                         <div class="services-details__content-img">
                             <img src="{{ asset('uploads/ss/' . $Vegetable->image) }}" alt="Vegetable Image"
-                                style="height:400px; width:780px">
+                                style="height:200px; width:300px">
                         </div>
                         <div class="services-details__content-icon">
                             <span class="icon-harvest"></span>

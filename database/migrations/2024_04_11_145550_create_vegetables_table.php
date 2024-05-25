@@ -28,7 +28,7 @@ return new class extends Migration
 
             $table->text('Seed_requirement');
 
-            $table->string('Nursery_Management');
+            $table->string('Nursery_Management')->length(2000)->nullable();
 
             $table->text('Land_preparation');
 

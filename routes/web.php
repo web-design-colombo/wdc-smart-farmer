@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\models\user;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\StripeController;
 
 use App\Http\Controllers\ProductController;
 
@@ -110,6 +111,26 @@ Route::put('adsupdatepro/{id}', 'App\Http\Controllers\AdsController@updatepro');
 
 Route::get('orderhistoraay', 'App\Http\Controllers\OrderController@sellhistory');
 
+//users
+Route::get('users', 'App\Http\Controllers\UserController@users');
+Route::get('view-user/{id}', 'App\Http\Controllers\UserController@viewUser');
+Route::get('edit-user/{id}', 'App\Http\Controllers\UserController@editUser');
+Route::get('edituser/{id}', 'App\Http\Controllers\UserController@updateUser');
+//profile
+Route::put('profile/{id}', 'App\Http\Controllers\UserController@profileUpdate');
+
+Route::delete('deleteuse/{id}', 'App\Http\Controllers\UserController@deleteUser');
+//add new user
+Route::get('adduser', 'App\Http\Controllers\UserController@create');
+//profileadd
+Route::post('profileadd', 'App\Http\Controllers\UserController@store');
+
+
+
+
+//dashboard
+Route::get('dashboard', 'App\Http\Controllers\DashboardController@view');
+
 });
 
 
@@ -152,6 +173,10 @@ Route::GET('/addvegetable', 'App\Http\Controllers\VegetableController@create');
 Route::get('vegetables', 'App\Http\Controllers\VegetableController@indexfront');
 
 Route::get('vegetablessss', 'App\Http\Controllers\VegetableController@index');
+Route::get('vealll', 'App\Http\Controllers\VegetableController@indexall');
+Route::delete('delet/{id}', 'App\Http\Controllers\VegetableController@delete');
+//editvege
+Route::get('editvege/{id}', 'App\Http\Controllers\VegetableController@edit');
 
 Route::get('morevege/{id}', 'App\Http\Controllers\VegetableController@show');
 
@@ -239,4 +264,7 @@ Route::get('sortorders', 'App\Http\Controllers\OrderController@sortorders');
 Route::get('/myroute', [HomeController::class, 'indexnew']);
 
 //stripe.payment
-Route::get('stripe/payment/{id}/{total}', 'App\Http\Controllers\OrderController@stripe')->name('stripe.payment');
+
+Route::get('payment/{id}/{total}', [StripeController::class, 'session'])->name('stripe.payment');
+Route::get('success', [StripeController::class, 'success'])->name('success');
+Route::get('checkout', [StripeController::class, 'checkout'])->name('checkout');

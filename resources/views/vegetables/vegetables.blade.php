@@ -8,9 +8,9 @@
             <div class="page-header__inner text-center clearfix">
                 <ul class="thm-breadcrumb">
                     <li><a href="https://pixydrops.com/agriox/index-main.html">Home</a></li>
-                    <li>Shop</li>
+                    <li>Vegetables</li>
                 </ul>
-                <h2>Shop</h2>
+                <h2>Vegetables</h2>
             </div>
         </div>
     </section>
@@ -37,7 +37,7 @@
                                 @foreach ($Vegetables ?? [] as $Category)
                                     @if (is_object($Category))
                                         <li><a
-                                                href="{{ url('view-category/' . $Category->slug) }}">{{ $Category->name }}</a>
+                                                href="{{ url('morevege/' . $Category->id) }}">{{ $Category->name }}</a>
                                         </li>
                                     @endif
                                 @endforeach

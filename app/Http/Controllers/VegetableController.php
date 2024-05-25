@@ -14,6 +14,13 @@ class VegetableController extends Controller
         return view('admin.vegetables.create', compact('Vegetables'));
 
     }
+    //indexall
+    public function indexall()
+    {
+        $Vegetables = Vegetable::all();
+        return view('admin.vegetables.index', compact('Vegetables'));
+
+    }
     // indexfront
     public function indexfront()
     {
@@ -126,4 +133,29 @@ class VegetableController extends Controller
 
         return view('vegetables.viewdetails', compact('Vegetable', 'Vegetables'));
     }
+
+    //delete
+    public function delete($id)
+    {
+        $Vegetable = Vegetable::find($id);
+        if (!$Vegetable) {
+            return redirect()->back()->with('error', 'Vegetable not found.');
+        }
+
+        $Vegetable->delete();
+        return redirect()->back()->with('status', 'Vegetable deleted successfully.');
+    }
+
+    //edit vegetbls
+    public function edit($id)
+    {
+        $Vegetable = Vegetable::find($id);
+        if (!$Vegetable) {
+            return redirect()->back()->with('error', 'Vegetable not found.');
+        }
+
+        return view('admin.vegetables.edit', compact('Vegetable'));
+    }
+
+
 }

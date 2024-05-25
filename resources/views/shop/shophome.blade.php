@@ -125,7 +125,7 @@
                                     <span class="shop-one__sale">sale</span><!-- /.shop-one__sale -->
 
                                     <img src="{{ asset('uploads/product/' . $Product->image) }}" alt=""
-                                        style="height: 290px">
+                                        style="height: 280px; width: 270">
                                     <a class="shop-one__cart" href="{{ url('more/' . $Product->slug) }}"><i
                                             class=" fa fa-eye"></i></a>
                                 </div><!-- /.shop-one__image -->
@@ -177,12 +177,12 @@
                                     <p class="shop-one__price">
                                         @if ($Product->original_price > 0)
                                             <span
-                                                style="color: red; text-decoration: line-through;">Rs.{{ $Product->original_price }}
+                                                style="text-decoration: line-through;">Rs.{{ $Product->original_price }}
                                             </span>
-                                            <span style="font-weight: bold; margin-left: 10px;">Rs.
+                                            <span style="font-weight: bold; margin-left: 10px; font-size: 20px; color: red; ">Rs.
                                                 {{ $Product->selling_price }}</span>
                                         @else
-                                            <span style="font-weight: bold;">Rs.
+                                            <span style="font-weight: bold; margin-left: 10px; font-size: 20px; color: red; ">Rs.
                                                 {{ $Product->selling_price }}</span>
                                         @endif
                                     </p>

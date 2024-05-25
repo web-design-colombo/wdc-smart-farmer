@@ -15,7 +15,7 @@
     <meta name="author" content="Themesberg">
     <meta name="generator" content="Hugo 0.58.2">
 
-    <title>Tailwind CSS Products Page - Flowbite</title>
+    <title>Smart Farmer Admin</title>
 
     <link rel="canonical" href="index.html">
 
@@ -449,7 +449,7 @@
                             </div>
                             <ul class="py-1" role="none">
                                 <li>
-                                    <a href="#"
+                                    <a href="dashboard"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                                         role="menuitem">Dashboard</a>
                                 </li>
@@ -512,7 +512,7 @@
                                 </form>
                             </li>
                             <li>
-                                <a href="../../index.html"
+                                <a href="dashboard"
                                     class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                     <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -557,7 +557,7 @@
                             </li>
 
                             <li>
-                                <a href="../../index.html"
+                                <a href="{{ url('users')}}"
                                     class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                     <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
                                         stroke="currentColor">
@@ -627,7 +627,45 @@
                                 </ul>
                             </li>
 
-
+                            <li>
+                                <button type="button"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                    aria-controls="x" aria-expanded="false" data-collapse-toggle="x">
+                                    <svg class="h-6 w-6 text-gray-500" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <circle cx="5" cy="17" r="2" />
+                                        <circle cx="14" cy="17" r="2" />
+                                        <line x1="7" y1="17" x2="12" y2="17" />
+                                        <path d="M3 17v-6h13v6" />
+                                        <path d="M5 11v-4h4" />
+                                        <path d="M9 11v-6h4l3 6" />
+                                        <path d="M22 15h-3v-10" />
+                                        <line x1="16" y1="13" x2="19" y2="13" />
+                                    </svg>
+                                    <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                                        data-sidebar-toggle-item>Vegetables</span>
+                                    <svg data-sidebar-toggle-item class="w-6 h-6" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="x" class="hidden space-y-2 py-2">
+                                    <li>
+                                        <a href="{{ url('vegetablessss') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700 bg-gray-100 dark:bg-gray-700">Add
+                                            Vegetables</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('vealll') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700">All
+                                            Vegetables</a>
+                                    </li>
+                                </ul>
+                            </li>
 
                             <li>
                                 <button type="button"
@@ -876,7 +914,7 @@
         @endif
         <script src="shopassets/js/theme.js"></script>
 
-        
+
 
 </body>
 

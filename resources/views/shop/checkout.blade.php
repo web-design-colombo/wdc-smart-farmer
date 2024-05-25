@@ -151,22 +151,25 @@
                     <div class="col-lg-6">
                         <div class="text-right d-flex justify-content-end">
                             <button type="submit"
-                            value="cash_on_delivery"
-                            name="payment_type"
-                            class="thm-btn">Place Your Order Cash on Delivery</button>
+                                    value="cash_on_delivery"
+                                    name="payment_type"
+                                    class="thm-btn">
+                                <i class="fas fa-money-bill-wave" style="color: green; width: 50px"></i> Place Your Order<span style="color: red; font-weight: bold"> Cash on Delivery</span>
+                            </button>
                         </div>
                         <br>
                         <div class="text-right d-flex justify-content-end">
-
                             <button type="submit"
-                            value="bank_trasnfer"
-                            name="payment_type"
-                            id="bankTransferBtn" class="thm-btn"
-                                style="background-color: rgb(184, 239, 184); width: 417px">Place Your Order Bank
-                                Transfer</button>
-
+                                    value="bank_transfer"
+                                    name="payment_type"
+                                    id="bankTransferBtn"
+                                    class="thm-btn"
+                                    style="background-color: rgb(184, 239, 184); width: 470px">
+                                <i class="fas fa-university" style="color: blue; width: 50px"></i> Place Your Order <span style="color: red; font-weight: bold"> Bank Transfer</span>
+                            </button>
                         </div><!-- /.text-right -->
                     </div>
+
 
                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
