@@ -44,11 +44,17 @@
                                     @endfor
 
 
-                                </div><!-- /.product-details__content__rating__star -->
+                                </div>
+                                <!-- /.product-details__content__rating__star -->
                                 <div class="product-details__content__rating__count">{{ $rating->count() }} reviews &
                                     {{ number_format($rating_value) }} Rating</div>
                                 <!-- /.product-details__content__rating__count -->
                             </div><!-- /.product-details__content__rating -->
+
+{{-- show out of stock (quntity) --}}
+
+
+
                             <div class="product-details__content__text">
                                 <p>{{ $product->small_description }}</p>
                             </div><!-- /.product-details__content__text -->
@@ -56,6 +62,13 @@
 
                             <form action="{{ route('addToCart', $product->id) }}" method="POST">
                                 @csrf
+
+                                @if ($product->qty == 0)
+                                <div class="product-details__content__availability" style="color: red; font-weight: bold;">Out of Stock</div>
+                            @else
+                                <div class="product-details__content__availability" style="color: rgb(102, 190, 102); font-weight: bold;">In Stock </div>
+                            @endif
+
                                 <div class="product-details__content__quantity">
                                     <div class="product-details__content__quantity__text">Choose Quantity</div>
                                     <!-- /.product-details__content__quantity__text -->

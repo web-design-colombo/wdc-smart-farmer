@@ -78,4 +78,13 @@ class OrderController extends Controller
     }
 
 
+
+    //stripe
+    public function stripe($id, $total)
+    {
+        // Use the order ID and total to process the payment
+        // For now, we're just passing these values to the view
+        return view('test', ['orderId' => $id, 'orderTotal' => $total]);
+    }
+
 }

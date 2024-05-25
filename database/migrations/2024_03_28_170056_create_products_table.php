@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('tax');
             $table->tinyInteger('status')->default(0);;
             $table->tinyInteger('trending');
+            $table->tinyInteger('sale')->default(0);;
             $table->string('meta_title');
             $table->text('meta_description');
             $table->text('meta_keywords');

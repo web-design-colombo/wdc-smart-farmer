@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 //Method Illuminate\Routing\Redirector
 use Illuminate\Routing\Redirector;
+use App\Models\Product;
 class CategoriController extends Controller
 {
     //create index,add,delete,edit,update function
     public function index()
 {
+    $product = Product::all();
+
     $categories = Category::all();
-    return view('admin.productcategory.create', compact('categories'));
+    return view('admin.productcategory.create', compact('categories','product'));
 }
 
 
@@ -88,7 +91,9 @@ class CategoriController extends Controller
 
     public function show()
     {
+        $product = Product::all();
+
         $category = Category::all();
-        return view('admin.productcategory.index', ['category' => $category]);
+        return view('admin.productcategory.index', ['category' => $category] , ['product' => $product]);
     }
 }

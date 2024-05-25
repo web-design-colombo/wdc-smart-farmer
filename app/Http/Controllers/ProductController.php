@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Cart;
+
+use App\Models\User;
+use Illuminate\Notifications\Notification;
+
 class ProductController extends Controller
 {
     public function index()
@@ -29,6 +35,7 @@ class ProductController extends Controller
 
     public function add(Request $request)
     {
+        $user = User::all();
         $product = new Product();
 
         if($request->hasFile('image')){
@@ -49,15 +56,17 @@ class ProductController extends Controller
         $product->tax = $request->input('tax');
 
         // Check if 'qty' field is provided, otherwise set a default value
-        $product->qty = $request->input('qty') ?? 0;
+        $product->qty = $request->input('qty_id') ?? 0;
 
         $product->status = $request->input('status') == true ? 1 : 0;
         $product->trending = $request->input('trending') == true ? 1 : 0;
         $product->meta_title = $request->input('meta_title');
         $product->meta_description = $request->input('meta_description');
         $product->meta_keywords = $request->input('meta_keywords');
+        //sale
+        $product->sale = $request->input('sale') == true ? 1 : 0;
         $product->save();
-
+        //send notification
         return redirect('product')->with('status', 'Product added successfully');
     }
 

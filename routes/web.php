@@ -236,3 +236,7 @@ Route::get('cate', 'App\Http\Controllers\ProductController@productAjaxx');
 //admin  sorting
 Route::get('sortorders', 'App\Http\Controllers\OrderController@sortorders');
 
+Route::get('/myroute', [HomeController::class, 'indexnew']);
+
+//stripe.payment
+Route::get('stripe/payment/{id}/{total}', 'App\Http\Controllers\OrderController@stripe')->name('stripe.payment');

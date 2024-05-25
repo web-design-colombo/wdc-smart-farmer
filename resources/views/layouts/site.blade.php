@@ -226,12 +226,12 @@
                             </nav>
 
                             <div class="main-header--one__bottom-middel">
-                                <div class="logo">
+                                <div class="logo" style="margin-right: 34px">
                                     <a href="index-main.html">
                                         <img class="dark-logo" src="{{ asset('img/logo-no-background.png') }}"
-                                            alt="" style="width: 190px">
+                                            alt="" style="width: 200px">
                                         <img class="light-logo" src="{{ asset('img/logo-no-background.png') }}"
-                                            alt="" style="width: 190px">
+                                            alt="" style="width: 200px">
                                     </a>
                                 </div>
                             </div>
@@ -239,8 +239,8 @@
                             <div class="main-header--one__bottom-right clearfix">
                                 <div class="search-cart">
                                     <a href="{{ url('cart') }}" class="relative inline-block"
-                                        style="margin-right: 4px; ">
-                                        <span class="icon-shopping-cart text-2xl" style="margin-right: 8px"></span>
+                                         >
+                                        <span class="icon-shopping-cart text-2xl" style="margin-right: 28px"></span>
                                         <span
                                             class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count"
                                             style="background-color: green; "></span>
@@ -251,10 +251,10 @@
                                             <a href="{{ url('/user/profile') }}" style="width: 60px; ">
                                                 <img src="{{ Auth::user()->profile_photo_url }}"
                                                     alt="{{ Auth::user()->name }}" class="rounded-full"
-                                                    style="margin-left: 8px; margin-bottom:-8px">
+                                                    style=" margin-bottom:-8px">
                                             </a>
 
-                                            <a style="margin-right: -10px">
+                                            <a >
                                                 <form method="post" action="{{ route('logout') }}" x-data>
                                                     @csrf
                                                     <button type="submit" @click.prevent="$root.submit();"
@@ -265,7 +265,7 @@
                                             </a>
                                         @else
                                             <a href="{{ route('login') }}"
-                                                style="margin-left: 10px;  margin-right: 18px; ">
+                                                style="  margin-right: 22px; ">
                                                 <i class="fas fa-user"></i>
                                             </a>
 
@@ -289,8 +289,13 @@
                                             style="background-color: red; ">4</span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="notificationDropdown">
-                                        <a id="xx" class="dropdown-item" href="#">Notification 2</a>
-                                        <a id="xx" class="dropdown-item" href="#">Notification 3</a>
+                                        <a id="xx" class="dropdown-item"
+                                            href="#"></a>
+
+                                        <a id="xx" class="dropdown-item" href="#">No Record fou</a>
+
+
+
                                         <!-- Add more notifications as needed -->
                                     </div>
 

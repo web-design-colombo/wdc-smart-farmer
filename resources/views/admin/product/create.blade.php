@@ -30,7 +30,7 @@
             cursor: pointer;
         }
 
-        
+
     </style>
 
 
@@ -184,6 +184,16 @@
                                 <label for="tranding" class="block text-gray-700 text-sm font-bold mb-2">Tranding</label>
                                 <input type="checkbox" id="tranding" name="tranding" class="mr-2 leading-tight">
                             </div>
+                        </div>
+                        <div class="mb-4 flex">
+                            <div class="w-1/2 mr-2">
+                                <label for="status" class="block text-gray-700 text-sm font-bold mb-2">Sale</label>
+                                <select id="status" name="sale" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                                    <option value="0">Normal</option>
+                                    <option value="1">Sale</option>
+                                </select>
+                            </div>
+
                         </div>
                         <div class="mb-4 flex">
                             <div class="w-1/2 mr-2">

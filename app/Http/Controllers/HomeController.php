@@ -4,28 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 class HomeController extends Controller
 {
     //roles
 
     public function index(){
+        $user = Auth::user();
         $role=Auth::user()->role->value;
 
         if ($role == 1){
-            return view("admin.index");
+            $user = User::find(1);
+            return view('admin.index' , compact('user'));
         }
 
         if ($role== 2){
-            return view("welcome");
+            $user = User::find(1);
+            return view('welcome', compact('user'));
         }
         if ($role== 3){
-            return view("welcome");
+            $user = User::find(1);
+
+            return view('welcome', compact('user'));
         }
 
         else {
-            return view('welcome');
+            $user = User::find(1);
+
+            return view('welcome', compact('user'));
           }
 
+    }
+
+
+    public function indexnew()
+    {
+        // Fetch data from the model
+        $users = User::all();
+
+        // Pass the data to the view
+        return view('layouts.site', compact('users'));
     }
 
 }

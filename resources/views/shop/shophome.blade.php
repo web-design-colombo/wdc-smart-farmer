@@ -100,7 +100,8 @@
                             @csrf
                             <div class="col-lg-12 shop-one__sorter">
                                 <p class="shop-one__product-count">Showing 1–9 of 12 results</p>
-                                <select class="shop-one__product-sorter" name="sort" id="sort" onchange="this.form.submit()">
+                                <select class="shop-one__product-sorter" name="sort" id="sort"
+                                    onchange="this.form.submit()">
                                     <option value="" disabled selected>Sort By</option>
                                     <option value="best_selling">Best Selling</option>
                                     <option value="lowest_price">Lowest Price</option>
@@ -116,32 +117,95 @@
                     </div><!-- /.row -->
                     <div class="row">
                         @foreach ($product as $Product)
-                            <div class="col-md-6 col-lg-4">
-                                <div class="shop-one__item">
-                                    <div class="shop-one__image">
-                                        <img src="{{ asset('uploads/product/' . $Product->image) }}" alt=""
-                                            style="height: 290px">
-                                        <a class="shop-one__cart" href="{{ url('more/' . $Product->slug) }}"><i
-                                                class=" fa fa-eye"></i></a>
-                                    </div><!-- /.shop-one__image -->
-                                    <div class="shop-one__content text-center">
-                                        <h3 class="shop-one__title"><a
-                                                href="{{ url('more/' . $Product->slug) }}">{{ $Product->name }}</a>
-                                        </h3>
-                                        <p class="shop-one__price">Rs.{{ $Product->selling_price }}</p>
-                                        <!-- /.shop-one__price -->
-                                        <div class="shop-one__rating">
-                                            {{-- @for ($i = 1; $i <= $rating_value; $i++)
-                                                <i class="fa fa-star"></i>
-                                            @endfor
-                                            @for ($j = $rating_value; $j < 5; $j++)
-                                                <i class='fas fa-star' style='color: black'></i>
-                                            @endfor --}}
 
-                                        </div><!-- /.shop-one__rating -->
-                                    </div><!-- /.shop-one__content -->
-                                </div><!-- /.shop-one__item -->
-                            </div><!-- /.col-md-6 col-lg-3 -->
+                        @if ($Product->sale == 1)
+                        <div class="col-md-6 col-lg-4">
+                            <div class="shop-one__item">
+                                <div class="shop-one__image">
+                                    <span class="shop-one__sale">sale</span><!-- /.shop-one__sale -->
+
+                                    <img src="{{ asset('uploads/product/' . $Product->image) }}" alt=""
+                                        style="height: 290px">
+                                    <a class="shop-one__cart" href="{{ url('more/' . $Product->slug) }}"><i
+                                            class=" fa fa-eye"></i></a>
+                                </div><!-- /.shop-one__image -->
+                                <div class="shop-one__content text-center">
+                                    <h3 class="shop-one__title"><a
+                                            href="{{ url('more/' . $Product->slug) }}">{{ $Product->name }}</a>
+                                    </h3>
+
+                                    <p class="shop-one__price">
+                                        @if ($Product->original_price > 0)
+                                            <span
+                                                style="text-decoration: line-through;">Rs.{{ $Product->original_price }}
+                                            </span>
+                                            <span style="font-weight: bold; margin-left: 10px; font-size: 20px; color: red; ">Rs.
+                                                {{ $Product->selling_price }}</span>
+                                        @else
+                                            <span style="font-weight: bold; margin-left: 10px; font-size: 20px; color: red; ">Rs.
+                                                {{ $Product->selling_price }}</span>
+                                        @endif
+                                    </p>
+                                    <!-- /.shop-one__price -->
+                                    <div class="shop-one__rating">
+                                        {{-- @for ($i = 1; $i <= $rating_value; $i++)
+                                            <i class="fa fa-star"></i>
+                                        @endfor
+                                        @for ($j = $rating_value; $j < 5; $j++)
+                                            <i class='fas fa-star' style='color: black'></i>
+                                        @endfor --}}
+
+                                    </div><!-- /.shop-one__rating -->
+                                </div><!-- /.shop-one__content -->
+                            </div><!-- /.shop-one__item -->
+                        </div>
+                        @else
+                        <div class="col-md-6 col-lg-4">
+                            <div class="shop-one__item">
+                                <div class="shop-one__image">
+
+                                    <img src="{{ asset('uploads/product/' . $Product->image) }}" alt=""
+                                        style="height: 290px">
+                                    <a class="shop-one__cart" href="{{ url('more/' . $Product->slug) }}"><i
+                                            class=" fa fa-eye"></i></a>
+                                </div><!-- /.shop-one__image -->
+                                <div class="shop-one__content text-center">
+                                    <h3 class="shop-one__title"><a
+                                            href="{{ url('more/' . $Product->slug) }}">{{ $Product->name }}</a>
+                                    </h3>
+
+                                    <p class="shop-one__price">
+                                        @if ($Product->original_price > 0)
+                                            <span
+                                                style="color: red; text-decoration: line-through;">Rs.{{ $Product->original_price }}
+                                            </span>
+                                            <span style="font-weight: bold; margin-left: 10px;">Rs.
+                                                {{ $Product->selling_price }}</span>
+                                        @else
+                                            <span style="font-weight: bold;">Rs.
+                                                {{ $Product->selling_price }}</span>
+                                        @endif
+                                    </p>
+                                    <!-- /.shop-one__price -->
+                                    <div class="shop-one__rating">
+                                        {{-- @for ($i = 1; $i <= $rating_value; $i++)
+                                            <i class="fa fa-star"></i>
+                                        @endfor
+                                        @for ($j = $rating_value; $j < 5; $j++)
+                                            <i class='fas fa-star' style='color: black'></i>
+                                        @endfor --}}
+
+                                    </div><!-- /.shop-one__rating -->
+                                </div><!-- /.shop-one__content -->
+                            </div><!-- /.shop-one__item -->
+                        </div>
+                        @endif
+
+
+
+
+
+                           <!-- /.col-md-6 col-lg-3 -->
                         @endforeach
                         {{ $product->links() }}
 
