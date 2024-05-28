@@ -8,4 +8,5 @@ enum Role: int {
     case buyer = 2;
     case farmer = 3;
 
+
 }

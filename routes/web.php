@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/redirects',[HomeController::class,'index']);;
+Route::get('/redirects',[HomeController::class,'index']);
 
 
 Route::middleware([
@@ -34,7 +34,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return redirect('/redirects');
+        return redirect('redirects');
     })->name('dashboard');
 });
 
@@ -47,9 +47,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], func
     });
 
 
-    Route::get('/admin', function () {
-        return view('admin.index');
-    });
+
+    Route::get('/admin', 'App\Http\Controllers\HomeController@index');
+
     Route::get('category', function () {
         return view('admin.productcategory.create');
     });
@@ -129,7 +129,7 @@ Route::post('profileadd', 'App\Http\Controllers\UserController@store');
 
 
 //dashboard
-Route::get('dashboard', 'App\Http\Controllers\DashboardController@view');
+Route::get('/admindash', 'App\Http\Controllers\DashboardController@view');
 
 });
 

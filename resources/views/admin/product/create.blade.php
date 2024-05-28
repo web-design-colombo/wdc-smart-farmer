@@ -1,42 +1,10 @@
 <x-admin-layout>
-    <style>
-        #aa {
-            margin-left: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            margin-right: 10px
-        }
-
-        input[type=textt],
-        select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type=submit] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-
-    </style>
 
 
 
-    <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900" style="padding-top: 90px">
-        <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
+
+    <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900"  >
+        <div id="main-content" class="relative w-full h-full overflow-y-auto  lg:ml-64 dark:bg-gray-900" >
             <main>
                 <div
                     class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
@@ -56,18 +24,7 @@
                                             Home
                                         </a>
                                     </li>
-                                    <li>
-                                        <div class="flex items-center">
-                                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                            <a href="#"
-                                                class="ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white">E-commerce</a>
-                                        </div>
-                                    </li>
+                                    
                                     <li>
                                         <div class="flex items-center">
                                             <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
@@ -89,13 +46,13 @@
 
                     </div>
                 </div>
-                <div id="aa">
+                <div style="margin-left: -40px">
                     <form action="{{ url('product-add') }}" method="POST" enctype="multipart/form-data" class="bg-white rounded-lg overflow-hidden shadow-md px-8 pt-6 pb-8 mb-4 ml-10 mr-10">
                         @csrf
                         <div class="mb-4 flex">
                             <div class="w-1/2 mr-2">
                                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Enter category name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
+                                <input type="text" id="name" name="name" placeholder="Enter Product name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
                             </div>
                             <div class="w-1/2 ml-2">
                                 <label for="small_description" class="block text-gray-700 text-sm font-bold mb-2">Small Description</label>
@@ -104,7 +61,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-                            <textarea id="description" name="description" rows="3" placeholder="Enter category description" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
+                            <textarea id="description" name="description" rows="3" placeholder="Enter Product description" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"></textarea>
                         </div>
                         <div class="mb-4 flex">
                             <div class="w-1/2 mr-2">
@@ -155,7 +112,7 @@
 
                             <div class="w-1/2 ml-2" style="margin-top: 10px">
                                 <select class="form-select mt-4 pt-2" name="cate_id" aria-label="Default select example">
-                                    <option value="">Select a Category</option>
+                                    <option value="">Select a Product</option>
                                     @foreach($category as $Category)
                                         <option value="{{ $Category->id }}">{{ $Category->name }}</option>
                                     @endforeach
@@ -209,7 +166,14 @@
                             <label for="meta_keywords" class="block text-gray-700 text-sm font-bold mb-2">Meta Keywords</label>
                             <input type="text" id="meta_keywords" name="meta_keywords" placeholder="Enter meta keywords" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50">
                         </div>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" style="width: 100%;
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 14px 20px;
+                        margin: 8px 0;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;">
 
                     </form>
                 </div>

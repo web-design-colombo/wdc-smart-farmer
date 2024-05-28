@@ -167,6 +167,8 @@
                                             <li class="dropdown">
                                                 <a>Services</a>
                                                 <ul>
+                                                    <li><a href="{{ url('/vegesell') }}">Today Price</a></li>
+
                                                     <li><a href="{{ url('/ads') }}">Look At The Vegetables Buyers</a>
                                                     </li>
                                                     <li><a href="{{ url('/vegesell') }}">Sell Vegetables</a></li>
@@ -188,9 +190,9 @@
 
                                                     <li><a href="{{ url('/vegetables') }}">Grow Vegetables </a>
                                                     </li>
-                                                    <li><a href="farmers.html">Farmers</a></li>
-                                                    <li><a href="projects-details.html">Projects Details</a></li>
-                                                    <li><a href="faq.html">Faq</a></li>
+                                                    <li><a href="#">Farmers</a></li>
+                                                    <li><a href="#">Projects Details</a></li>
+                                                    <li><a href="#">Faq</a></li>
                                                 </ul>
                                             </li>
                                             <li class="dropdown">
@@ -352,7 +354,7 @@
                                         data-wow-delay="0.1s">
                                         <div class="footer-widget__column footer-widget__about">
                                             <div class="footer-widget__about-logo">
-                                                <a href="https://pixydrops.com/agriox/index-main.html"><img
+                                                <a href="htindex-main.htmltps://pixydrops.com/agriox/"><img
                                                         src="{{ asset('img/logo-no-background.png') }}"
                                                         alt="" style="width: 200px"></a>
                                             </div>

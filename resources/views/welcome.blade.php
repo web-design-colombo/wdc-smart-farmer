@@ -425,9 +425,7 @@
 <section class="projects-one">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <div class="icon">
-                <img src="assets/images/resources/sec-title-icon1.png" alt="">
-            </div>
+            
             <h2 class="sec-title__title">Highlights of Services</h2>
         </div>
         <div class="row">
