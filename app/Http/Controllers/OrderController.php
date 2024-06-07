@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -86,5 +87,11 @@ class OrderController extends Controller
         // For now, we're just passing these values to the view
         return view('test', ['orderId' => $id, 'orderTotal' => $total]);
     }
-
+    public function destroy($id)
+    {
+        $order = Order::findOrFail($id);
+        $order->delete();
+        $orders = Order::where('user_id', Auth::id())->get();
+        return view('shop.orders.index', compact('orders'));
+    }
 }

@@ -91,8 +91,8 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    <a href="../../index.html" class="flex ml-2 md:mr-24">
-                        <img src="{{ asset('img/logo-no-background.png') }}" class="h-8 mr-3" style="width: 150px"
+                    <a href="/">
+                        <img src="{{ asset('img/logo-no-background.png') }}" class="h-8 mr-3" style="width: 150px; margin-right: 60px; margin-left: 20px"
                             alt="FlowBite Logo" />
                     </a>
                     <form action="#" method="GET" class="hidden lg:block lg:pl-3.5">
@@ -113,24 +113,8 @@
                     </form>
                 </div>
                 <div class="flex items-center">
-                    <div class="hidden mr-3 -mb-1 sm:block">
-                        <a class="github-button" href="https://github.com/themesberg/flowbite-admin-dashboard"
-                            data-color-scheme="no-preference: dark; light: light; dark: light;"
-                            data-icon="octicon-star" data-size="large" data-show-count="true"
-                            aria-label="Star themesberg/flowbite-admin-dashboard on GitHub">Star</a>
-                    </div>
 
-                    <button id="toggleSidebarMobileSearch" type="button"
-                        class="p-2 text-gray-500 rounded-lg lg:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span class="sr-only">Search</span>
 
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
 
                     <button type="button" data-dropdown-toggle="notification-dropdown"
                         class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
@@ -405,71 +389,43 @@
                             </a>
                         </div>
                     </div>
-                    <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button"
-                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                fill-rule="evenodd" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="tooltip-toggle" role="tooltip"
-                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
-                        Toggle dark mode
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
 
-                    <div class="flex items-center ml-3">
-                        <div>
-                            <button type="button"
-                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                                id="user-menu-button-2" aria-expanded="false" data-dropdown-toggle="dropdown-2">
-                                <span class="sr-only">Open user menu</span>
-                                <img class="w-8 h-8 rounded-full"
-                                    src="../../../flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                    alt="user photo">
-                            </button>
-                        </div>
 
-                        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
-                            id="dropdown-2">
-                            <div class="px-4 py-3" role="none">
-                                <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                    Neil Sims
-                                </p>
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
-                                    role="none">
-                                    neil.sims@flowbite.com
-                                </p>
+                    <div class="flex items-center ml-3" style="width: 40px; margin-bottom: 10px">
+
+                        @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/user/profile') }}" style="width: 60px; ">
+                                <img src="{{ Auth::user()->profile_photo_url }}"
+                                    alt="{{ Auth::user()->name }}" class="rounded-full"
+                                    style=" margin-bottom:-8px">
+                            </a>
+
+                            <a>
+                                <form method="post" action="{{ route('logout') }}" x-data>
+                                    @csrf
+                                    <button type="submit" @click.prevent="$root.submit();"
+                                        style="border: none;">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </form>
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}" style="  margin-right: 22px; ">
+                                <i class="fas fa-user"></i>
+                            </a>
+
+                        @endauth
+                    @endif
+
+                    @if (Auth::check() == false)
+                        <div class="hamburger-menu d-block d-xl-none">
+                            <div class="hamburger-inner">
+                                <div class="icon open-menu"><i class="fal fa-bars"></i></div>
                             </div>
-                            <ul class="py-1" role="none">
-                                <li>
-                                    <a href="dashboard"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">Settings</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">Earnings</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">Sign out</a>
-                                </li>
-                            </ul>
                         </div>
+                    @endif
+
                     </div>
                 </div>
             </div>
@@ -745,11 +701,49 @@
                                     </li>
                                 </ul>
                             </li>
+
+                            <li>
+                                <button type="button"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                    aria-controls="cal" aria-expanded="false" data-collapse-toggle="cal">
+                                    <svg class="h-6 w-6 text-gray-500" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <circle cx="5" cy="17" r="2" />
+                                        <circle cx="14" cy="17" r="2" />
+                                        <line x1="7" y1="17" x2="12" y2="17" />
+                                        <path d="M3 17v-6h13v6" />
+                                        <path d="M5 11v-4h4" />
+                                        <path d="M9 11v-6h4l3 6" />
+                                        <path d="M22 15h-3v-10" />
+                                        <line x1="16" y1="13" x2="19" y2="13" />
+                                    </svg>
+                                    <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                                        data-sidebar-toggle-item>Calculator</span>
+                                    <svg data-sidebar-toggle-item class="w-6 h-6" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <ul id="cal" class="hidden space-y-2 py-2">
+                                    <li>
+                                        <a href="{{ url('vgedetails') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700 bg-gray-100 dark:bg-gray-700">Vegetables Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('createvege') }}"
+                                            class="text-base text-gray-900 rounded-lg flex items-center p-2 group hover:bg-gray-100 transition duration-75 pl-11 dark:text-gray-200 dark:hover:bg-gray-700">Add Vegetables</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
 
                     </div>
                 </div>
-                
+
             </div>
         </aside>
 
@@ -759,13 +753,19 @@
         <script src="/adminassets/app.bundle.js"></script>
         <script src="/adminassets/ajax/libs/flowbite/1.6.2/datepicker.min.js"></script>
 
+
+        <script src="shopassets/js/theme.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         @if (session('status'))
             <script>
-                swal("Good job!", "{{ session('status') }}", "success");
+                swal("{{ session('status') }}", "", "success");
+            </script>
+        @elseif (session('fail'))
+            <script>
+                swal("{{ session('fail') }}", "", "error");
             </script>
         @endif
-        <script src="shopassets/js/theme.js"></script>
+
 
 
 

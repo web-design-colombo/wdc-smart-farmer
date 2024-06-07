@@ -8,9 +8,22 @@
                 <div
                     class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:border-gray-700 sm:p-6 dark:bg-gray-800">
                     <div class="w-full">
+                        <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">New Orders</h3>
+                        <span
+                            class="text-2xl font-bold leading-none text-red-500 sm:text-3xl dark:text-white">{{ $pendingOrdersCount }}</span>
+
+                    </div>
+                    <div class="w-full" id="week-signups-chart"></div>
+                </div>
+
+
+
+                <div
+                    class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+                    <div class="w-full">
                         <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">All Products</h3>
                         <span
-                            class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">34</span>
+                            class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $productsCount }}</span>
 
 
 
@@ -20,13 +33,28 @@
 
 
 
-
                 <div
                     class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:border-gray-700 sm:p-6 dark:bg-gray-800">
                     <div class="w-full">
                         <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Users</h3>
                         <span
-                            class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">23</span>
+                            class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $usersCount }}</span>
+
+                    </div>
+                    <div class="w-full" id="week-signups-chart"></div>
+                </div>
+
+
+
+
+
+
+                <div
+                    class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+                    <div class="w-full">
+                        <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Categories</h3>
+                        <span
+                            class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $categoriesCount }}</span>
 
                     </div>
                     <div class="w-full" id="week-signups-chart"></div>
@@ -307,42 +335,6 @@
 
                     </div>
 
-                    <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800"
-                        style="margin-left: 40px; width: 500px">
-                        <div class="w-full">
-                            <h3 class="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">Audience by age
-                            </h3>
-                            <div class="flex items-center mb-2">
-                                <div class="w-16 text-sm font-medium dark:text-white">50+</div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-primary-600 h-2.5 rounded-full dark:bg-primary-500"
-                                        style="width: 18%"></div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <div class="w-16 text-sm font-medium dark:text-white">40+</div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-primary-600 h-2.5 rounded-full dark:bg-primary-500"
-                                        style="width: 15%"></div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <div class="w-16 text-sm font-medium dark:text-white">30+</div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-primary-600 h-2.5 rounded-full dark:bg-primary-500"
-                                        style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <div class="w-16 text-sm font-medium dark:text-white">20+</div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-primary-600 h-2.5 rounded-full dark:bg-primary-500"
-                                        style="width: 30%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="traffic-channels-chart" class="w-full"></div>
-                    </div>
 
                 </div>
 

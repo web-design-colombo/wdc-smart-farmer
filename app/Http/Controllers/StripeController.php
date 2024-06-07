@@ -27,7 +27,7 @@ class StripeController extends Controller
             'line_items' => [
                 [
                     'price_data' => [
-                        'currency' => 'USD',
+                        'currency' => 'LKR',
                         'product_data' => [
                             'name' => "Product ID: $id",
                         ],
@@ -48,7 +48,7 @@ class StripeController extends Controller
     {
         // return "Thanks for your order! You have just completed your payment. The seller will reach out to you as soon as possible.";
 
-        return redirect()->to('/checkout')->with('success', 'Order Placed Successfully');
+        return redirect()->to('/checkout')->with('success', 'Thanks for your order! You have just completed your payment.');
 
     }
 }

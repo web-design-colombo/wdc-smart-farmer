@@ -6,7 +6,8 @@ use App\models\user;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\StripeController;
-
+use App\Http\Controllers\VegetablecalController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -131,6 +132,12 @@ Route::post('profileadd', 'App\Http\Controllers\UserController@store');
 //dashboard
 Route::get('/admindash', 'App\Http\Controllers\DashboardController@view');
 
+//vgedetails
+Route::get('vegedetails', 'App\Http\Controllers\VegetablecalController@vegedetails');
+Route::get('createvege', 'App\Http\Controllers\VegetablecalController@create');
+//vegeaddcal
+Route::post('vegeaddcal', 'App\Http\Controllers\VegetablecalController@store');
+
 });
 
 
@@ -187,6 +194,7 @@ Route::get('morevege/{id}', 'App\Http\Controllers\VegetableController@show');
 //massage
 // routes/web.php
 use App\Http\Controllers\MessageController;
+use Carbon\Language;
 
 Route::get('/messages', [MessageController::class, 'index']);
 Route::post('/messages', [MessageController::class, 'store']);
@@ -268,3 +276,23 @@ Route::get('/myroute', [HomeController::class, 'indexnew']);
 Route::get('payment/{id}/{total}', [StripeController::class, 'session'])->name('stripe.payment');
 Route::get('success', [StripeController::class, 'success'])->name('success');
 Route::get('checkout', [StripeController::class, 'checkout'])->name('checkout');
+
+//
+
+Route::get('/cal', [VegetablecalController::class, 'index']);
+Route::post('/calculate', [VegetablecalController::class, 'calculate'])->name('calculate');
+
+//
+// Language
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
+Route::get('/change-language/{lang}', function ($lang) {
+    if (in_array($lang, ['en', 'sin'])) {
+        Session::put('applocale', $lang);
+        App::setLocale($lang);
+    }
+    return response()->json(['status' => 'success']);
+});
+
+Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.destroy');

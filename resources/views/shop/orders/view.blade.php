@@ -1,6 +1,4 @@
-
 <x-site-layout>
-
     <main class="bg-gray-100 min-h-screen">
         <div class="container mx-auto py-8">
             <section class="shop-checkout bg-white rounded-lg shadow-md">
@@ -62,7 +60,11 @@
                             </div>
 
                             <div class="flex justify-end">
-                                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">Place Order</button>
+                                <form action="{{ route('orders.destroy', $order->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">Delete Order</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -70,5 +72,4 @@
             </section>
         </div>
     </main>
-
 </x-site-layout>

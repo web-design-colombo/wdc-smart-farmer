@@ -36,7 +36,7 @@ class RatingController extends Controller
             })->exists();
 
         if (!$verified_purchase) {
-            return redirect()->back()->with('error', "You must purchase this product to rate it.");
+            return redirect()->back()->with('fail', "You must purchase this product to rate it.");            // return redirect()->back()->with('fail', "You must purchase this product to rate it.");
 
     }
         $existing_rating = Rating::where('user_id', $user_id)

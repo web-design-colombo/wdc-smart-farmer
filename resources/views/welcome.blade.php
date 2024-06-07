@@ -2,6 +2,7 @@
 <x-site-layout>
 
 <section class="main-slider main-slider-one">
+
     <div class="swiper-container thm-swiper__slider"
         data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": {
             "el": "#main-slider-pagination",
@@ -425,7 +426,7 @@
 <section class="projects-one">
     <div class="auto-container">
         <div class="sec-title text-center">
-            
+
             <h2 class="sec-title__title">Highlights of Services</h2>
         </div>
         <div class="row">

@@ -77,7 +77,7 @@
                                     </li>
                                 </ol>
                             </nav>
-                            <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Edit Profile</h1>
+                            <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Create User</h1>
                         </div>
                     </div>
                 </div>

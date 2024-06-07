@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http;
-
+use Closure;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class Kernel extends HttpKernel
 {
@@ -66,4 +68,6 @@ class Kernel extends HttpKernel
         //user-role
         'user-role' => \App\Http\Middleware\UserRoleMiddleware::class,
     ];
+
+  
 }

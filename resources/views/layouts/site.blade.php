@@ -80,8 +80,8 @@
         <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
         <h3>Layout Options</h3>
         <div class="language-feature">
-            <button class="ltr-switcher" data-href="#googtrans(en|en)">LTR</button><!-- /.ltr-switcher -->
-            <button class="rtl-switcher" data-href="#googtrans(en|ar)">RTL</button><!-- /.rtl-switcher -->
+            <button class="ltr-switcher" data-href="#googtrans(en|en)">ENG</button><!-- /.ltr-switcher -->
+            <button class="rtl-switcher" data-href="#googtrans(en|sin)">SIN</button><!-- /.rtl-switcher -->
         </div><!-- /.language-feature -->
         <div class="layout-feature" id="colorMode">
             <a href="#" class="dark-switcher" data-theme="agriox-dark">Dark</a>
@@ -89,6 +89,7 @@
             <button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
         </div><!-- /.language-feature -->
     </div>
+
 
     {{-- <div class="preloader">
 		<img class="preloader__image" width="300" src="{{ asset('img/logo-no-background.png') }}" alt="" />
@@ -176,12 +177,12 @@
                                                     <li><a href="{{ url('/export your vegetables') }}">Export Your
                                                             Vegetables</a></li>
                                                     {{-- if only user id = 2 ,then show this li  --}}
-                                                    @if (auth()->check() && auth()->user()->role->value == 2)
+                                                    {{-- @if (auth()->check() && auth()->user()->role->value == 2)
                                                         <li><a href="{{ url('/buyers') }}">Create Your
                                                                 Advertisement</a></li>
-                                                    @endif
-
-
+                                                    @endif --}}
+                                                    <li><a href="{{ url('/buyers') }}">Create Your
+                                                            Advertisement</a></li>
                                                 </ul>
                                             </li>
                                             <li class="dropdown">
@@ -241,8 +242,7 @@
 
                             <div class="main-header--one__bottom-right clearfix">
                                 <div class="search-cart">
-                                    <a href="{{ url('cart') }}" class="relative inline-block"
-                                         >
+                                    <a href="{{ url('cart') }}" class="relative inline-block">
                                         <span class="icon-shopping-cart text-2xl" style="margin-right: 28px"></span>
                                         <span
                                             class="cart-amount absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white  rounded-full cart-count"
@@ -257,7 +257,7 @@
                                                     style=" margin-bottom:-8px">
                                             </a>
 
-                                            <a >
+                                            <a>
                                                 <form method="post" action="{{ route('logout') }}" x-data>
                                                     @csrf
                                                     <button type="submit" @click.prevent="$root.submit();"
@@ -267,8 +267,7 @@
                                                 </form>
                                             </a>
                                         @else
-                                            <a href="{{ route('login') }}"
-                                                style="  margin-right: 22px; ">
+                                            <a href="{{ route('login') }}" style="  margin-right: 22px; ">
                                                 <i class="fas fa-user"></i>
                                             </a>
 
@@ -292,8 +291,7 @@
                                             style="background-color: red; "></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="notificationDropdown">
-                                        <a id="xx" class="dropdown-item"
-                                            href="#"></a>
+                                        <a id="xx" class="dropdown-item" href="#"></a>
 
                                         <a id="xx" class="dropdown-item" href="#">No Record fou</a>
 
@@ -345,8 +343,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="footer-one__top-wrapper">
-                                <div class="footer-one__bg"><img
-                                        src="{{ asset('img/logo-no-background.png') }}"
+                                <div class="footer-one__bg"><img src="{{ asset('img/logo-no-background.png') }}"
                                         alt="" /></div>
                                 <div class="row">
                                     <!--Start Footer Widget Column-->
@@ -358,7 +355,9 @@
                                                         src="{{ asset('img/logo-no-background.png') }}"
                                                         alt="" style="width: 200px"></a>
                                             </div>
-                                            <p class="footer-widget__about-text">Smart Farmer is dedicated to revolutionizing the agricultural industry. Connect with us to learn more.</p>
+                                            <p class="footer-widget__about-text">Smart Farmer is dedicated to
+                                                revolutionizing the agricultural industry. Connect with us to learn
+                                                more.</p>
                                             <div class="footer-widget__about-contact-box">
                                                 <p class="phone"><a href="tel:123456789"><i
                                                             class="fas fa-phone-square-alt"></i>+94 7768400 32</a>
@@ -366,7 +365,7 @@
                                                 <p><a href="mailto:needhelp@company.com"><i
                                                             class="fa fa-envelope"></i>SmartFarmer@gmail.com
 
-                                                        </a></p>
+                                                    </a></p>
                                                 <p class="text"><i class="fas fa-map-marker-alt"></i>Colombo</p>
                                             </div>
                                         </div>
@@ -419,14 +418,15 @@
                                                         href="{{ url('/shop') }}">Shop</a></li>
                                                 <li class="footer-widget__explore-list-item"><a
                                                         href="{{ url('/messages') }}">Live Chat</a></li>
-                                                <li class="footer-widget__explore-list-item"><a href="{{ url('/export your vegetables') }}">Export Your
-                                                    Vegetables</a></li>
+                                                <li class="footer-widget__explore-list-item"><a
+                                                        href="{{ url('/export your vegetables') }}">Export Your
+                                                        Vegetables</a></li>
                                                 <li class="footer-widget__explore-list-item"><a
                                                         href="{{ url('/vegesell') }}">Sell Vegetables</a>
                                                 </li>
                                                 <li class="footer-widget__explore-list-item"><a
-                                                    href="{{ url('/vegetables') }}">Grow Vegetables</a>
-                                            </li>
+                                                        href="{{ url('/vegetables') }}">Grow Vegetables</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -494,9 +494,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="https://pixydrops.com/agriox/index-main.html" aria-label="logo image"><img
-                        src="https://pixydrops.com/agriox/assets/images/resources/mobilemenu_logo.png" width="155"
-                        alt="" /></a>
+                <a href="/" aria-label="logo image"><img src="{{ asset('img/logo-no-background.png') }}"
+                        width="155" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
@@ -693,6 +692,17 @@
             });
         }
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if (session('status'))
+        <script>
+            swal("{{ session('status') }}", "", "success");
+        </script>
+    @elseif (session('fail'))
+        <script>
+            swal("{{ session('fail') }}", "", "error");
+        </script>
+    @endif
+
 
 
 </body>
