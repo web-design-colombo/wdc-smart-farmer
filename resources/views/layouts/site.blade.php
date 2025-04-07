@@ -160,10 +160,15 @@
 
                                     <div class="main-header--one__bottom-left">
                                         <ul class="main-menu__list">
+
                                             <li class="dropdown megamenu">
                                                 <a href="/">Home</a>
-
                                             </li>
+
+                                            <li class="dropdown megamenu">
+                                                <a href="{{route('harvestPlanner')}}">Harvest Planner</a>
+                                            </li>
+
                                             {{-- <li><a href="about.html">About</a></li> --}}
                                             <li class="dropdown">
                                                 <a>Services</a>

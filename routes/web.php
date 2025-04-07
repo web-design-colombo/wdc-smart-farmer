@@ -39,15 +39,15 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
+Route::get('/harvestPlanner', function () {
+    return view('harvestPlanner');
+})->name('harvestPlanner');
 
 //admin route
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], function () {
     Route::get('/admin', function () {
         return view('admin.index');
     });
-
-
 
     Route::get('/admin', 'App\Http\Controllers\HomeController@index');
 
