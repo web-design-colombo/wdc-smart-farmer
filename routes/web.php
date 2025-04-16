@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HarvestController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\models\user;
@@ -39,9 +41,31 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+////Route::get('/weather/{location}', [WeatherController::class, 'getWeatherData']);
+//Route::get('/harvestPlanner', function () {
+//    return view('harvest');
+//})->name('harvestPlanner');
+//
+//
+//// Route for fetching weather data
+//Route::get('/weather/{location}', [WeatherController::class, 'getWeatherData']);
+//
+//// Routes for fetching country and vegetable lists
+//Route::get('/api/countries', [HarvestController::class, 'getCountries']);
+//Route::get('/api/vegetables', [HarvestController::class, 'getVegetables']);
+
+// Define routes
 Route::get('/harvestPlanner', function () {
-    return view('harvestPlanner');
+    return view('harvest');
 })->name('harvestPlanner');
+
+// Routes for fetching city and vegetable lists
+Route::get('/api/cities', [HarvestController::class, 'getCities']);
+Route::get('/api/vegetables', [HarvestController::class, 'getVegetables']);
+
+
+
 
 //admin route
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], function () {
@@ -54,6 +78,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'user-role:1']], func
     Route::get('category', function () {
         return view('admin.productcategory.create');
     });
+
+
+
+
 
 
 
